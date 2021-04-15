@@ -19,7 +19,7 @@ function Layout({ children, pageTitle, description }) {
         style={{
           fontSize: "0.625rem",
           fontWeight: "200",
-          marginTop: "19rem",
+          marginTop: "24rem",
         }}
       >
         2021 © Henry.

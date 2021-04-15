@@ -59,6 +59,8 @@ h2 {
 a {
   color: currentColor;
   text-decoration: none;
+  font-family: "SF Pro Rounded";
+  font-size: 0.925rem;
 }
 
 a:hover {
