@@ -1,18 +1,20 @@
 import Link from "next/link";
 import Metadata from "./metadata";
 
-export default function Portfolio({ portfolio }) {
+function Project({ project }) {
   const {
     link,
     module: { meta },
-  } = portfolio;
+  } = project;
 
   return (
     <article>
       <Metadata meta={meta} />
-      <Link href={`/portfolio${link}`}>
+      <Link href={`/project${link}`}>
         <a>Read more &rarr;</a>
       </Link>
     </article>
   );
 }
+
+export default Project;

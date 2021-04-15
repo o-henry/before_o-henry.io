@@ -1,5 +1,5 @@
-import Portfolio from "./components/portfolio";
-import { posts } from "./lib/getall.posts";
+import Project from "../components/project";
+import { projects } from "../lib/getall.post";
 
 function Index() {
   return (
@@ -8,9 +8,10 @@ function Index() {
         <header style={{ fontFamily: "Rajdhani", fontWeight: "600" }}>
           SOME THINGS I'VE BUILT
         </header>
+
         <section>
-          {posts.map((post) => (
-            <Portfolio key={post.link} portfolio={post} />
+          {projects.map((post) => (
+            <Project key={post.link} project={post} />
           ))}
         </section>
       </div>

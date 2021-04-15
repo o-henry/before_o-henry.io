@@ -1,9 +1,9 @@
-export default function Metadata({ meta, post }) {
+export default function Metadata({ meta, project }) {
   return (
     <>
-      <h1 className={post ? "great-title" : null}>{meta.title}</h1>
+      <h1 className={project ? "great-title" : null}>{meta.title}</h1>
       <div className="details">
-        {post ? null : <p>{meta.description}</p>}
+        {project ? null : <p>{meta.description}</p>}
         <span>{meta.date}</span>
         <span role="img" aria-label="one coffee">
           {meta.readTime + " min read"}

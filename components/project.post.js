@@ -1,5 +1,6 @@
 import Metadata from "./metadata";
-export default function PortfolioPost({ children, meta }) {
+
+function ProjectPost({ children, meta }) {
   return (
     <>
       <Metadata meta={meta} post />
@@ -7,3 +8,5 @@ export default function PortfolioPost({ children, meta }) {
     </>
   );
 }
+
+export default ProjectPost;
