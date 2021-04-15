@@ -14,16 +14,6 @@ function Layout({ children, pageTitle, description }) {
         <Header />
         <div className="content">{children}</div>
       </main>
-
-      <footer
-        style={{
-          fontSize: "0.625rem",
-          fontWeight: "200",
-          marginTop: "24rem",
-        }}
-      >
-        2021 © Henry.
-      </footer>
     </>
   );
 }

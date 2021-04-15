@@ -316,3 +316,7 @@ article {
   line-height: 1.5;
   height: calc(100% + 48px) !important;
 }
+
+.content {
+  margin-top: 4rem;
+}

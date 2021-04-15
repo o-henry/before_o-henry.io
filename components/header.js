@@ -12,7 +12,7 @@ export default function Header() {
       <div style={{ flex: 9 }}>
         <Link href="/">
           <a>
-            <h1>Henry</h1>
+            <h1 style={{ fontSize: "1.125rem" }}>Henry</h1>
           </a>
         </Link>
       </div>
