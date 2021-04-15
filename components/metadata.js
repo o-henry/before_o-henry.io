@@ -1,20 +1,19 @@
-export default function Metadata({ meta, project }) {
+export default function Metadata({ meta, project, blog }) {
   return (
     <>
-      <h1 className={project ? "great-title" : null}>{meta.title}</h1>
+      <h1 className={project || blog ? "great-title" : null}>{meta.title}</h1>
       <div className="details">
-        {project ? null : <p>{meta.description}</p>}
+        {project || blog ? null : <p>{meta.description}</p>}
         <span>{meta.date}</span>
-        <span role="img" aria-label="one coffee">
-          {meta.readTime + " min read"}
-        </span>
+        <span>{meta.readTime + " min read"}</span>
       </div>
       <style jsx>
         {`
           h1 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #f39c12;
+            color: #9ca3af;
+            font-family: "Poppins";
           }
           .great-title {
             font-size: 2rem;

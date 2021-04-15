@@ -69,6 +69,11 @@ textarea {
   resize: none;
 }
 
+article {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
 }

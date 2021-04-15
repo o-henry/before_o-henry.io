@@ -1,7 +1,7 @@
-import Project from "../components/project";
-import { projects } from "../lib/getall.post";
+import BlogPage from "../components/blog";
+import { blogs } from "../lib/getall.post";
 
-function Index() {
+function Blogs() {
   return (
     <>
       <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
@@ -10,8 +10,8 @@ function Index() {
         </header>
 
         <section>
-          {projects.map((project) => (
-            <Project key={project.link} project={project} />
+          {blogs.map((blog) => (
+            <BlogPage key={blog.link} blog={blog} />
           ))}
         </section>
       </div>
@@ -19,4 +19,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Blogs;
