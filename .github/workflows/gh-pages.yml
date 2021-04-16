@@ -19,10 +19,10 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /log
       - run: npm run export # runs `next export`
+      - run: touch ./out/.nojekyll
         env:
           CI: true
           DEPLOY_TARGET: gh-pages
-      - run: touch ./out/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
