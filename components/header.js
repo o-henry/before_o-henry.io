@@ -11,13 +11,11 @@ export default function Header() {
     const initialColorValue = root.style.getPropertyValue(
       "--initial-color-mode"
     );
-    console.log("init", initialColorValue);
 
     setDarkTheme(initialColorValue === "dark");
   }, []);
 
   useEffect(() => {
-    console.log(">", darkTheme);
     if (darkTheme !== undefined) {
       if (darkTheme) {
         document.documentElement.setAttribute("data-theme", "dark");
