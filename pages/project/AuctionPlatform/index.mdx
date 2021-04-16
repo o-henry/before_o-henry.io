@@ -1,4 +1,5 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
 
 export const meta = {
   title: "Auction Platform",
@@ -13,7 +14,22 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
   REACT ・ TS ・ NestJS ・ TypeORM ・ Emotion
 </p>
 
-<div style={{ paddingTop: "5rem" }}>
+<div
+  style={{
+    marginTop: "2.625rem",
+    textAlign: "center",
+  }}
+>
+  <a
+    href="https://github.com/o-henry/popup-store"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Github style={{ fontSize: "20px" }} />
+  </a>
+</div>
+
+<div style={{ paddingTop: "2rem" }}>
   <iframe
     width="100%"
     height="315"

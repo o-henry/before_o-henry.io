@@ -1,4 +1,5 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
 
 export const meta = {
   title: "Ohouse",
@@ -10,7 +11,44 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-## TES
+<p style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
+  REACT ・ TS ・ Sass
+</p>
 
-WTF
-IDK
+<div
+  style={{
+    marginTop: "2.625rem",
+    textAlign: "center",
+  }}
+>
+  <a
+    href="https://github.com/o-henry/Ohouse_Front_Task"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Github style={{ fontSize: "20px" }} />
+  </a>
+</div>
+
+<div style={{ paddingTop: "2rem" }}>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/L5u7KgX1P4o" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+</iframe>
+
+</div>
+
+<p
+  style={{
+    paddingTop: "1.125rem",
+    fontFamily: "seoulNamsanL",
+    fontSize: "1.125rem",
+  }}
+>
+  오늘의 집 과제 페이지 입니다.
+  <br />
+  <br />
+</p>
+
+- 스크롤에 따른 이미지 요청
+- 스크랩 버튼 상태에 따른 색상 변경
+- 스크랩 및 새로고침시
+  데이터 유지

@@ -1,7 +1,8 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
 
 export const meta = {
-  title: "Place Data",
+  title: "Place",
   description:
     "인스타그램 장소 태그를 크롤링하여 가공/사용 하는 서비스 입니다.",
   date: "Dec 12, 2020",
@@ -10,7 +11,49 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-## TES
+<p style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
+  REACT ・ Express ・ Expo ・ MongoDB ・ Puppeteer
+</p>
 
-WTF
-IDK
+<div
+  style={{
+    marginTop: "2.625rem",
+    textAlign: "center",
+  }}
+>
+  <a
+    href="https://github.com/o-henry/local-server-v2"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Github style={{ fontSize: "20px" }} />
+  </a>
+</div>
+
+<div style={{ paddingTop: "2rem" }}>
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/LkqD32oWN20"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
+
+<p
+  style={{
+    paddingTop: "1.125rem",
+    fontFamily: "seoulNamsanL",
+    fontSize: "1.125rem",
+  }}
+>
+  인스타그램 장소 태그를 크롤링하여 가공/사용 하는 서비스 입니다.
+  <br />
+  <br />
+</p>
+
+- Puppeteer를 활용한 크롤링
+- 크롤링 데이터 전처리
+- 빈도수에 따른 데이터 순차 제공

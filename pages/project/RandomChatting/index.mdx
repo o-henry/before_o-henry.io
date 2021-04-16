@@ -1,4 +1,6 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
+import Result from "../../../assets/result.svg";
 
 export const meta = {
   title: "Random Chatting",
@@ -9,7 +11,49 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-## TES
+<p style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
+  REACT ・ Socket.io ・ Heroku ・ TS ・ Express ・ Material-UI
+</p>
 
-WTF
-IDK
+<div
+  style={{
+    marginTop: "2.625rem",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+  }}
+>
+  <a
+    href="https://github.com/o-henry/real-chat-socket"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Github style={{ fontSize: "20px" }} />
+  </a>
+
+  <div style={{ width: "15px" }} />
+  
+  <a
+    href="https://random-chat-4a745.web.app/"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Result style={{ fontSize: "20px" }} />
+  </a>
+</div>
+
+<p
+  style={{
+    paddingTop: "2rem",
+    fontFamily: "seoulNamsanL",
+    fontSize: "1.125rem",
+  }}
+>
+  Socket.io를 활용하여 만든 랜덤 채팅 앱 입니다.
+  <br />
+  <br />
+</p>
+
+- atomic design pattern
+- Server는 Heroku / Front는 Firebase로 배포하였습니다.
+- 테스트를 위해서는 2개의 브라우저를 사용하여 접속해야 합니다. 한글만 입력가능합니다.

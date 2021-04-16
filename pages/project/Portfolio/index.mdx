@@ -1,4 +1,5 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
 
 export const meta = {
   title: "Portfolio",
@@ -9,7 +10,48 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-## TES
+<p style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
+  REACT ・ TS ・ Mobx ・ Sass
+</p>
 
-WTF
-IDK
+<div
+  style={{
+    marginTop: "2.625rem",
+    textAlign: "center",
+  }}
+>
+  <a
+    href="https://github.com/o-henry/portfoliov4"
+    target="_blank"
+    style={{ fontFamily: "Rajdhani" }}
+  >
+    <Github style={{ fontSize: "20px" }} />
+  </a>
+</div>
+
+<div style={{ paddingTop: "2rem" }}>
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/WjKlW4kXMPw"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
+
+<p
+  style={{
+    paddingTop: "1.125rem",
+    fontFamily: "seoulNamsanL",
+    fontSize: "1.125rem",
+  }}
+>
+  포트폴리오로 만든 사이트 입니다.
+  <br />
+  <br />
+</p>
+
+- 시멘틱 웹
+- 반응형 페이지
