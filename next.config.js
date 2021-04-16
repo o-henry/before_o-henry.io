@@ -7,6 +7,13 @@ const name = "https://o-henry.github.io/";
 
 module.exports = withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+      "/project": { page: "/project" },
+    };
+  },
   assertPrefix: !debug ? `/${name}` : "",
   webpack(config) {
     config.module.rules.push({
