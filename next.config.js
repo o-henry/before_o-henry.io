@@ -4,7 +4,6 @@ const withMDX = require("@next/mdx")({
 
 module.exports = withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
-  basePath: "/",
   assertPrefix: "/",
   webpack(config) {
     config.module.rules.push({
