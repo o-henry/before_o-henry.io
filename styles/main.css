@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+@font-face {
+  font-family: "SeoulNamsanL";
+  font-weight: 200;
+  src: url("/fonts/SeoulNamsanL.ttf") format("truetype");
+}
 
 * {
   border: 0;
@@ -65,6 +71,7 @@ a {
 
 a:hover {
   cursor: pointer;
+  color: #5b34da;
 }
 
 textarea {
@@ -74,6 +81,11 @@ textarea {
 article {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+  border: 15px solid white;
 }
 
 ::-moz-selection {

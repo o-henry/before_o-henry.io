@@ -21,7 +21,7 @@ export default function Metadata({ meta, project, blog }) {
             font-family: "Poppins";
           }
           .great-title {
-            font-size: 2.125rem;
+            font-size: 3.125rem;
             text-align: center;
             color: black;
           }

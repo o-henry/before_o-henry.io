@@ -10,10 +10,13 @@ function Layout({ children, pageTitle, description }) {
         <meta name="Description" content={description}></meta>
         <title>{pageTitle}</title>
       </Head>
+
       <main>
         <Header />
         <div className="content">{children}</div>
       </main>
+
+      <footer style={{ marginTop: "2rem", marginBottom: "2rem" }}></footer>
     </>
   );
 }
