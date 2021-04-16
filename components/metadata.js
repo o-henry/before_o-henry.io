@@ -17,13 +17,13 @@ export default function Metadata({ meta, project, blog }) {
           h1 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #9ca3af;
+            color: var(--color-header);
             font-family: "Poppins";
           }
           .great-title {
             font-size: 3.125rem;
             text-align: center;
-            color: black;
+            color: var(--color-header);
           }
           .details span {
             color: #bdbdbd;

@@ -2,24 +2,15 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
-    const meta = {
-      title: "Next.js Blog Starter Kit",
-      description: "Clone and deploy your own Next.js portfolio in minutes.",
-      image:
-        "https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png",
-    };
-
     return (
-      <Html lang="en">
-        <Head>
-          <meta name="robots" content="follow, index" />
-          <meta name="description" content={meta.description} />
-          <meta property="og:site_name" content={meta.title} />
-          <meta property="og:description" content={meta.description} />
-          <meta property="og:title" content={meta.title} />
-          <meta property="og:image" content={meta.image} />
-        </Head>
+      <Html lang="ko">
+        <Head></Head>
         <body>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: blockingSetInitialColorMode,
+            }}
+          ></script>
           <Main />
           <NextScript />
         </body>
@@ -29,3 +20,44 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
+// our function needs to be a string
+const blockingSetInitialColorMode = `(function() {
+	${setInitialColorMode.toString()}
+	setInitialColorMode();
+})()
+`;
+
+function setInitialColorMode() {
+  function getInitialColorMode() {
+    const persistedColorPreference = window.localStorage.getItem("theme");
+    const hasPersistedPreference = typeof persistedColorPreference === "string";
+
+    /**
+     * If the user has explicitly chosen light or dark,
+     * use it. Otherwise, this value will be null.
+     */
+    if (hasPersistedPreference) {
+      return persistedColorPreference;
+    }
+
+    // If there is no saved preference, use a media query
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const hasMediaQueryPreference = typeof mql.matches === "boolean";
+
+    if (hasMediaQueryPreference) {
+      return mql.matches ? "dark" : "light";
+    }
+
+    // default to 'light'.
+    return "light";
+  }
+
+  const colorMode = getInitialColorMode();
+  const root = document.documentElement;
+  root.style.setProperty("--initial-color-mode", colorMode);
+
+  // add HTML attribute if dark mode
+  if (colorMode === "dark")
+    document.documentElement.setAttribute("data-theme", "dark");
+}

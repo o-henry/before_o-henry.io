@@ -1,6 +1,34 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Moon from "../assets/moon.svg";
+import Sun from "../assets/sun.svg";
 
 export default function Header() {
+  const [darkTheme, setDarkTheme] = useState(undefined);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      "--initial-color-mode"
+    );
+    console.log("init", initialColorValue);
+
+    setDarkTheme(initialColorValue === "dark");
+  }, []);
+
+  useEffect(() => {
+    console.log(">", darkTheme);
+    if (darkTheme !== undefined) {
+      if (darkTheme) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        window.localStorage.setItem("theme", "light");
+      }
+    }
+  }, [darkTheme]);
+
   return (
     <>
       <div
@@ -33,6 +61,44 @@ export default function Header() {
             <h2 style={{ fontSize: "0.825rem" }}>About</h2>
           </a>
         </Link>
+
+        <div style={{ flexShrink: "0", width: "15px" }}></div>
+
+        {darkTheme ? (
+          <label>
+            <input
+              type="checkbox"
+              checked={darkTheme}
+              onChange={(ev) => {
+                setDarkTheme(ev.target.checked ? true : false);
+              }}
+            />
+            <Moon
+              style={{
+                position: "relative",
+                fontSize: "25px",
+                top: "2.5px",
+              }}
+            />
+          </label>
+        ) : (
+          <label>
+            <input
+              type="checkbox"
+              checked={darkTheme}
+              onChange={(ev) => {
+                setDarkTheme(ev.target.checked ? true : false);
+              }}
+            />
+            <Sun
+              style={{
+                position: "relative",
+                fontSize: "25px",
+                top: "3.465px",
+              }}
+            />
+          </label>
+        )}
       </div>
     </>
   );

@@ -52,6 +52,10 @@ body {
   margin-right: 1rem;
   margin-left: 1rem;
   max-width: 42rem;
+
+  background-color: var(--color-background);
+  transition: background-color 0.2s;
+  color: var(--color-primary);
 }
 
 h1 {
@@ -71,7 +75,6 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: #5b34da;
 }
 
 textarea {
@@ -332,4 +335,24 @@ img {
 
 .content {
   margin-top: 4rem;
+}
+
+:root {
+  --color-primary-accent: #5b34da;
+  --color-primary: #000;
+  --color-background: #fff;
+  --color-header: #000;
+  --color-secondary-accent: #358ef1;
+}
+
+[data-theme="dark"] {
+  --color-primary-accent: #9d86e9;
+  --color-secondary-accent: #61dafb;
+  --color-header: #fff;
+  --color-primary: #fff;
+  --color-background: #0d1117;
+}
+
+[data-theme="batman"] {
+  --color-primary-accent: #ffff00;
 }
