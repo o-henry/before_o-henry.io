@@ -11,7 +11,7 @@ module.exports = withMDX({
     return {
       "/": { page: "/" },
       "/about": { page: "/about" },
-      "/project": { page: "/project" },
+      "/blog": { page: "/blog" },
     };
   },
   assertPrefix: !debug ? `/${name}` : "",
