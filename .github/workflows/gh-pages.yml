@@ -16,9 +16,11 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build # runs `next build`
-        # env:
-        #   NEXT_PUBLIC_BASE_PATH: /
+        env:
+          NEXT_PUBLIC_BASE_PATH: /o-henry.github.io
       - run: npm run export # runs `next export`
+        env:
+          NEXT_PUBLIC_BASE_PATH: /o-henry.github.io
       - run: touch ./out/.nojekyll
         env:
           CI: true

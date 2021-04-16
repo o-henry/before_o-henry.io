@@ -4,7 +4,8 @@ const withMDX = require("@next/mdx")({
 
 module.exports = withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
-  assertPrefix: "/",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assertPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
