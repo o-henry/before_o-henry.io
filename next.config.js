@@ -3,7 +3,7 @@ const withMDX = require("@next/mdx")({
 });
 
 const debug = process.env.DEPLOY_TARGET !== "gh-pages";
-const name = "https://o-henry.github.io/";
+const name = "o-henry.github.io/";
 
 module.exports = withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
