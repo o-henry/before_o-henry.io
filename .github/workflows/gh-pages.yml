@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -14,9 +14,9 @@ jobs:
 
       - name: Install and Build
         uses: actions/setup-node@v1
-      - run: yarn
-      - run: yarn run build # runs `next build`
-      - run: yarn run export # runs `next export`
+      - run: npm
+      - run: npm run build # runs `next build`
+      - run: npm run export # runs `next export`
         env:
           CI: true
           DEPLOY_TARGET: gh-pages
