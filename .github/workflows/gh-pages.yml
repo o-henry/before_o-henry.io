@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build # runs `next build`
-        env:
-          NEXT_PUBLIC_BASE_PATH: /
+        # env:
+        #   NEXT_PUBLIC_BASE_PATH: /
       - run: npm run export # runs `next export`
       - run: touch ./out/.nojekyll
         env:
