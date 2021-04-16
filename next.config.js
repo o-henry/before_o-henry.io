@@ -2,20 +2,10 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 });
 
-const debug = process.env.DEPLOY_TARGET !== "gh-pages";
-const name = "log";
-
 module.exports = withMDX({
   pageExtensions: ["js", "jsx", "md", "mdx"],
-  exportPathMap: function () {
-    return {
-      "/": { page: "/" },
-      "/about": { page: "/about" },
-      "/blog": { page: "/blog" },
-    };
-  },
-  basePath: "/log",
-  assertPrefix: "/log",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assertPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
