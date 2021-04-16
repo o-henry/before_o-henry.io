@@ -356,3 +356,7 @@ img {
 [data-theme="batman"] {
   --color-primary-accent: #ffff00;
 }
+
+svg {
+  cursor: pointer;
+}
