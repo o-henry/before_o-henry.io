@@ -2,7 +2,7 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 });
 
-const debug = process.env.NODE_ENV !== "production";
+const debug = process.env.DEPLOY_TARGET !== "gh-pages";
 const name = "https://o-henry.github.io/";
 
 module.exports = withMDX({
@@ -14,7 +14,7 @@ module.exports = withMDX({
       "/blog": { page: "/blog" },
     };
   },
-  assertPrefix: !debug ? `/${name}` : "",
+  assertPrefix: debug ? `/${name}` : "",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
