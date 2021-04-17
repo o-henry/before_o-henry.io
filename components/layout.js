@@ -24,7 +24,7 @@ function Layout({ children, pageTitle, description }) {
           marginBottom: "2.5rem",
         }}
       >
-        2021 © Henry.
+        2021 © Henry
       </footer>
     </>
   );
