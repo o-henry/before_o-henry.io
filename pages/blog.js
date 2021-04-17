@@ -1,16 +1,24 @@
+import { MDXProvider } from "@mdx-js/react";
+import Image from "next/image";
 import BlogPage from "../components/blog";
 import { blogs } from "../lib/getall.post";
+
+const components = {
+  img: Image,
+};
 
 function Blogs() {
   return (
     <>
-      <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
-        <section>
-          {blogs.map((blog) => (
-            <BlogPage key={blog.link} blog={blog} />
-          ))}
-        </section>
-      </div>
+      <MDXProvider components={components}>
+        <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
+          <section>
+            {blogs.map((blog) => (
+              <BlogPage key={blog.link} blog={blog} />
+            ))}
+          </section>
+        </div>
+      </MDXProvider>
     </>
   );
 }
