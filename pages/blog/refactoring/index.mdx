@@ -1,0 +1,37 @@
+import Post from "../../../components/post";
+
+export const meta = {
+  title: "Refactoring",
+  description: "리팩터링 2판",
+  date: "Apr 18, 2021",
+  readTime: 2,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
+  Refactoring: Improving the Design of Existing Code (2nd Edition)
+</div>
+
+<div style={{ marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
+
+<h1>Order of refactoring</h1>
+
+<hr />
+
+프로그램의 작동방식을 더 쉽게 파악할 수 있도록 코드를 여러 함수와 프로그램 요소로 재구성 한다.
+구조가 빈약하다면 구조부터 바로잡은 뒤에 기능을 수정 하는 것이 수월하다.
+
+<br />
+
+<h1>The first step in refactoring</h1>
+
+<hr />
+
+리팩터링할 코드영역을 검사해줄 테스트 코드를 마련한다.
+
+긴 함수를 리팩터링할 때는 먼저 전체 동작을 각각의 부분으로 나눌 수 있는 지점을 찾는다.
+
+수정 후 바로 컴파일 후, 테스트해서 실수여부를 체크한다. 조금씩 변경하고 매번 테스트한다.
+
+</div>

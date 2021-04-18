@@ -1,4 +1,4 @@
-export default function Metadata({ meta, project, blog }) {
+function Metadata({ meta, project, blog }) {
   return (
     <>
       <h1 className={project || blog ? "great-title" : null}>{meta.title}</h1>
@@ -31,15 +31,11 @@ export default function Metadata({ meta, project, blog }) {
           }
           .details {
             font-weight: 300;
-            line-height: 25px;
-            font-size: 16px;
             margin-bottom: 8px;
-            font-family: "SF Pro Display", "애플 SD 산돌고딕 Neo",
-              "Apple SD Gothic Neo", "나눔바른고딕", NanumBarunGothic,
-              "나눔고딕", NanumGothic, "맑은 고딕", "Malgun Gothic",
-              -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-              sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-              "Segoe UI Symbol";
+            font-size: 11pt;
+            line-height: 22pt;
+            letter-spacing: 0.8px;
+            font-family: "NotoSansKR-Thin", MalgunGothic;
           }
           .date {
             font-size: 15px;
@@ -49,3 +45,5 @@ export default function Metadata({ meta, project, blog }) {
     </>
   );
 }
+
+export default Metadata;

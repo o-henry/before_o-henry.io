@@ -7,6 +7,10 @@
   font-weight: 200;
   src: url("/fonts/SeoulNamsanL.ttf") format("truetype");
 }
+@font-face {
+  font-family: "MalgunGothic";
+  src: url("/fonts/MalgunGothic.eot") format("truetype");
+}
 
 * {
   border: 0;
@@ -36,10 +40,11 @@ html {
   -webkit-font-smoothing: auto;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-display: auto;
-  font-family: "SF Pro Display", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo",
-    "나눔바른고딕", NanumBarunGothic, "나눔고딕", NanumGothic, "맑은 고딕",
-    "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SF Pro Display", "NotoSansKR-Thin", "애플 SD 산돌고딕 Neo",
+    "Apple SD Gothic Neo", "나눔바른고딕", NanumBarunGothic, "나눔고딕",
+    NanumGothic, "맑은 고딕", "Malgun Gothic", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -73,6 +78,11 @@ a {
   font-size: 0.925rem;
 }
 
+a:visited {
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in;
+}
+
 a:hover {
   cursor: pointer;
 }
@@ -88,9 +98,88 @@ article {
   font-size: 1.125rem;
 }
 
+/* p {
+  font-family: "NotoSansKR-Thin", MalgunGothic;
+  font-size: 11pt;
+  line-height: 22pt;
+  letter-spacing: 0.8px;
+} */
+
 img {
+  margin-top: 16px;
+  max-width: 100%;
+  display: inline;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+  display: block;
+  margin: 12px 0;
   width: 100%;
   border: 15px solid white;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-size: 15px;
+  margin: 16px 0;
+  display: block;
+  border-radius: 4px;
+}
+
+strong {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 700;
+}
+
+ul,
+ol {
+  color: inherit;
+  margin: 8px 0;
+  margin-left: 16px;
+}
+
+li {
+  color: inherit;
+  font-size: 16px;
+  margin-bottom: 4px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+blockquote {
+  padding: 4px 8px 4px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 16px 0;
+  word-break: break-all;
+}
+
+code {
+  font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono", monospace;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4px;
+  padding: 2px 4px;
+  display: inline;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+code span {
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+svg {
+  cursor: pointer;
+}
+
+hr {
+  margin-top: 10px;
 }
 
 ::-moz-selection {
@@ -131,8 +220,9 @@ img {
 }
 
 .markdown pre {
+  white-space: pre-wrap;
   font-size: 15px;
-  white-space: pre;
+  overflow-x: auto;
 }
 
 .markdown p {
@@ -232,6 +322,7 @@ img {
 }
 
 .markdown pre {
+  white-space: pre-wrap;
   margin: 16px 0;
   display: block;
   border-radius: 4px;
@@ -356,8 +447,4 @@ img {
 
 [data-theme="batman"] {
   --color-primary-accent: #ffff00;
-}
-
-svg {
-  cursor: pointer;
 }

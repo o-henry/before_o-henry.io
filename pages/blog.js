@@ -5,6 +5,7 @@ import { blogs } from "../lib/getall.post";
 
 const components = {
   img: Image,
+  code: (props) => <pre style={{}} {...props} />,
 };
 
 function Blogs() {
