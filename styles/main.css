@@ -98,13 +98,6 @@ article {
   font-size: 1.125rem;
 }
 
-/* p {
-  font-family: "NotoSansKR-Thin", MalgunGothic;
-  font-size: 11pt;
-  line-height: 22pt;
-  letter-spacing: 0.8px;
-} */
-
 img {
   margin-top: 16px;
   max-width: 100%;
@@ -158,10 +151,8 @@ blockquote {
 
 code {
   font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono", monospace;
-  font-weight: 500;
   font-size: 14px;
   line-height: 1.4px;
-  padding: 2px 4px;
   display: inline;
   width: 100%;
   border-radius: 4px;
@@ -180,6 +171,18 @@ svg {
 
 hr {
   margin-top: 10px;
+}
+
+/* fix code highlight */
+
+figure.highlight {
+  background: #263238;
+  padding: 0;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 3px 3px 3px 3px;
+  position: relative;
+  margin: 1em 0 1em !important;
 }
 
 ::-moz-selection {

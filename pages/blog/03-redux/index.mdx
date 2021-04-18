@@ -1,0 +1,184 @@
+import Post from "../../../components/post";
+
+export const meta = {
+  title: "Redux",
+  description: "리덕스",
+  date: "Nov 15, 2020",
+  readTime: 5,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
+
+<h1>Redux</h1>
+
+<hr />
+
+리덕스는 상태관리를 컴포넌트 밖에서 합니다. 앱의 상태 전부는 하나의 **store** 안에
+있는 객체 트리에 저장됩니다. **상태 트리를 변경** 하는 방법은 **action**을 보내는 것 뿐입니다.
+액션이 상태트리를 어떻게 변경할지 명시하기 위해 **reducers**를 작성해야 합니다.
+
+<hr />
+
+<h3>action</h3>
+
+action은 객체 형태로 애플리케이션에서 스토어로 보내는 데이터 묶음 입니다. `store.dispatch()`를 통해서 보냅니다. 반드시 **type** 속성을 가져야 합니다.
+type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 때문에 상수 변수로 만드는것이 좋습니다.
+
+<hr />
+
+<h3>reducer</h3>
+
+reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 상태값을 만드는 **순수함수**
+입니다.
+
+<hr />
+
+<h3>middleware</h3>
+미들웨어는 리듀서가 액션을 처리하기전에 실행되는 함수 입니다. 디버깅 목적으로 상탯값
+변경시 로그를 출력하거나, API 호출 등의 목적으로 활용 가능합니다.
+
+<hr />
+
+데이터가 많아질수록 이를 체계적으로 구조화 하는 방법이 필요합니다. 각 기능 폴더 하위에 작성하여 관리하는게 좋습니다.
+
+<br />
+
+<h1>To consider</h1>
+
+    ★ 사용하는 데이터가 하나다. ⇢ 리듀서를 하나만 사용한다.
+    ★ 사용되는 데이터의 양이 많아진다. ⇢ 데이터를 기능별로 폴더를 만들어 하위에서 관리/구조화 한다.
+    ★ 분리한 리듀서를 통합한다 ⇢ combineReducder
+
+
+    페이스북에서 '타임라인' 과 '친구목록'을 구현한다고 하자.
+    ★ 타임라인 에서는 사용자에게 보여줄 여러 개의 게시물을 관리해야 한다.
+    └── 각 게시물 데이터를 배열로 관리한다.
+    └── 게시물을 추가 / 삭제 할 수 있어야 한다.
+    └── 각 게시물의 좋아요 숫자는 변하는 값이므로 게시물 데이터를 수정할 수 있어야 한다.
+    └── 무한 스크롤 기능이 필요 하므로 로딩된 데이터 끝에 도달하면 자동으로 다음 데이터를 서버로 요청해야 한다.
+
+    ★ 친구 목록
+    └── 친구목록 데이터를 배열로 관리한다.
+    └── 친구를 추가 / 삭제 할 수 있어야 한다.
+    └── 친구가 수정한 프로필 정보를 반영하기 위해 친구 데이터를 수정할 수 있어야 한다.
+
+    ★ 덕스 패턴
+    └── 연관된 액션 타입, 액션 생성자 함수, 리듀서를 하나의 파일로 작성한다.
+    └── 리듀서 함수는 export default 키워드로 내보낸다.
+    └── 액션 생성자 함수는 export 키워드로 내보낸다.
+    └── 액션 타입은 접두사와 액션 이름을 조합해서 만든다.
+
+    src
+    ├── common
+    │   └── createReducer.js
+    ├── friend
+    │   └── state.js
+    ├── index.js
+    └── timeline
+        └── state.js
+
+    ★ (친구 목록) 액션 과 리듀서 코드를 먼저 작성한다.
+    ◦ 데이터 타입은 어떻게 되어 있는가 ⇢ `배열로 관리한다.`
+    ◦ 어떤 액션 타입이 필요한가 ⇢ `친구를 추가 / 삭제 할 수 있어야 하고, 데이터를 수정할 수 있어야 한다.`
+    ◦ 리듀서 에서 상탯값을 수정한다. ⇢ `ADD, REMOVE, EDIT`에 해당하는 로직을 구현한다.
+
+    ★ (타임 라인) 액션 과 리듀서 코드를 작성한다.
+    ◦ 데이터 타입은 어떻게 되어 있는가 ⇢ `배열로 관리한다.`
+    ◦ 어떤 액션 타입이 필요한가 ⇢ `게시물을 추가 / 삭제 및 게시물을 수정 또 페이지 번호 증가.`
+
+    ★ 리듀서의 공통 부분 분리하기
+    ◦ 초기 상태값 빈 배열 정의
+    ◦ 액션 타입과 액션 생성자 함수
+    ◦ 데이터 추가/삭제/수정 리듀서 코드
+    └── 공통부분에 해당하는 부분을 모듈화 한다.
+
+    ★ 리듀서 합치기
+    combineReducers를 통해 리듀서를 하나로 합칠 수 있다.
+    └── entry point에서 reducer를 합쳐준다.
+    └── 합친 리듀서를 스토어에 붙인다.
+
+<br />
+
+<h1>Ducks Pattern</h1>
+
+    app
+    ├── actions
+    │ ├── App.js
+    │ ├── User.js
+    │ └── Product.js
+    ├── reducer
+    │ ├── App.js
+    │ ├── User.js
+    │ └── Product.js
+    ├── store
+    │ └──index.js.js
+    ├── view
+    │ └── ...
+    ├── package.json
+    └── README.md
+
+    user/
+    ├── actions.js
+    ├── index.js
+    ├── operations.js
+    ├── reducers.js
+    ├── selectors.js
+    ├── tests.js
+    ├── types.js
+    ├── utils.js
+    product/
+    ├── actions.js
+    ├── index.js
+    ├── operations.js
+    ├── reducers.js
+    ├── selectors.js
+    ├── tests.js
+    ├── types.js
+    └── utils.js
+
+    src
+    ├── common
+    │   ├── redux.ts
+    │   └── store.ts
+    ├── components // 재사용할 컴포넌트
+    │   ├── button
+    │   │   ├── _button.scss
+    │   │   └── index.tsx
+    │   └── index.ts
+    ├── containers // view
+    │   ├── todo.container
+    │   │   ├── todo.container.tsx // business logic
+    │   │   ├── todo.view.tsx // only view
+    │   │   ├── _todo.scss
+    │   │   └── redux or state
+    │   │        ├── action.ts
+    │   │        ├── types.ts
+    │   │        └── reducer.ts
+    │   │   // ...
+    │   ├── product.container
+    │   └── index.ts
+    ├── style
+    ├── App.tsx
+    └── index.tsx
+
+    ** cra-template-redux structure
+
+    ├── api
+    │   └── githubAPI.js
+    ├── components
+    │   └── Heading.js
+    ├── features
+    │   ├── counter
+    │   │   ├── Counter.css
+    │   │   ├── Counter.js
+    │   │   └── counterReducer.js
+    │   ├── github
+    │   │   ├── RepoDetail.js
+    │   │   └── repoDetailSlice.js
+    │   └── todos
+    │       ├── Todos.js
+    └──     └── todosSlice.js
+
+</div>
