@@ -1,12 +1,8 @@
 import { MDXProvider } from "@mdx-js/react";
-import Image from "next/image";
 import BlogPage from "../components/blog";
 import { blogs } from "../lib/getall.post";
 
-const components = {
-  img: Image,
-  code: (props) => <pre style={{}} {...props} />,
-};
+const components = { code: (props) => <pre style={{}} {...props} /> };
 
 function Blogs() {
   return (
