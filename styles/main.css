@@ -127,26 +127,30 @@ strong {
 
 ul,
 ol {
+  font-family: "NotoSansKR-Thin", MalgunGothic;
   color: inherit;
   margin: 8px 0;
-  margin-left: 16px;
+  margin-left: 1.5rem;
 }
 
 li {
   color: inherit;
-  font-size: 16px;
+  font-size: 11pt;
   margin-bottom: 4px;
-  line-height: 1.5;
-  font-weight: 400;
+  line-height: 22pt;
+  letter-spacing: 0.8px;
 }
 
 blockquote {
-  padding: 4px 8px 4px 16px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  margin: 16px 0;
-  word-break: break-all;
+  font-family: Poppins, "SeoulNamsanL";
+  border-radius: 4px;
+  line-height: 1.9rem;
+  max-width: 100%;
+  font-size: 0.965rem;
+  font-weight: 100;
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
 code {
