@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="Personal Blog"/><title>Henry&#x27;s log</title><meta name="next-head-count" content="4"/><link rel="preload" href="/_next/static/css/6f2bbff00daf071eaac2.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6f2bbff00daf071eaac2.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.e3de07479da4f2477dea.js" as="script"/><link rel="preload" href="/_next/static/chunks/d70fd1b25595f0b45425438df4c8a48f991b761f.5815d3d06589864eadd8.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-3b37b3f6f2d75c3bc9c6.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-e667d250eec2344b77c8.js" as="script"/><link rel="preload" href="/_next/static/chunks/b6f2b7c8748b8e10782d89f2f63dda2610fe7661.cc20734f40f719976a94.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/blog/03-redux-9af24bc9b6a77d79d105.js" as="script"/><style id="__jsx-2244981321">.hide.jsx-2244981321{display:none;}h1.jsx-2244981321{font-size:1.5rem;font-weight:700;color:var(--color-header);font-family:"Poppins";}.great-title.jsx-2244981321{font-size:3.125rem;text-align:center;color:var(--color-header);}.details.jsx-2244981321 span.jsx-2244981321{color:#bdbdbd;margin-right:1rem;}.details.jsx-2244981321{font-weight:300;margin-bottom:8px;font-size:11pt;line-height:22pt;-webkit-letter-spacing:0.8px;-moz-letter-spacing:0.8px;-ms-letter-spacing:0.8px;letter-spacing:0.8px;font-family:"NotoSansKR-Thin",MalgunGothic;}.date.jsx-2244981321{font-size:15px;}</style></head><body><script>(function() {
+<!DOCTYPE html><html lang="ko"><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="Personal Blog"/><title>Henry&#x27;s log</title><meta name="next-head-count" content="4"/><link rel="preload" href="/_next/static/css/6e80152fd17c49c96e1e.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6e80152fd17c49c96e1e.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.e3de07479da4f2477dea.js" as="script"/><link rel="preload" href="/_next/static/chunks/d70fd1b25595f0b45425438df4c8a48f991b761f.5815d3d06589864eadd8.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-3b37b3f6f2d75c3bc9c6.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-60d4ab7cf8baca015229.js" as="script"/><link rel="preload" href="/_next/static/chunks/b6f2b7c8748b8e10782d89f2f63dda2610fe7661.6cc80a99bf46fac77e2b.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/blog/03-redux-7b8c5a54fc0f760d47f3.js" as="script"/><style id="__jsx-2244981321">.hide.jsx-2244981321{display:none;}h1.jsx-2244981321{font-size:1.5rem;font-weight:700;color:var(--color-header);font-family:"Poppins";}.great-title.jsx-2244981321{font-size:3.125rem;text-align:center;color:var(--color-header);}.details.jsx-2244981321 span.jsx-2244981321{color:#bdbdbd;margin-right:1rem;}.details.jsx-2244981321{font-weight:300;margin-bottom:8px;font-size:11pt;line-height:22pt;-webkit-letter-spacing:0.8px;-moz-letter-spacing:0.8px;-ms-letter-spacing:0.8px;letter-spacing:0.8px;font-family:"NotoSansKR-Thin",MalgunGothic;}.date.jsx-2244981321{font-size:15px;}</style></head><body><script>(function() {
 	function setInitialColorMode() {
   function getInitialColorMode() {
     const persistedColorPreference = window.localStorage.getItem("theme");
@@ -36,7 +36,7 @@
 있는 객체 트리에 저장됩니다. <strong>상태 트리를 변경</strong> 하는 방법은 <strong>action</strong>을 보내는 것 뿐입니다.
 액션이 상태트리를 어떻게 변경할지 명시하기 위해 <strong>reducers</strong>를 작성해야 합니다.</p><hr/><h3>action</h3><p>action은 객체 형태로 애플리케이션에서 스토어로 보내는 데이터 묶음 입니다. <code>store.dispatch()</code>를 통해서 보냅니다. 반드시 <strong>type</strong> 속성을 가져야 합니다.
 type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 때문에 상수 변수로 만드는것이 좋습니다.</p><hr/><h3>reducer</h3><p>reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 상태값을 만드는 <strong>순수함수</strong>
-입니다.</p><hr/><h3>middleware</h3>미들웨어는 리듀서가 액션을 처리하기전에 실행되는 함수 입니다. 디버깅 목적으로 상탯값 변경시 로그를 출력하거나, API 호출 등의 목적으로 활용 가능합니다.<hr/><p>데이터가 많아질수록 이를 체계적으로 구조화 하는 방법이 필요합니다. 각 기능 폴더 하위에 작성하여 관리하는게 좋습니다.</p><br/><h1>To consider</h1><pre><code>★ 사용하는 데이터가 하나다. ⇢ 리듀서를 하나만 사용한다.
+입니다.</p><hr/><h3>middleware</h3>미들웨어는 리듀서가 액션을 처리하기전에 실행되는 함수 입니다. 디버깅 목적으로 상탯값 변경시 로그를 출력하거나, API 호출 등의 목적으로 활용 가능합니다.<hr/><p>데이터가 많아질수록 이를 체계적으로 구조화 하는 방법이 필요합니다. 각 기능 폴더 하위에 작성하여 관리하는게 좋습니다.</p><br/><h1>To consider</h1><div><pre>★ 사용하는 데이터가 하나다. ⇢ 리듀서를 하나만 사용한다.
 ★ 사용되는 데이터의 양이 많아진다. ⇢ 데이터를 기능별로 폴더를 만들어 하위에서 관리/구조화 한다.
 ★ 분리한 리듀서를 통합한다 ⇢ combineReducder
 
@@ -87,81 +87,4 @@ src
 combineReducers를 통해 리듀서를 하나로 합칠 수 있다.
 └── entry point에서 reducer를 합쳐준다.
 └── 합친 리듀서를 스토어에 붙인다.
-</code></pre><br/><h1>Ducks Pattern</h1><pre><code>app
-├── actions
-│ ├── App.js
-│ ├── User.js
-│ └── Product.js
-├── reducer
-│ ├── App.js
-│ ├── User.js
-│ └── Product.js
-├── store
-│ └──index.js.js
-├── view
-│ └── ...
-├── package.json
-└── README.md
-
-user/
-├── actions.js
-├── index.js
-├── operations.js
-├── reducers.js
-├── selectors.js
-├── tests.js
-├── types.js
-├── utils.js
-product/
-├── actions.js
-├── index.js
-├── operations.js
-├── reducers.js
-├── selectors.js
-├── tests.js
-├── types.js
-└── utils.js
-
-src
-├── common
-│   ├── redux.ts
-│   └── store.ts
-├── components // 재사용할 컴포넌트
-│   ├── button
-│   │   ├── _button.scss
-│   │   └── index.tsx
-│   └── index.ts
-├── containers // view
-│   ├── todo.container
-│   │   ├── todo.container.tsx // business logic
-│   │   ├── todo.view.tsx // only view
-│   │   ├── _todo.scss
-│   │   └── redux or state
-│   │        ├── action.ts
-│   │        ├── types.ts
-│   │        └── reducer.ts
-│   │   // ...
-│   ├── product.container
-│   └── index.ts
-├── style
-├── App.tsx
-└── index.tsx
-
-** cra-template-redux structure
-
-├── api
-│   └── githubAPI.js
-├── components
-│   └── Heading.js
-├── features
-│   ├── counter
-│   │   ├── Counter.css
-│   │   ├── Counter.js
-│   │   └── counterReducer.js
-│   ├── github
-│   │   ├── RepoDetail.js
-│   │   └── repoDetailSlice.js
-│   └── todos
-│       ├── Todos.js
-└──     └── todosSlice.js
-</code></pre></div></article></div></main><footer style="font-size:0.625rem;font-weight:200;margin-top:2.625rem;margin-bottom:2.5rem">2021 © Henry</footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blog/03-redux","query":{},"buildId":"5C-zXC13Gc13gyIZMvib7","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/chunks/polyfills-3df0de3cea69da24cd66.js"></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.e3de07479da4f2477dea.js" async=""></script><script src="/_next/static/chunks/d70fd1b25595f0b45425438df4c8a48f991b761f.5815d3d06589864eadd8.js" async=""></script><script src="/_next/static/chunks/main-3b37b3f6f2d75c3bc9c6.js" async=""></script><script src="/_next/static/chunks/pages/_app-e667d250eec2344b77c8.js" async=""></script><script src="/_next/static/chunks/b6f2b7c8748b8e10782d89f2f63dda2610fe7661.cc20734f40f719976a94.js" async=""></script><script src="/_next/static/chunks/pages/blog/03-redux-9af24bc9b6a77d79d105.js" async=""></script><script src="/_next/static/5C-zXC13Gc13gyIZMvib7/_buildManifest.js" async=""></script><script src="/_next/static/5C-zXC13Gc13gyIZMvib7/_ssgManifest.js" async=""></script></body></html>
+</pre></div><br/></div></article></div></main><footer style="font-size:0.625rem;font-weight:200;margin-top:2.625rem;margin-bottom:2.5rem">2021 © Henry</footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blog/03-redux","query":{},"buildId":"h4ms9gbgk4lKBTeiXjJO5","nextExport":true,"autoExport":true,"isFallback":false}</script><script nomodule="" src="/_next/static/chunks/polyfills-3df0de3cea69da24cd66.js"></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.e3de07479da4f2477dea.js" async=""></script><script src="/_next/static/chunks/d70fd1b25595f0b45425438df4c8a48f991b761f.5815d3d06589864eadd8.js" async=""></script><script src="/_next/static/chunks/main-3b37b3f6f2d75c3bc9c6.js" async=""></script><script src="/_next/static/chunks/pages/_app-60d4ab7cf8baca015229.js" async=""></script><script src="/_next/static/chunks/b6f2b7c8748b8e10782d89f2f63dda2610fe7661.6cc80a99bf46fac77e2b.js" async=""></script><script src="/_next/static/chunks/pages/blog/03-redux-7b8c5a54fc0f760d47f3.js" async=""></script><script src="/_next/static/h4ms9gbgk4lKBTeiXjJO5/_buildManifest.js" async=""></script><script src="/_next/static/h4ms9gbgk4lKBTeiXjJO5/_ssgManifest.js" async=""></script></body></html>
