@@ -37,7 +37,7 @@ function Metadata({ meta, project, blog }) {
           }
           .details {
             font-weight: 300;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
             font-size: 11pt;
             line-height: 22pt;
             letter-spacing: 0.8px;
