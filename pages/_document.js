@@ -4,7 +4,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head></Head>
+        <Head>
+          {/* <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism-tomorrow.min.css"
+            rel="stylesheet"
+            crossOrigin="anonyumous"
+          /> */}
+        </Head>
         <body>
           <script
             dangerouslySetInnerHTML={{
