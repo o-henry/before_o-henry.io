@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Metadata from "./metadata";
 
-function BlogPage({ blog }) {
+function BlogPreview({ blog }) {
   const {
     link,
     module: { meta },
@@ -17,4 +17,4 @@ function BlogPage({ blog }) {
   );
 }
 
-export default BlogPage;
+export default BlogPreview;

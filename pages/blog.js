@@ -1,23 +1,20 @@
-import { MDXProvider } from "@mdx-js/react";
-import BlogPage from "../components/blog";
-import { blogs } from "../lib/getall.post";
+import BlogPreview from "../components/blog-preview";
+import { getAllPosts } from "../lib/getall.post";
 
-const components = { code: (props) => <pre style={{}} {...props} /> };
+function BlogPage() {
+  const blogs = getAllPosts();
 
-function Blogs() {
   return (
     <>
-      <MDXProvider components={components}>
-        <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
-          <section>
-            {blogs.map((blog) => (
-              <BlogPage key={blog.link} blog={blog} />
-            ))}
-          </section>
-        </div>
-      </MDXProvider>
+      <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
+        <section>
+          {blogs.map((blog) => (
+            <BlogPreview key={blog.link} blog={blog} />
+          ))}
+        </section>
+      </div>
     </>
   );
 }
 
-export default Blogs;
+export default BlogPage;

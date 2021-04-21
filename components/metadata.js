@@ -1,10 +1,16 @@
+import tinytime from "tinytime";
+
+const postDateTemplate = tinytime("{MM} {DD}, {YYYY}");
+
 function Metadata({ meta, project, blog }) {
   return (
     <>
       <h1 className={project || blog ? "great-title" : null}>{meta.title}</h1>
       <div className="details">
         {project || blog ? null : <p>{meta.description}</p>}
-        <span className={project || blog ? "hide" : "date"}>{meta.date}</span>
+        <span className={project || blog ? "hide" : "date"}>
+          {postDateTemplate.render(new Date(meta.date))}
+        </span>
         <span className={project || blog ? "hide" : "date"}>
           {meta.readTime + " min read"}
         </span>
