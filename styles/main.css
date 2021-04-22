@@ -81,6 +81,11 @@ h2 {
   font-family: Poppins;
 }
 
+h3 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
 a {
   color: currentColor;
   text-decoration: none;
@@ -197,8 +202,8 @@ pre {
   overflow-x: auto;
   font-size: 13px;
   font-family: monospace;
-  margin: 16px 0;
   border-radius: 4px;
+  /* margin: 16px 0; */
 }
 
 ::-moz-selection {
@@ -466,4 +471,16 @@ pre {
 
 [data-theme="batman"] {
   --color-primary-accent: #ffff00;
+}
+
+.blog-post pre {
+  padding: 2.5rem 1rem 1.5rem 1.5rem;
+  border-radius: 4px;
+  overflow: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-image: url("../public/mac-style.png");
+  background-repeat: no-repeat;
+  background-size: 44px 10px;
+  background-position: 16px 14px;
 }

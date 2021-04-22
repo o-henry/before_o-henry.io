@@ -1,5 +1,4 @@
 import React from "react";
-import Github from "../assets/github.svg";
 
 function About() {
   return (
@@ -18,12 +17,6 @@ function About() {
         <br />
         이것 저것 개발하며 지내고 있습니다.
       </p>
-
-      <br />
-
-      <a href="https://github.com/o-henry" target="_blank">
-        <Github style={{ fontSize: "20px", color: "var(--color-primary)" }} />
-      </a>
     </>
   );
 }
