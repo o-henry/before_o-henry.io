@@ -1,4 +1,5 @@
 import Post from "../../../components/post";
+import Github from "../../../assets/github.svg";
 
 export const meta = {
   title: "Refactoring",
@@ -15,6 +16,12 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <div style={{ marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
 
+<div>
+  <a href="https://github.com/o-henry/book-refactoring" target="_blank">
+    <Github style={{ fontSize: "20px", color: "var(--color-primary)" }} />
+  </a>
+</div>
+
 <h1>Order of refactoring</h1>
 
 <hr />
@@ -30,8 +37,27 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 리팩터링할 코드영역을 검사해줄 테스트 코드를 마련한다.
 
-긴 함수를 리팩터링할 때는 먼저 전체 동작을 각각의 부분으로 나눌 수 있는 지점을 찾는다.
+긴 함수를 리팩터링할 때는 먼저 전체 동작을 각각의 부분으로 나눌 수 있는 지점(분기 등)을 찾는다.
 
 수정 후 바로 컴파일 후, 테스트해서 실수여부를 체크한다. 조금씩 변경하고 매번 테스트한다.
+
+<hr />
+
+**함수 쪼개기**
+
+- 코드 조각을 별도 함수로 추출한다.
+
+  - 유효범위를 벗어나는 변수를 확인한다.
+  - 값이 바뀌지 않는 변수는 매개변수로 전달한다.
+  - 한 가지를 수정할 때마다 테스트 한다.
+  - 테스트를 통과하면 변경사항을 커밋한다.
+  - 의미있는 단위로 뭉쳐지면 저장소로 푸시한다.
+
+- 리팩토링시 매개변수의 역할이 뚜렷하지 않을경우 부정 관사(a/an)을 붙인다.
+
+<p style={{ fontWeight: 600 }}>
+  리팩터링은 함수의 프로그램 수정을 작은 단계로 나눠 진행한다. 따라서 버그를
+  쉽게 발견할 수 있다
+</p>
 
 </div>

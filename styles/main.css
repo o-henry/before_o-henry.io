@@ -466,7 +466,8 @@ pre {
   --color-secondary-accent: #61dafb;
   --color-header: #fff;
   --color-primary: #fff;
-  --color-background: #0d1117;
+  /* --color-background: #0d1117; */
+  --color-background: #282c35;
 }
 
 [data-theme="batman"] {
@@ -478,7 +479,7 @@ pre {
   border-radius: 4px;
   overflow: auto;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: auto;
   background-image: url("../public/mac-style.png");
   background-repeat: no-repeat;
   background-size: 44px 10px;
