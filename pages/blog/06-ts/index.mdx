@@ -82,7 +82,7 @@ function forcePure(array: readonly number[]) {
 **깊은 복사와 얕은 복사**
 
 - number와 boolean 타입은 깊은복사 형태로 작동합니다.
-- 객체와 배열은 얕은 복사 방식으로, 참조값을 넘깁니다.ㄴ
+- 객체와 배열은 얕은 복사 방식으로, 참조값을 넘깁니다.
 
 전개 연산자는 깊은 복사를 가능하게 합니다.
 
@@ -93,6 +93,53 @@ const oArray = [1, 2, 3, 4];
 const deepCopiedArray = [...oArray];
 deepCopiedArray[0] = 0;
 console.log(oArray, deepCopiedArray); // [1, 2, 3, 4] [0, 2, 3, 4]
+```
+
+</div>
+
+<br />
+
+# Generic Function
+
+<div className="blog-post">
+
+```ts
+function g1<T>(a: T): void {}
+function g2<T, Q>(a: T, b: Q): void {}
+
+const g3 = <T>(a: T): void => {};
+
+// type-alias
+type Type1Func<T> = (T) => void;
+```
+
+</div>
+
+<br />
+
+# Higher order function and curry
+
+**고차함수**는 어떤 함수가 또 다른 함수를 반환할때 그 함수를 고차함수라고 합니다. 즉 함수를 값으로 사용할 수 있다는 말 입니다.
+
+<div className="blog-post">
+
+```ts
+export type FirstOrderFunc<T, R> = (T) => R;
+export type SecondOrderFunc<T, R> = (T) => FirstOrderFunc<T, R>;
+export type ThirdOrderFunc<T, R> = (T) => SecondOrderFunc<T, R>;
+```
+
+<br />
+
+# React with Type
+
+**리액트 컴포넌트 에서 타입 정의**
+
+```ts
+// 이벤트 객체와 이벤트 처리 함수의 타입
+import React from "react";
+type EventObject<T = HTMLElement> = React.SyntheticEvent<T>;
+type EventFunc<T = HTMLElement> = (e: EventObject<T>) => void;
 ```
 
 </div>
