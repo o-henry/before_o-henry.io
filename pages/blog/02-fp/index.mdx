@@ -10,7 +10,7 @@ export const meta = {
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <div style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
-  Functional-Light-JS
+  Functional-Light-JS - Kyle Simpson
 </div>
 
 <div style={{ marginTop: "4rem", fontFamily: "AppleGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
@@ -53,10 +53,126 @@ wherever possible.
 
 The values you pass in
 
-<br />
+<hr />
 
 **Parameters**
 
 The named variables inside the function that receive those passed-in values
+
+As of ES6, default parameters can lead to more complexity in terms of reading and understanding
+
+<br />
+
+<h1>Arity</h1>
+
+The number of arguments a function determined by number of parameters
+
+<br />
+
+<h1>Spread operator</h1>
+
+**... operator** is more readable, beacuse the destructing hides the unnecessary details of how to manage the parameter inputs
+
+<br />
+
+<h1>Function multiple outputs</h1>
+
+To consider if a function needing multiple outputs could be refactored to avoid that.
+Go for more smaller single-purpose functions
+
+We'll want to prefer pure functions and avoid side effects wherever possible
+
+<br />
+
+<h1>Higher-order function</h1>
+
+JS Functions can receive and return values of any type including functions.
+
+<div className="blog-post">
+
+```js
+function forEach(list, fn) {
+  for (let v of list) {
+    fn(v);
+  }
+}
+
+forEach([1, 2, 3, 4, 5], function each(val) {
+  console.log(val);
+});
+
+function foo() {
+  return function inner(msg) {
+    return msg.toUpperCase();
+  };
+}
+
+function bar(func) {
+  return func("Hello!");
+}
+
+let f = foo();
+f("Hello!");
+foo();
+```
+
+</div>
+
+<br />
+
+<h1>Closure</h1>
+
+How a function behaves when it's inside antoher function's scope -
+when the inner function makes reference to a variable from the outer function, and
+this is **closure**
+
+> scope chain , lexical environment
+
+<div className="blog-post">
+
+```js
+function makeAdder(x) {
+  return function sum(y) {
+    return x + y;
+  };
+}
+
+let addTo10 = makeAdder(10);
+let addTo37 = makeAdder(37);
+
+addTo10(3); // 13
+addTo37(13); // 50
+```
+
+</div>
+
+<br />
+
+<h1>Named Function > Anonymous Function</h1>
+Naming function tends to make code more self-explantory and thus easier to read and
+debugging.
+
+if you can't written proper name for some function then you don't fully understand your function's purpose yet -- or it's just too broad or abstract. You need to go back and re-design the function until this is more clear
+if i don't have a good name to use for a function, name it **TODO** initially. and later fix it.
+
+<br />
+
+<h1>Function without function</h1>
+
+<div className="blog-post">
+
+```js
+people.map(function getPreferredName(person) {
+  return person.nicknames[0] || person.firstName;
+});
+
+// vs
+
+people.map((person) => person.nicknames[0] || person.firstName);
+```
+
+Arrow functions are lexically anonymous
+
+</div>
 
 </div>
