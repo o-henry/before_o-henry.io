@@ -152,7 +152,7 @@ addTo37(13); // 50
 Naming function tends to make code more self-explantory and thus easier to read and
 debugging.
 
-if you can't written proper name for some function then you don't fully understand your function's purpose yet -- or it's just too broad or abstract. You need to go back and re-design the function until this is more clear
+if you can't written proper name for some function then you don't fully understand your function's purpose yet -- or it's just too broad or abstract. You need to go back and re-design the function until this is more clear.
 if i don't have a good name to use for a function, name it **TODO** initially. and later fix it.
 
 <br />
@@ -171,8 +171,10 @@ people.map(function getPreferredName(person) {
 people.map((person) => person.nicknames[0] || person.firstName);
 ```
 
-Arrow functions are lexically anonymous
-
 </div>
+
+Arrow functions are lexically anonymous If person. nicknames isn't defined for some reason, an exception will be thrown, meaning this (anonymous function) will be at the top of the stack trace.
+but arrow functions is useful in quick code explorations.
+Up to you.
 
 </div>
