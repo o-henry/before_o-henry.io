@@ -4,7 +4,7 @@ export const meta = {
   title: "Functional Programming",
   description: "함수형 프로그래밍",
   date: "2021-04-16T14:45:00.0Z",
-  readTime: 4,
+  readTime: 10,
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
@@ -176,5 +176,26 @@ people.map((person) => person.nicknames[0] || person.firstName);
 Arrow functions are lexically anonymous If person. nicknames isn't defined for some reason, an exception will be thrown, meaning this (anonymous function) will be at the top of the stack trace.
 but arrow functions is useful in quick code explorations.
 Up to you.
+
+<br />
+
+# Managing Function Inputs
+
+We only want the function to receive a single argument
+make helper function
+
+<div className="blog-post">
+
+```js
+function identity(v) {
+  return v;
+}
+
+let words = "   Now is the time for all... ".split(/\s|\b/);
+words; // ["","Now","is","the","time","for","all","...",""]
+words.filter(identity); // ["Now","is","the","time","for","all","..."]
+```
+
+</div>
 
 </div>
