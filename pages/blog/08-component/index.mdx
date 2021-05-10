@@ -68,6 +68,8 @@ Compound Component는 암묵적 상태를 공유하고, 컴포넌트 사용자�
 <div className="blog-post">
 
 ```ts
+const TabsContext = React.createContext<ITabsContext>(undefined);
+
 export const useTabs = (): ITabsContext => {
   const context = React.useContext(TabsContext);
   if (!context) {

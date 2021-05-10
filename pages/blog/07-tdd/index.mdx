@@ -9,15 +9,6 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-<div
-  style={{
-    textAlign: "center",
-    fontFamily: "'Rajdhani', 'NotoSansKR-Thin', MalgunGothic",
-  }}
->
-  자바스크립트 패턴과 테스트 중
-</div>
-
 <div style={{  marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
 
 # TDD
@@ -35,32 +26,36 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <hr />
 
-테스트 결과 자체를 기능명세로 보고 될 수 있도록 구체적으로 기술한다.
+**테스트 결과 자체를 기능명세로 보고 될 수 있도록 구체적으로 기술한다.**
 
-<hr />
+<br />
 
 **기본적 TDD의 절차**
 
 - 실패하는 테스트를 작성한다. 본인이 무엇을 테스트하려고 하는지 확실해진다.
-  - 실패하는 테스트에서는 해당 기능을 어떻게 구성할지 또, 어떤 것이 필요한지 등의 명세를 작성한다.
+
   - 코딩 전 테스트를 먼저 작성한다.
   - 에러조건을 먼저 테스트한다.
   - 복잡한것 보다 간단한것을 먼저 테스트한다.
   - 구체적으로 작성한다.
   - 테스트 마다 한가지만 확인한다.
+
 - 테스트가 성공할만큼 코딩한다.
 - 리팩토링 한다.
+
   - DRY 하게 유지한다.
+
+- 실패하는 테스트에서는 해당 기능을 어떻게 구성할지 또, 어떤 것이 필요한지등의 명세를 작성한다.
 
 <br />
 
 # BDD
 
-<br />
-
 - 테스트 코드는 곧 명세가 된다.
 - BDD(행위 주도 개발) ~는 이러해야 한다. 동작에 대해 그린다.
-- 사용자 측면에서의 테스트 한다. ( 잘 작동하는 지의 여부를 체크한다. )
+- 사용자 측면에서의 테스트 한다. ( 잘 작동하는지 등의 여부를 체크한다. )
   - 사용자는 해당 기능이 어떻게 실행되는지 신경쓰지 않는다. 그저 자신이 기대하는대로 작동하는 지를 고려한다.
+
+<br />
 
 </div>
