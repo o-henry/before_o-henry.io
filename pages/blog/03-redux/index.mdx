@@ -15,27 +15,88 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <hr />
 
+리덕스는 **actions** 이벤트를 사용하여 어플리케이션의 상태를 관리하고 업데이트 하는 패턴 및 라이브러리 입니다.
 리덕스는 상태관리를 컴포넌트 밖에서 합니다. 앱의 상태 전부는 하나의 **store** 안에
 있는 객체 트리에 저장됩니다. **상태 트리를 변경** 하는 방법은 **action**을 보내는 것 뿐입니다.
 액션이 상태트리를 어떻게 변경할지 명시하기 위해 **reducers**를 작성해야 합니다.
 
 <hr />
 
-**action**
+**리덕스를 언제 사용해야 할까요**
+
+> I would like to amend this: don't use Redux until you have problems with vanilla React. - Dan Abramov
+
+- 앱의 여러 위치에 필요한 많은 양의 상태를 갖고 있을 때
+- 앱의 상태가 자주 업데이트 될때
+- 상태 업데이트 로직이 복잡할때
+- 많은 사람들이 작업하고, 중간 또는 큰 사이즈의 코드 베이스를 갖을때
+
+<hr />
+
+<div className="blog-post">
+
+```ts
+// one-way data flow
+function Counter() {
+  // State: the source of truth that drives our app;
+  const [counter, setCounter] = useState(0);
+
+  // Action: the events that occur in the app based on user input,
+  // and trigger updates in the state
+  const increment = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+
+  // View: a declarative description of the UI based on the current state
+  return (
+    <div>
+      Value: {counter} <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+```
+
+</div>
+
+**Actions**
 
 action은 객체 형태로 애플리케이션에서 스토어로 보내는 데이터 묶음 입니다. `store.dispatch()`를 통해서 보냅니다. 반드시 **type** 속성을 가져야 합니다.
-type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 때문에 상수 변수로 만드는것이 좋습니다.
+type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 때문에 상수 변수로 만드는것이 좋습니다. 액션은 어플리케이션에서 발생한 작업을 설명하는 이벤트라고 생각하면 됩니다.
+**payload** 필드에는 추가적인 정보가 담겨있습니다.
 
 <hr />
 
-**reducer**
+**Reducers**
 
 reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 상태값을 만드는 **순수함수**
-입니다.
+입니다. 리듀서를 액션 타입을 기준으로 이벤트를 처리 하는 이벤트 리스너라고 생각할 수 있습니다.
+사이드 이펙트를 일으켜서는 안되며, state를 직접적으로 변경해서는 안됩니다.
+
+<div className="blog-post">
+
+```js
+const initialState = { value: 0 };
+
+function counterReducer(state = initialState, action) {
+  // Check to see if the reducer cares about this action
+  if (action.type === "counter/increment") {
+    // If so, make a copy of `state`
+    return {
+      ...state,
+      // and update the copy with the new value
+      value: state.value + 1,
+    };
+  }
+  // otherwise return the existing state unchanged
+  return state;
+}
+```
+
+</div>
 
 <hr />
 
-**middleware**
+**Middleware**
 
 미들웨어는 리듀서가 액션을 처리하기전에 실행되는 함수 입니다. 디버깅 목적으로 상탯값
 변경시 로그를 출력하거나, API 호출 등의 목적으로 활용 가능합니다.
@@ -48,10 +109,11 @@ reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 �
 
 # To consider
 
+<hr />
+
     ★ 사용하는 데이터가 하나다. ⇢ 리듀서를 하나만 사용한다.
     ★ 사용되는 데이터의 양이 많아진다. ⇢ 데이터를 기능별로 폴더를 만들어 하위에서 관리/구조화 한다.
     ★ 분리한 리듀서를 통합한다 ⇢ combineReducder
-
 
     페이스북에서 '타임라인' 과 '친구목록'을 구현한다고 하자.
     ★ 타임라인 에서는 사용자에게 보여줄 여러 개의 게시물을 관리해야 한다.
@@ -71,15 +133,6 @@ reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 �
     └── 액션 생성자 함수는 export 키워드로 내보낸다.
     └── 액션 타입은 접두사와 액션 이름을 조합해서 만든다.
 
-    src
-    ├── common
-    │   └── createReducer.js
-    ├── friend
-    │   └── state.js
-    ├── index.js
-    └── timeline
-        └── state.js
-
     ★ (친구 목록) 액션 과 리듀서 코드를 먼저 작성한다.
     ◦ 데이터 타입은 어떻게 되어 있는가 ⇢ 배열로 관리한다.
     ◦ 어떤 액션 타입이 필요한가 ⇢ 친구를 추가 / 삭제 할 수 있어야 하고, 데이터를 수정할 수 있어야 한다.
@@ -94,11 +147,6 @@ reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 �
     ◦ 액션 타입과 액션 생성자 함수
     ◦ 데이터 추가/삭제/수정 리듀서 코드
     └── 공통부분에 해당하는 부분을 모듈화 한다.
-
-    ★ 리듀서 합치기
-    combineReducers를 통해 리듀서를 하나로 합칠 수 있다.
-    └── entry point에서 reducer를 합쳐준다.
-    └── 합친 리듀서를 스토어에 붙인다.
 
 <br />
 

@@ -182,7 +182,11 @@ figure.highlight {
 }
 
 code {
-  font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono";
+  /* font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono"; */
+  background: #606770;
+  color: white;
+  padding: 5px;
+  font-family: "PT Mono";
   font-size: 14px;
   line-height: 1.4px;
   display: inline;
