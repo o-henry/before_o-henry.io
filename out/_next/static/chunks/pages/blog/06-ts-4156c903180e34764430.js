@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[18],{Eyjl:function(_,n,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/blog/06-ts",function(){return w("e4z/")}])}},[["Eyjl",0,1,2,6]]]);
