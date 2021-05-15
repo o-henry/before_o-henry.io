@@ -63,6 +63,21 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 # RTL
 
+<div style={{ 
+  fontFamily: 'Poppins, "SeoulNamsanL"',   
+  borderRadius: '4px',
+  lineHeight: '1.9rem',
+  maxWidth: '100%',
+  fontSize: '0.965rem',
+  fontWeight: '100',
+  position: 'relative',
+  padding: '2rem 1rem'}}>
+
+The main utilities it provides involve querying the DOM for nodes in a way that's similar to how the user finds elements on the page. In this way, the library helps ensure your tests give you confidence that your application will work when a real user uses it.
+It should be generally useful for testing the application components in the way the user would use it.
+
+</div>
+
 <div className="blog-post">
 
 ```ts
@@ -104,6 +119,32 @@ RTL 에서는 Parent 컴포넌트가 Child 컴포넌트를 어떻게 렌더링 �
 
 2. `Using mocking of the child component`
 
-<br />
+<div className="blog-post">
+
+</div>
+
+```ts
+/*
+  <Forms>
+    <Input />
+  </Forms>
+*/
+
+import { render, screen } from "@testing-library/react";
+
+describe("<Forms />", () =>> {
+  it('should render Input component', () => {
+    expect(screen.getByLabelText(/input/i)).toBeInTheDocument()
+  })
+})
+
+```
+
+**RTL 에서 피해야하는 테스팅**
+
+1. 컴포넌트의 내부 상태
+2. 컴포넌트의 내부 메서드
+3. 컴포넌트의 메서드 라이프사이클
+4. 자식 컴포넌트
 
 </div>
