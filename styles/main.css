@@ -491,3 +491,12 @@ pre {
   background-size: 44px 10px;
   background-position: 16px 14px;
 }
+
+.think {
+  display: flex;
+  background: #edf2ff;
+  margin: 2rem 0;
+  border-left: 3px solid #5183f5;
+  border-radius: 0.35rem;
+  padding: 1rem;
+}
