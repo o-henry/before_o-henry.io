@@ -58,6 +58,15 @@ function Counter() {
 
 </div>
 
+<div className="think">
+  컴포넌트를 만들때, UI를 만들고 해당 UI 에서는 button 이나 Input등의 이벤트를
+  발생시키고, 이를 통해 상태를 변경 할텐데, Redux로 해당 UI에서 상태가
+  변경되었다를 알리기 위해서 Action을 Dispatch를 합니다. (말 그대로 일어난
+  이벤트를 보낸다) 그러면 store에 있는 리듀서가 해당 액션을 처리하여 새로운
+  상태로 값을 반환할텐데, 이때 리듀서는 어떤 액션이 들어왔는지 구분하기 위해서
+  type이라는 속성을 갖게 됩니다.
+</div>
+
 **Actions**
 
 action은 객체 형태로 애플리케이션에서 스토어로 보내는 데이터 묶음 입니다. `store.dispatch()`를 통해서 보냅니다. 반드시 **type** 속성을 가져야 합니다.
