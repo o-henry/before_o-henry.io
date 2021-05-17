@@ -142,6 +142,30 @@ type EventObject<T = HTMLElement> = React.SyntheticEvent<T>;
 type EventFunc<T = HTMLElement> = (e: EventObject<T>) => void;
 ```
 
+<br />
+
+# Utility Types
+
+```ts
+type A = number | string
+type B = string
+
+Exclude<T, U>;
+type C = Exclude<A, B> // number
+
+Extract<T, U>
+type C = Extract<A, B> // string
+
+NonNullable<T>
+type A = {a?: number | null}
+type B = NonNullable<A['a']> // number
+
+/* 함수의 리턴 타입을 계산합니다. */
+ReturnType<F>
+declare function f1(): { a: number; b: string };
+type T4 = ReturnType<typeof f1>; // type T4 = { a: number; b: string; }
+```
+
 </div>
 
 </div>
