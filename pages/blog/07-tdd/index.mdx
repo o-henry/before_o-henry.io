@@ -9,7 +9,7 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-<div style={{  marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
+<div style={{  marginTop: "4rem", fontFamily: "Poppins, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
 
 # TDD
 
@@ -63,6 +63,8 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 # RTL
 
+RTL에서는 컴포넌트 인스턴스가 아닌 DOM 노드에 대한 테스트를 해야 합니다.
+
 <div style={{ 
   fontFamily: 'Poppins, "SeoulNamsanL"',   
   borderRadius: '4px',
@@ -78,31 +80,43 @@ It should be generally useful for testing the application components in the way 
 
 </div>
 
+- `getBy*` : 동기적이며, 해당 요소가 DOM 안에 있는지 확인하고, 존재하지 않으면 에러를 일으킨다.
+- `findBy*` : 비동기적이며, 특정 시간 이후 찾지못하면 에러를 발생시킨다.
+- `queryBy*` : 동기적이며, 요소를 찾지 못하더라도 에러를 발생시키지 않고 null을 리턴한다.
+
+<br />
+
 <div className="blog-post">
 
 ```ts
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 /*
-  testing library를 사용할 때, 테스트를 작동하는 기능 명세 위주로 작성하게 되면,
-  해당 테스트에서 필요로 하는 기능이 보일 것이다.
-  그때 API를 참조하여 해당 기능을 사용하는 식의 사고를 갖자.
-  사용자의 관점, 실제 어떻게 동작하는지에 대해 테스팅 한다.
-  상태가 어떻게 관리되고, prop이 어떻게 넘어가는지 등의 테스트는 enzyme를 사용하자.
+  RTL 에서는 사용자의 관점, 실제 어떻게 동작하는지에 대해 테스팅 한다.
+  상태가 어떻게 관리되고, prop이 어떻게 넘어가는지 등은 RTL의 목표가 아니다.
 */
 
 // Arrange → Act → Assert
-describe("Comment", () => {
-  test("It renders the comment and the author", () => {
-    // Arrange the data(in this case props)
-    const props = { comment: "Test for TDD & BDD", author: "Henry" };
+describe("Header", () => {
+  it("PageA link points to the correct page", () => {
     // Act
-    render(<Comment {...props} />);
-    // Now we should be asserting
-    // that we are actually rendering the comment and author
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
     // Assert
-    expect(screen.getByText(props.comment)).toBeDefined();
-    expect(screen.getByText(`- ${props.author}`)).toBeDefined();
+    // getByRole은 최우선 순위를 갖는다.
+    // ARIA role이 대상이된다.
+    const link = screen.getByRole("link", { name: /pageA/i });
+    userEvent.click(link);
+    // debug
+    screen.debug(link);
+    // prettier-ignore
+    expect(screen.getByRole("heading", { name: /pageA/i })
+    ).toBeInTheDocument();
   });
 });
 ```
@@ -111,9 +125,14 @@ describe("Comment", () => {
 
 **컴포넌트가 다른 컴포넌트를 인스턴스로 갖는다면 어떻게 테스트 해야할까**
 
-RTL 에서는 Parent 컴포넌트가 Child 컴포넌트를 어떻게 렌더링 하는지는 고려 요소가 아니다.
+먼저, RTL 에서는 Parent 컴포넌트가 Child 컴포넌트를 어떻게 렌더링 하는지는 고려 요소가 아니다.
 
-그럼 어떻게 테스팅 해야 하는가 ?
+만약, 헤더 컴포넌트가 있고, 헤더 컴포넌트를 포함한 App 컴포넌트가 있다고 할때, 헤더 컴포넌트만 따로 분리해서 테스트를 작성하는 것이 아닌 App 컴포넌트를 사용하여
+어플리케이션 컨텍스트 안에서 테스트 하는 방법이 있다.
+
+<hr />
+
+그래도 하겠다면.. 그럼 어떻게 테스팅 해야 하는가 ?
 
 1. `data-testid`를 포함한 태그를 추가한다. 해당 DOM에 접근해서 테스팅 하는걸 목표로 한다.
 
@@ -148,3 +167,18 @@ describe("<Forms />", () =>> {
 4. 자식 컴포넌트
 
 </div>
+
+<br />
+
+<hr
+  style={{
+    width: "15px",
+    border: "0.325px solid gray",
+    marginTop: "1.125rem",
+    marginBottom: "1.125rem",
+  }}
+/>
+
+##### 참조
+
+[RTL](https://jkettmann.com/beginners-guide-to-testing-react)
