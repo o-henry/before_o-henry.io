@@ -2,100 +2,14 @@ import Post from "../../../components/post";
 
 export const meta = {
   title: "Typescript",
-  description: "타입스크립트 프로그래밍",
+  description: "타입스크립트",
   date: "2021-04-23T14:21:00.0Z",
   readTime: 4,
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-<div
-  style={{
-    textAlign: "center",
-    fontFamily: "'Rajdhani', 'NotoSansKR-Thin', MalgunGothic",
-  }}
->
-  Do it! 타입스크립트 프로그래밍
-</div>
-
 <div style={{  marginTop: "4rem", fontFamily: "NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
-
-# Declarative Programming and Array
-
-<hr />
-
-**명령형 프로그래밍**
-
-- 입력 데이터 얻기
-- 입력 데이터 가공해 출력 데이터 생성
-- 출력 데이터 출력
-
-<hr />
-
-**선언형 프로그래밍**
-
-선언형 프로그래밍은 스시템 자원의 효율적인 운용보다는 일괄된 문제 해결 구조에 더 집중합니다. for 문을 사용하지 않고 모든 데이터를 배열에 담습니다.
-그 후 문제가 해결될 때까지 다른 형태의 배열로 가공하는 방식으로 구현합니다.
-
-- 문제를 푸는데 필요한 모든 데이터를 배열에 저장
-- 입력 데이터 배열을 가공해 출력 데이터 배열 생성
-- 출력 데이터 배열에 담긴 아이템 출력
-
-<br />
-
-# Pure Function and Array
-
-<hr />
-
-순수함수는 **side effect** 가 없는 함수를 말합니다.
-
-- 함수 몸통에 입출력 관련 코드가 없어야 한다.
-- 함수 몸통에서 매개변숫값을 변경시키지 않는다(매개변수는 const 나 readonly 형태로만 사용한다)
-- 함수는 몸통에서 만들어진 결과를 즉시 반환한다.
-- 함수 내부에 전역 변수나 정적 변수를 사용하지 않는다.
-- 함수가 예외를 발생시키지 않는다.
-- 함수가 콜백 함수로 구현되어 있거나, 함수 몸통에 콜백 함수를 사용하는 코드가 없다.
-- 함수 몸통에 Promise와 같은 비동기 방식으로 동작하는 코드가 없다.
-
-<div className="blog-post">
-
-```ts
-function pure(a: number, b: number): number {
-  return a + b;
-}
-
-function forcePure(array: readonly number[]) {
-  array.push(1); // readonly number[] 형식에 push 속성이 없습니다.
-}
-```
-
-인터페이스, 클래스, 함수의 매개변수등은 const 키워드를 사용하지 못하므로, readonly 타입 수정자를 사용합니다.
-
-</div>
-
-<br />
-
-# Mutable and Immutable
-
-<hr />
-
-**깊은 복사와 얕은 복사**
-
-- number와 boolean 타입은 깊은복사 형태로 작동합니다.
-- 객체와 배열은 얕은 복사 방식으로, 참조값을 넘깁니다.
-
-전개 연산자는 깊은 복사를 가능하게 합니다.
-
-<div className="blog-post">
-
-```ts
-const oArray = [1, 2, 3, 4];
-const deepCopiedArray = [...oArray];
-deepCopiedArray[0] = 0;
-console.log(oArray, deepCopiedArray); // [1, 2, 3, 4] [0, 2, 3, 4]
-```
-
-</div>
 
 <br />
 
@@ -117,17 +31,48 @@ type Type1Func<T> = (T) => void;
 
 <br />
 
-# Higher order function and curry
-
-**고차함수**는 어떤 함수가 또 다른 함수를 반환할때 그 함수를 고차함수라고 합니다. 즉 함수를 값으로 사용할 수 있다는 말 입니다.
+# Companinon Object Pattern
 
 <div className="blog-post">
 
 ```ts
-export type FirstOrderFunc<T, R> = (T) => R;
-export type SecondOrderFunc<T, R> = (T) => FirstOrderFunc<T, R>;
-export type ThirdOrderFunc<T, R> = (T) => SecondOrderFunc<T, R>;
+type Currency = {
+  unit: "EUR" | "KOR" | "JPY" | "USD";
+  value: number;
+};
+
+let Currency = {
+  DEFAULT: "USD",
+  from(value: number, unit = Currency.DEFAULT): Currency {
+    return { unit, value };
+  },
+};
 ```
+
+</div>
+
+<br />
+
+# Advanced Function Types
+
+<div className="blog-post">
+
+```ts
+// let a = [1, true] //  (number | boolean)[];
+
+// prettier-ignore
+function tuple<
+  T extends unknown[] // (meaning T is an array of any kind of type).
+> (
+  ...ts: T
+  ): T {
+  return ts;
+}
+
+let a = tuple(1, true); // [number, boolean];
+```
+
+</div>
 
 <br />
 
@@ -144,28 +89,54 @@ type EventFunc<T = HTMLElement> = (e: EventObject<T>) => void;
 
 <br />
 
-# Utility Types
+# User-Defined Type Guards
+
+<div className="blog-post">
+
+```ts
+function isString(a: unknown): a is string {
+  // boolean occur error because of Scope
+  return typeof a === "string";
+}
+
+function parseInput(input: string | number) {
+  let formattedInput: string;
+  if (isString(input)) {
+    formattedInput = input.toUpperCase();
+  }
+}
+```
+
+</div>
+
+<br />
+
+# Conditional (Utility) Types
+
+<div className="blog-post">
 
 ```ts
 type A = number | string
 type B = string
 
+/* U에 없는 T */
 Exclude<T, U>;
 type C = Exclude<A, B> // number
 
+/* U에 할당한 T */
 Extract<T, U>
 type C = Extract<A, B> // string
 
+/* null과 undefined를 계산합니다.*/
 NonNullable<T>
-type A = {a?: number | null}
-type B = NonNullable<A['a']> // number
+type I = {a?: number | null}
+type J = NonNullable<I['a']> // number
 
 /* 함수의 리턴 타입을 계산합니다. */
 ReturnType<F>
-declare function f1(): { a: number; b: string };
-type T4 = ReturnType<typeof f1>; // type T4 = { a: number; b: string; }
+type T3 = (a: number) => string
+type T4 = ReturnType<T3> // string
 ```
 
 </div>
-
 </div>
