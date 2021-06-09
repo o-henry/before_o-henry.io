@@ -9,223 +9,44 @@ export const meta = {
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
-<div style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
-  Functional-Light-JS - Kyle Simpson
-</div>
+<div style={{ textAlign: "center", fontFamily: "Rajdhani" }}></div>
 
-<div style={{ marginTop: "4rem", fontFamily: "Poppins", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
-
-# Pure Function and Array
-
-<hr />
-
-순수함수는 **side effect** 가 없는 함수를 말합니다.
-
-- 함수 몸통에 입출력 관련 코드가 없어야 한다.
-- 함수 몸통에서 매개변숫값을 변경시키지 않는다(매개변수는 const 나 readonly 형태로만 사용한다)
-- 함수는 몸통에서 만들어진 결과를 즉시 반환한다.
-- 함수 내부에 전역 변수나 정적 변수를 사용하지 않는다.
-- 함수가 예외를 발생시키지 않는다.
-- 함수가 콜백 함수로 구현되어 있거나, 함수 몸통에 콜백 함수를 사용하는 코드가 없다.
-- 함수 몸통에 Promise와 같은 비동기 방식으로 동작하는 코드가 없다.
-
-<div className="blog-post">
-
-```ts
-function pure(a: number, b: number): number {
-  return a + b;
-}
-
-function forcePure(array: readonly number[]) {
-  array.push(1); // readonly number[] 형식에 push 속성이 없습니다.
-}
-```
-
-인터페이스, 클래스, 함수의 매개변수등은 const 키워드를 사용하지 못하므로, readonly 타입 수정자를 사용합니다.
-
-</div>
+<div style={{ marginTop: "4rem", fontFamily: "Poppins, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
 
 <br />
 
-FP programs often have fewer bugs, and the bugs that do exist are usually in more obvious places, so they're easier to find and fix. In other words, FP pattern is already well proven.
+## Imperative 와 Declarative
+
+명령형 프로그래밍은 결과를 위해 어떻게(How) 할지 지시 하는 과정이 포함되는데 반해, 함수형 프로그래밍은 해당 하는 것이 무엇(What)인지를 표현합니다.
 
 <br />
 
-<h1> Readability </h1>
+## Pure Function
 
-Fp is one of the most effective tools for crafting readable code.
-
-<br />
-
-<h1> Imperative </h1>
-
-It’s focused on precisely instructing the computer how to do something.
-You certainly can trace through its logic to see how the numbers flow and change to the end state, but It’s not at all clear or straightforward.
+순수 함수는 사이드 이펙트가 없고 같은 Input에 항상 같은 Output을 반환하는 함수를 의미합니다.
 
 <br />
 
-<h1> Declarative </h1>
+## Closure
 
-FP is code that’s more focused on describing the what outcome.
-The focus shifts from low-level how to higher level what outcomes.
-
-<br />
-
-<h1> Function </h1>
-
-**In math, a function always takes input(s), and always gives an output.** That
-means you should be using functions as mums as possible, and trying to avoid procedures
-wherever possible.
+클로저는 내부 함수가 외부 함수의 Context(맥락)에 접근할 수 있는 것을 말하는데, 해당 함수가 호출, 종료 되어 제거 되어도 계속 접근할 수 있습니다.
 
 <br />
 
-**Arguments**
+## Higher Order Function
 
-The values you pass in
-
-<hr />
-
-**Parameters**
-
-The named variables inside the function that receive those passed-in values
-
-As of ES6, default parameters can lead to more complexity in terms of reading and understanding
+함수형 프로그래밍을 제공하는 언어는 Higher Order Function 기능을 제공하는데, 이는 함수를 인자로도, 값으로도 사용할 수 있다는 말입니다.
 
 <br />
 
-<h1>Arity</h1>
+## Curry
 
-The number of arguments a function determined by number of parameters
-
-<br />
-
-<h1>Spread operator</h1>
-
-**... operator** is more readable, beacuse the destructing hides the unnecessary details of how to manage the parameter inputs
+함수형 프로그래밍은, 함수의 조합으로 구현되는데, 이를 위해서는 Curry가 중요합니다. Curry를 통해 Compose를 구현합니다.
 
 <br />
 
-<h1>Function multiple outputs</h1>
+## Composition
 
-To consider if a function needing multiple outputs could be refactored to avoid that.
-Go for more smaller single-purpose functions
-
-We'll want to prefer pure functions and avoid side effects wherever possible
-
-<br />
-
-<h1>Higher-order function</h1>
-
-JS Functions can receive and return values of any type including functions.
-
-<div className="blog-post">
-
-```js
-function forEach(list, fn) {
-  for (let v of list) {
-    fn(v);
-  }
-}
-
-forEach([1, 2, 3, 4, 5], function each(val) {
-  console.log(val);
-});
-
-function foo() {
-  return function inner(msg) {
-    return msg.toUpperCase();
-  };
-}
-
-function bar(func) {
-  return func("Hello!");
-}
-
-let f = foo();
-f("Hello!");
-foo();
-```
-
-</div>
-
-<br />
-
-<h1>Closure</h1>
-
-How a function behaves when it's inside antoher function's scope -
-when the inner function makes reference to a variable from the outer function, and
-this is **closure**
-
-> scope chain , lexical environment
-
-<div className="blog-post">
-
-```js
-function makeAdder(x) {
-  return function sum(y) {
-    return x + y;
-  };
-}
-
-let addTo10 = makeAdder(10);
-let addTo37 = makeAdder(37);
-
-addTo10(3); // 13
-addTo37(13); // 50
-```
-
-</div>
-
-<br />
-
-<h1>Named Function > Anonymous Function</h1>
-Naming function tends to make code more self-explantory and thus easier to read and
-debugging.
-
-if you can't written proper name for some function then you don't fully understand your function's purpose yet -- or it's just too broad or abstract. You need to go back and re-design the function until this is more clear.
-if i don't have a good name to use for a function, name it **TODO** initially. and later fix it.
-
-<br />
-
-<h1>Function without function</h1>
-
-<div className="blog-post">
-
-```js
-people.map(function getPreferredName(person) {
-  return person.nicknames[0] || person.firstName;
-});
-
-// vs
-
-people.map((person) => person.nicknames[0] || person.firstName);
-```
-
-</div>
-
-Arrow functions are lexically anonymous If person. nicknames isn't defined for some reason, an exception will be thrown, meaning this (anonymous function) will be at the top of the stack trace.
-but arrow functions is useful in quick code explorations.
-Up to you.
-
-<br />
-
-# Managing Function Inputs
-
-We only want the function to receive a single argument
-make helper function
-
-<div className="blog-post">
-
-```js
-function identity(v) {
-  return v;
-}
-
-let words = "   Now is the time for all... ".split(/\s|\b/);
-words; // ["","Now","is","the","time","for","all","...",""]
-words.filter(identity); // ["Now","is","the","time","for","all","..."]
-```
-
-</div>
+다양한 함수 조합을 위하여 가장 기본이 되는 기능으로, 모든 기능을 레고 조각 처럼 함수들을 조합하여 구현합니다.
 
 </div>

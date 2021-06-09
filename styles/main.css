@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Slab:wght@200;300;400;500;800;900&family=Rubik:wght@900&display=swap");
 @font-face {
   font-family: "SeoulNamsanL";
   font-weight: 200;
@@ -73,14 +74,18 @@ body {
 
 h1 {
   /* font-family: "Playfair Display", serif; */
-  font-family: "AppleGothic", serif;
-  font-weight: 900;
+  /* font-family: "AppleGothic", serif; */
+  /* font-family: "Oswald", sans-serif; */
+  font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
+  font-weight: 700;
   padding: 5px 0;
   letter-spacing: 0px;
 }
 
 h2 {
-  font-family: Poppins;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
 }
 
 h3 {
@@ -148,6 +153,7 @@ li {
   margin-bottom: 4px;
   line-height: 22pt;
   letter-spacing: 0.8px;
+  font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
 }
 
 blockquote {
