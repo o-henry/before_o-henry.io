@@ -79,37 +79,35 @@ dispatch({
 // saga
 import { takeEvery, call, put } from "redux-saga/effects";
 
-// The watcher: watch actions and coordinate worker tasks
-function* watchFetchRequests() {
-    // saga watches a 'FETCH_REQUEST'
-    // 'FETCH_REQEUST' 액션이 전달될때마다, fetchUrl 콜백함수를 실행 합니다.
-    yield takeEvery("FETCH_REQUEST", fetchUrl);
+function* watchFetchRequests() { ①
+  yield takeEvery("FETCH_REQUEST", fetchUrl); ②
 }
 
-// The worker : perform the requested task
-function* fetchUrl(url): Generator {
-  /*
-    call : call creates a description of the effect.
-      {
-        CALL: {
-          fn: fetch,
-          args: [url]
-        }
-      }
-    resolve가 되면 generator 함수를 next 처럼 진행시킵니다.
-  */
-  const data = yield call(fetch, url);
-
-  // create and yield a dispatch Effect
-  // 비동기 요청이 끝나면, put을 통해 새로운 액션을 스토어에 전달합니다.
-  yield put({
-    type: "FETCH_SUCCESS",
-    data,
-  });
+function* fetchUrl(url): Generator { ③
+  try {
+    const data = yield call(fetch, url); ④
+    yield put({ ⑤
+      type: "FETCH_SUCCESS",
+      data,
+    });
+  }
+  catch(error) {
+    yield put({ type: 'FETCH_FAILED', error })
+  }
 }
 ```
 
 </div>
+
+① : The watcher - watch actions and coordinate worker tasks
+
+② : saga watches a 'FETCH_REQUEST'. Run fetchUrl callback function.
+
+③ : The worker - perform the requested task
+
+④ : call creates a description of the effect. `{ CALL: { fn: fetch, args: [url] } } `
+
+⑤ : create and yield a dispatch Effect.
 
 <div className="blog-post">
 
@@ -135,6 +133,16 @@ assert.deepEqual(
   gen.next(data).value,
   put({ type: "FETCH_SUCCESS", data }),
   "fetchUrl should yield an Effect put({ type: 'FETCH_SUCCESS', data })"
+);
+
+// create a fake error
+const error = {};
+
+// expects a dispatch instruction
+assert.deepEqual(
+  iterator.throw(error).value,
+  put({ type: "FETCH_FAILED", error })
+  "fetchUrl should yield an Effect put({type: 'FETCH_FAILED', error})"
 );
 ```
 
