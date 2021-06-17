@@ -19,12 +19,16 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 ## VIEW
 
+<hr />
+
 리액트에서 눈에 보이는 화면은 one-way binding 을 통해 이루어집니다.
 뷰는 상태에 따른 값을 보여줍니다. 상태가 변하면 해당 부분만을 바꾸며 그저 보여주기만 합니다.
 
 <br />
 
 ## MANAGE STATE
+
+<hr />
 
 그럼 어떻게 뷰의 상태를 바꿀 수 있을까요?
 
@@ -44,6 +48,8 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 ## SIDE EFFECT
 
+<hr />
+
 개발자는 예측할 수 없는 상황을 싫어합니다.
 간단한 예로 순수함수는 항상 같은 입력에는 같은 출력을 반환해야 하는데, 외부 요소에 의해 아웃풋이 변경된다거나 하는 등의 상황이 있습니다. 이러한 상황을 일으키는 걸 사이드 이펙트라고 합니다.
 리액트에서는 사이드 이펙트를 처리하라고 `useEffect` 등의 함수를 사용하도록 하는데, 일반적으로 DB에 데이터를 저장한다거나 등의 일들을 위에서 처리합니다.
@@ -51,6 +57,8 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 <br />
 
 ## REDUX-SAGA
+
+<hr />
 
 redux-saga는 위의 **사이드 이펙트**를 전담하는 미들웨어 입니다.
 
@@ -63,7 +71,7 @@ Effects는 비동기 함수를 호출하거나, action을 dispatch 하는 등의
 <hr />
 
 UI 컴포넌트는 action 을 dispatch 함으로써 어떠한 일이 발생했다는 정보를 알립니다.
-모든 것은 saga 내부에 캡슐화 되어야 합니다. 실제 Task를 동작시키기 위해 `action(FETCH_REQUEST)` 을 **watch** 하는 saga를 만들어야 합니다.
+모든 것은 saga 내부에 캡슐화 되어야 합니다. 실제 Task를 동작시키기 위해 `action(FETCH_REQUEST)` 을 watch 하는 saga를 만들어야 합니다.
 
 <div className="blog-post">
 
