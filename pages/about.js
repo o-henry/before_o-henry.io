@@ -1,4 +1,5 @@
 import React from "react";
+import Npm from "../assets/npm.svg";
 
 function About() {
   return (
@@ -17,6 +18,37 @@ function About() {
         <br />
         이것 저것 개발하며 지내고 있습니다.
       </p>
+
+      <div style={{ margin: "3rem" }}></div>
+
+      <div
+        style={{
+          border: "1px solid whitesmoke",
+          backgroundColor: "whitesmoke",
+          padding: "2rem",
+          borderRadius: "5px",
+        }}
+      >
+        <a
+          href="https://www.npmjs.com/package/visual-box"
+          style={{
+            fontFamily: "Poppins",
+            display: "flex",
+            color: "black",
+          }}
+          target="_blank"
+        >
+          <Npm
+            style={{
+              fontSize: "20px",
+              position: "relative",
+              right: "10px",
+              // color: "var(--color-primary)",
+            }}
+          />
+          visual-box
+        </a>
+      </div>
     </>
   );
 }
