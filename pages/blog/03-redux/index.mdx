@@ -67,7 +67,7 @@ function Counter() {
   type이라는 속성을 갖게 됩니다.
 </div>
 
-## Actions
+# Actions
 
 action은 객체 형태로 애플리케이션에서 스토어로 보내는 데이터 묶음 입니다. `store.dispatch()`를 통해서 보냅니다. 반드시 **type** 속성을 가져야 합니다.
 type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 때문에 상수 변수로 만드는것이 좋습니다. 액션은 어플리케이션에서 발생한 작업을 설명하는 이벤트라고 생각하면 됩니다.
@@ -82,7 +82,7 @@ type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 �
 
 <hr />
 
-## Reducers
+# Reducers
 
 reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 상태값을 만드는 **순수함수**
 입니다. `(state, action) => newState` 리듀서를 액션 타입을 기준으로 이벤트를 처리 하는 이벤트 리스너라고 생각할 수 있습니다.
@@ -112,14 +112,14 @@ function counterReducer(state = initialState, action) {
 
 <br />
 
-## Middleware
+# Middleware
 
 미들웨어는 리듀서가 액션을 처리하기전에 실행되는 함수 입니다. 디버깅 목적으로 상탯값
 변경시 로그를 출력하거나, API 호출 등의 목적으로 활용 가능합니다.
 
 <br />
 
-## Selector
+# Selector
 
 `useSelector` 훅을 활용하면 store에 있는 데이터를 읽어올 수 있습니다.
 selector 함수는 모든 state object를 받고, 값으로 반환해야 합니다.
