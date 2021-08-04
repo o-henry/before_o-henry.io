@@ -54,6 +54,12 @@ export default function Header() {
 
         <div style={{ flexShrink: "0", width: "15px" }}></div>
 
+        <a href="https://brunch.co.kr/@lch1992" target="_blank">
+          <h2 style={{ fontSize: "0.825rem" }}>Read</h2>
+        </a>
+
+        <div style={{ flexShrink: "0", width: "15px" }}></div>
+
         <Link href="/about">
           <a>
             <h2 style={{ fontSize: "0.825rem" }}>About</h2>
