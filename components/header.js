@@ -54,7 +54,10 @@ export default function Header() {
 
         <div style={{ flexShrink: "0", width: "15px" }}></div>
 
-        <a href="https://brunch.co.kr/@lch1992" target="_blank">
+        <a
+          href="https://lush-casquette-712.notion.site/82a3ac3053a9457b9f1a4e1b3d7baedc?v=309c49777f2d4ddd81248e3a03324f7a"
+          target="_blank"
+        >
           <h2 style={{ fontSize: "0.825rem" }}>Read</h2>
         </a>
 
