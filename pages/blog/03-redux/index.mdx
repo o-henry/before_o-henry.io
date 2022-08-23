@@ -1,10 +1,10 @@
 import Post from "../../../components/post";
 
 export const meta = {
-  title: "Redux",
-  description: "리덕스",
-  date: "2020-11-15T10:45:00.0Z",
-  readTime: 7,
+    title: "Redux",
+    description: "리덕스",
+    date: "2020-11-15T10:45:00.0Z",
+    readTime: 7,
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
@@ -26,10 +26,10 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 > I would like to amend this: don't use Redux until you have problems with vanilla React. - Dan Abramov
 
-- 앱의 여러 위치에 필요한 많은 양의 상태를 갖고 있을 때
-- 앱의 상태가 자주 업데이트 될때
-- 상태 업데이트 로직이 복잡할때
-- 많은 사람들이 작업하고, 중간 또는 큰 사이즈의 코드 베이스를 가질때
+-   앱의 여러 위치에 필요한 많은 양의 상태를 갖고 있을 때
+-   앱의 상태가 자주 업데이트 될때
+-   상태 업데이트 로직이 복잡할때
+-   많은 사람들이 작업하고, 중간 또는 큰 사이즈의 코드 베이스를 가질때
 
 <hr />
 
@@ -38,33 +38,33 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 ```ts
 // one-way data flow
 function Counter() {
-  // State: the source of truth that drives our app;
-  const [counter, setCounter] = useState(0);
+    // State: the source of truth that drives our app;
+    const [counter, setCounter] = useState(0);
 
-  // Action: the events that occur in the app based on user input,
-  // and trigger updates in the state
-  const increment = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-  };
+    // Action: the events that occur in the app based on user input,
+    // and trigger updates in the state
+    const increment = () => {
+        setCounter((prevCounter) => prevCounter + 1);
+    };
 
-  // View: a declarative description of the UI based on the current state
-  return (
-    <div>
-      Value: {counter} <button onClick={increment}>Increment</button>
-    </div>
-  );
+    // View: a declarative description of the UI based on the current state
+    return (
+        <div>
+            Value: {counter} <button onClick={increment}>Increment</button>
+        </div>
+    );
 }
 ```
 
 </div>
 
 <div className="think">
-  컴포넌트를 만들때, UI를 만들고 해당 UI 에서는 button 이나 Input등의 이벤트를
-  발생시키고, 이를 통해 상태를 변경 할텐데, Redux로 해당 UI에서 상태가
-  변경되었다를 알리기 위해서 Action을 Dispatch를 합니다. (말 그대로 일어난
-  이벤트를 보낸다) 그러면 store에 있는 리듀서가 해당 액션을 처리하여 새로운
-  상태로 값을 반환할텐데, 이때 리듀서는 어떤 액션이 들어왔는지 구분하기 위해서
-  type이라는 속성을 갖게 됩니다.
+    컴포넌트를 만들때, UI를 만들고 해당 UI 에서는 button 이나 Input등의 이벤트를
+    발생시키고, 이를 통해 상태를 변경 할텐데, Redux로 해당 UI에서 상태가
+    변경되었다를 알리기 위해서 Action을 Dispatch를 합니다. (말 그대로 일어난
+    이벤트를 보낸다) 그러면 store에 있는 리듀서가 해당 액션을 처리하여 새로운
+    상태로 값을 반환할텐데, 이때 리듀서는 어떤 액션이 들어왔는지 구분하기 위해서
+    type이라는 속성을 갖게 됩니다.
 </div>
 
 # Actions
@@ -74,10 +74,10 @@ type 속성값은 리듀서에 액션 객체를 구분할 때도 사용되기 �
 **payload** 필드에는 추가적인 정보가 담겨있습니다.
 
 <div className="think">
-  React 자체의 상태관리를 할때에는 해당 함수 안에서 상태를 관리하는데 반해
-  redux는 global store를 통해 모든 앱에서의 상태를 공유 하게 됩니다. 이는 곧,
-  해당 상태가 바뀌었다는 정보를 global store에 전달해줘야 한다는 얘기이며, 이를
-  위해 action을 dispatch 합니다.
+    React 자체의 상태관리를 할때에는 해당 함수 안에서 상태를 관리하는데 반해
+    redux는 global store를 통해 모든 앱에서의 상태를 공유 하게 됩니다. 이는 곧,
+    해당 상태가 바뀌었다는 정보를 global store에 전달해줘야 한다는 얘기이며,
+    이를 위해 action을 dispatch 합니다.
 </div>
 
 <hr />
@@ -94,17 +94,17 @@ reducer는 이전 상태값과, 액션 객체를 입력으로 받아 새로운 �
 const initialState = { value: 0 };
 
 function counterReducer(state = initialState, action) {
-  // Check to see if the reducer cares about this action
-  if (action.type === "counter/increment") {
-    // If so, make a copy of `state`
-    return {
-      ...state,
-      // and update the copy with the new value
-      value: state.value + 1,
-    };
-  }
-  // otherwise return the existing state unchanged
-  return state;
+    // Check to see if the reducer cares about this action
+    if (action.type === "counter/increment") {
+        // If so, make a copy of `state`
+        return {
+            ...state,
+            // and update the copy with the new value
+            value: state.value + 1,
+        };
+    }
+    // otherwise return the existing state unchanged
+    return state;
 }
 ```
 
@@ -128,47 +128,6 @@ selector 함수는 리덕스 스토어가 업데이트 되면 언제든지 재�
 이를 방지하기 위해 RTK 는 `createSelector` 함수를 제공합니다. `reselet` 라이브러리의 기능으로 메모이제이션을 지원하여, 무분별한 렌더링을 방지 합니다.
 
 <br />
-
-# Think
-
-<hr />
-
-    ★ 사용하는 데이터가 하나다. ⇢ 리듀서를 하나만 사용한다.
-    ★ 사용되는 데이터의 양이 많아진다. ⇢ 데이터를 기능별로 폴더를 만들어 하위에서 관리/구조화 한다.
-    ★ 분리한 리듀서를 통합한다 ⇢ combineReducder
-
-    페이스북에서 '타임라인' 과 '친구목록'을 구현한다고 하자.
-    ★ 타임라인 에서는 사용자에게 보여줄 여러 개의 게시물을 관리해야 한다.
-    └── 각 게시물 데이터를 배열로 관리한다.
-    └── 게시물을 추가 / 삭제 할 수 있어야 한다.
-    └── 각 게시물의 좋아요 숫자는 변하는 값이므로 게시물 데이터를 수정할 수 있어야 한다.
-    └── 무한 스크롤 기능이 필요 하므로 로딩된 데이터 끝에 도달하면 자동으로 다음 데이터를 서버로 요청해야 한다.
-
-    ★ 친구 목록
-    └── 친구목록 데이터를 배열로 관리한다.
-    └── 친구를 추가 / 삭제 할 수 있어야 한다.
-    └── 친구가 수정한 프로필 정보를 반영하기 위해 친구 데이터를 수정할 수 있어야 한다.
-
-    ★ 덕스 패턴
-    └── 연관된 액션 타입, 액션 생성자 함수, 리듀서를 하나의 파일로 작성한다.
-    └── 리듀서 함수는 export default 키워드로 내보낸다.
-    └── 액션 생성자 함수는 export 키워드로 내보낸다.
-    └── 액션 타입은 접두사와 액션 이름을 조합해서 만든다.
-
-    ★ (친구 목록) 액션 과 리듀서 코드를 먼저 작성한다.
-    ◦ 데이터 타입은 어떻게 되어 있는가 ⇢ 배열로 관리한다.
-    ◦ 어떤 액션 타입이 필요한가 ⇢ 친구를 추가 / 삭제 할 수 있어야 하고, 데이터를 수정할 수 있어야 한다.
-    ◦ 리듀서 에서 상탯값을 수정한다. ⇢ ADD, REMOVE, EDIT 에 해당하는 로직을 구현한다.
-
-    ★ (타임 라인) 액션 과 리듀서 코드를 작성한다.
-    ◦ 데이터 타입은 어떻게 되어 있는가 ⇢ 배열로 관리한다.
-    ◦ 어떤 액션 타입이 필요한가 ⇢ 게시물을 추가 / 삭제 및 게시물을 수정 또 페이지 번호 증가.
-
-    ★ 리듀서의 공통 부분 분리하기
-    ◦ 초기 상태값 빈 배열 정의
-    ◦ 액션 타입과 액션 생성자 함수
-    ◦ 데이터 추가/삭제/수정 리듀서 코드
-    └── 공통부분에 해당하는 부분을 모듈화 한다.
 
 <br />
 

@@ -227,7 +227,7 @@ figure.highlight {
 code {
     /* font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono"; */
     /* background: #606770; */
-    color: white;
+    color: rgba(210, 145, 7, 0.961);
     padding: 5px;
     font-family: "PT Mono";
     font-size: 14px;
