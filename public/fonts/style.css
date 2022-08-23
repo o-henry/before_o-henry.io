@@ -15,3 +15,11 @@
         url("../../public/fonts/Recoleta-Regular.eot")
             format("embedded-opentype");
 }
+
+@font-face {
+    font-family: "Recoleta";
+    src: url("../../public/fonts/Recoleta-Regular.ttf") format("truetype"),
+        url("../../public/fonts/Recoleta-Regular.woff") format("woff"),
+        url("../../public/fonts/Recoleta-Regular.eot")
+            format("embedded-opentype");
+}

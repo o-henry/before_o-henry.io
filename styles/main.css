@@ -25,6 +25,13 @@
         url("../public/fonts/Recoleta-Regular.eot") format("embedded-opentype");
 }
 
+@font-face {
+    font-family: "Recoleta";
+    src: url("../public/fonts/Recoleta-Regular.ttf") format("truetype"),
+        url("../public/fonts/Recoleta-Regular.woff") format("woff"),
+        url("../public/fonts/Recoleta-Regular.eot") format("embedded-opentype");
+}
+
 @import url("./vscode-style.css");
 /* @import url("./duotone-sea.css"); */
 
@@ -83,14 +90,14 @@ h1 {
     /* font-family: "Playfair Display", serif; */
     /* font-family: "AppleGothic", serif; */
     /* font-family: "Oswald", sans-serif; */
-    font-family: "Recoleta-Regular", "NotoSansKR-Thin", "MalgunGothic", serif;
+    font-family: "Recoleta", "NotoSansKR-Thin", "MalgunGothic", serif;
     font-weight: 700;
     padding: 5px 0;
     letter-spacing: 0px;
 }
 
 h2 {
-    font-family: "Recoleta-Regular", sans-serif;
+    font-family: "Recoleta", sans-serif;
     font-weight: 400;
     font-size: 1.125rem;
 }

@@ -1,7 +1,7 @@
 import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/layout";
 import "../styles/main.css";
-import "../public/static/fonts/style.css";
+import "../public/fonts/style.css";
 
 const components = {
     code: (props) => <pre {...props} />,

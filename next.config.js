@@ -14,10 +14,10 @@ module.exports = withMDX({
 
     webpack(config) {
         config.module.rules.push({
-            test: /\.(svg|ttf|eot|woff)$/,
+            test: /\.svg$/,
             use: [
                 {
-                    loader: ["@svgr/webpack", "url-loader"],
+                    loader: "@svgr/webpack",
                     options: {
                         icon: true,
                         titleProp: true,
