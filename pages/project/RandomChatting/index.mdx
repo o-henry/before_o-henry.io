@@ -3,16 +3,15 @@ import Github from "../../../assets/github.svg";
 import Result from "../../../assets/result.svg";
 
 export const meta = {
-  title: "Random Chatting",
-  description: "Socket.io를 활용하여 만든 랜덤 채팅 앱 입니다.",
-  date: "2020-06-11T19:45:00.0Z",
-  readTime: 2,
+    title: "Random Chatting",
+    date: "2020-06-11T19:45:00.0Z",
+    readTime: 2,
 };
 
 export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <p style={{ textAlign: "center", fontFamily: "Rajdhani" }}>
-  REACT ・ Socket.io ・ Heroku ・ TS ・ Express ・ Material-UI
+    REACT ・ Socket.io ・ Heroku ・ TS ・ Express ・ Material-UI
 </p>
 
 <div
@@ -23,34 +22,26 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     justifyContent: "center",
   }}
 >
-  <a
-    href="https://github.com/o-henry/real-chat-socket"
-    target="_blank"
-    style={{ fontFamily: "Rajdhani" }}
-  >
-    <Github style={{ fontSize: "20px" }} />
-  </a>
 
   <div style={{ width: "15px" }} />
   
   <a
     href="https://random-chat-4a745.web.app/"
     target="_blank"
-    style={{ fontFamily: "Rajdhani" }}
+    style={{ fontFamily: "Recoleta-Regular", fontWeight: 600 }}
   >
-    <Result style={{ fontSize: "20px" }} />
+    Play
   </a>
 </div>
 
 <div
-  style={{
-    paddingTop: "2rem",
-    fontFamily: "seoulNamsanL",
-    fontSize: "0.8rem",
-    fontWeight: "200",
-    textAlign: "center",
-  }}
+    style={{
+        paddingTop: "2rem",
+        fontSize: "0.8rem",
+        fontWeight: "200",
+        textAlign: "center",
+    }}
 >
-  테스트를 위해서는 2개의 브라우저를 사용하여 접속해야 합니다. 한글만
-  입력가능합니다.
+    테스트를 위해서는 2개의 브라우저를 사용하여 접속해야 합니다. 한글만
+    입력가능합니다.
 </div>

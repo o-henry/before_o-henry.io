@@ -9,501 +9,548 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Slab:wght@200;300;400;500;800;900&family=Rubik:wght@900&display=swap");
 @font-face {
-  font-family: "SeoulNamsanL";
-  font-weight: 200;
-  src: url("/fonts/SeoulNamsanL.ttf") format("truetype");
+    font-family: "SeoulNamsanL";
+    font-weight: 200;
+    src: url("/fonts/SeoulNamsanL.ttf") format("truetype");
 }
 @font-face {
-  font-family: "MalgunGothic";
-  src: url("/fonts/MalgunGothic.eot") format("truetype");
+    font-family: "MalgunGothic";
+    src: url("/fonts/MalgunGothic.eot") format("truetype");
+}
+
+@font-face {
+    font-family: "Recoleta-Reuglar";
+    src: url("/fonts/Recoleta-Regular.ttf");
 }
 
 @import url("./vscode-style.css");
 /* @import url("./duotone-sea.css"); */
 
 * {
-  border: 0;
-  box-sizing: inherit;
-  -webkit-font-smoothing: auto;
-  font-weight: inherit;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  text-decoration: none;
-  text-rendering: optimizeLegibility;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+    border: 0;
+    box-sizing: inherit;
+    -webkit-font-smoothing: auto;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 html {
-  display: flex;
-  min-height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #16171a;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-  -webkit-font-smoothing: auto;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-display: auto;
-  font-family: "SF Pro Display", "NotoSansKR-Thin", "애플 SD 산돌고딕 Neo",
-    "Apple SD Gothic Neo", "나눔바른고딕", NanumBarunGothic, "나눔고딕",
-    NanumGothic, "맑은 고딕", "Malgun Gothic", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #16171a;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    -webkit-font-smoothing: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-display: auto;
+    font-family: "SF Pro Display", "NotoSansKR-Thin", "애플 SD 산돌고딕 Neo",
+        "Apple SD Gothic Neo", "나눔바른고딕", NanumBarunGothic, "나눔고딕",
+        NanumGothic, "맑은 고딕", "Malgun Gothic", -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 3rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  max-width: 42rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    max-width: 42rem;
 
-  background-color: var(--color-background);
-  transition: background-color 0.2s;
-  color: var(--color-primary);
+    background-color: var(--color-background);
+    transition: background-color 0.2s;
+    color: var(--color-primary);
 }
 
 h1 {
-  /* font-family: "Playfair Display", serif; */
-  /* font-family: "AppleGothic", serif; */
-  /* font-family: "Oswald", sans-serif; */
-  font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
-  font-weight: 700;
-  padding: 5px 0;
-  letter-spacing: 0px;
+    /* font-family: "Playfair Display", serif; */
+    /* font-family: "AppleGothic", serif; */
+    /* font-family: "Oswald", sans-serif; */
+    font-family: "Recoleta-Regular", "NotoSansKR-Thin", "MalgunGothic", serif;
+    font-weight: 700;
+    padding: 5px 0;
+    letter-spacing: 0px;
 }
 
 h2 {
-  font-family: "Roboto Slab", sans-serif;
-  font-weight: 400;
-  font-size: 1.125rem;
+    font-family: "Recoleta-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
 }
 
 h3 {
-  font-family: "Merriweather", serif;
-  font-weight: 700;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
 }
 
 a {
-  color: currentColor;
-  text-decoration: none;
-  font-family: "SF Pro Rounded";
-  font-size: 0.925rem;
+    color: currentColor;
+    text-decoration: none;
+    font-family: "SF Pro Rounded";
+    font-size: 0.925rem;
 }
 
 a:visited {
-  opacity: 0.6;
-  transition: opacity 0.2s ease-in;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in;
 }
 
 a:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 textarea {
-  resize: none;
+    resize: none;
 }
 
 article {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-weight: 200;
-  font-size: 1.125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 4rem 0 4rem;
+    font-weight: 200;
+    font-size: 1.125rem;
+    height: 100%;
 }
 
 img {
-  margin-top: 16px;
-  max-width: 100%;
-  display: inline;
-  border-radius: 4px;
-  transition: box-shadow 0.2s;
-  display: block;
-  margin: 12px 0;
-  width: 100%;
-  border: 15px solid white;
+    margin-top: 16px;
+    max-width: 100%;
+    display: inline;
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+    display: block;
+    margin: 12px 0;
+    width: 100%;
+    border: 15px solid white;
 }
 
 strong {
-  color: inherit;
-  font-size: inherit;
-  font-weight: 700;
-  font-family: "Sriracha", SeoulNamsanL;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: "Sriracha", SeoulNamsanL;
 }
 
 ul,
 ol {
-  font-family: "NotoSansKR-Thin", MalgunGothic;
-  color: inherit;
-  margin: 8px 0;
-  margin-left: 1.5rem;
+    font-family: "NotoSansKR-Thin", MalgunGothic;
+    color: inherit;
+    margin: 8px 0;
+    margin-left: 1.5rem;
 }
 
 li {
-  color: inherit;
-  font-size: 11pt;
-  margin-bottom: 4px;
-  line-height: 22pt;
-  letter-spacing: 0.8px;
-  font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
+    color: inherit;
+    font-size: 11pt;
+    margin-bottom: 4px;
+    line-height: 22pt;
+    letter-spacing: 0.8px;
+    font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
 }
 
 blockquote {
-  font-family: Poppins, "SeoulNamsanL";
-  border-radius: 4px;
-  line-height: 1.9rem;
-  max-width: 100%;
-  font-size: 0.965rem;
-  font-weight: 100;
-  position: relative;
-  text-align: center;
-  padding: 2rem 1rem;
+    font-family: Poppins, "SeoulNamsanL";
+    border-radius: 4px;
+    line-height: 1.9rem;
+    max-width: 100%;
+    font-size: 0.965rem;
+    font-weight: 100;
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
 svg {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 hr {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 /* fix code highlight */
 
 figure.highlight {
-  background: #263238;
-  padding: 0;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
-  width: 100%;
-  border-radius: 3px 3px 3px 3px;
-  position: relative;
-  margin: 1em 0 1em !important;
+    background: #263238;
+    padding: 0;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 3px 3px 3px 3px;
+    position: relative;
+    margin: 1em 0 1em !important;
 }
 
 code {
-  /* font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono"; */
-  background: #606770;
-  color: white;
-  padding: 5px;
-  font-family: "PT Mono";
-  font-size: 14px;
-  line-height: 1.4px;
-  display: inline;
-  width: 100%;
-  border-radius: 4px;
-  letter-spacing: 0px;
-  margin-bottom: 16px;
+    /* font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono"; */
+    background: #606770;
+    color: white;
+    padding: 5px;
+    font-family: "PT Mono";
+    font-size: 14px;
+    line-height: 1.4px;
+    display: inline;
+    width: 100%;
+    border-radius: 4px;
+    letter-spacing: 0px;
+    margin-bottom: 16px;
 }
 
 code span {
-  max-width: 100%;
-  white-space: pre-wrap;
-  word-break: break-word;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 pre {
-  white-space: pre-wrap;
-  overflow-x: auto;
-  font-size: 13px;
-  font-family: monospace;
-  border-radius: 4px;
-  /* margin: 16px 0; */
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-size: 13px;
+    font-family: monospace;
+    border-radius: 4px;
+    /* margin: 16px 0; */
 }
 
 ::-moz-selection {
-  /* Code for Firefox */
+    /* Code for Firefox */
 }
 
 ::selection {
 }
 
 ::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
+    /* WebKit, Blink, Edge */
 }
 :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  opacity: 1;
+    /* Mozilla Firefox 4 to 18 */
+    opacity: 1;
 }
 ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  opacity: 1;
+    /* Mozilla Firefox 19+ */
+    opacity: 1;
 }
 :-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
+    /* Internet Explorer 10-11 */
 }
 
 .fade-enter {
-  opacity: 0;
-  z-index: 1;
+    opacity: 0;
+    z-index: 1;
 }
 
 .fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+    opacity: 1;
+    transition: opacity 250ms ease-in;
 }
 
 .markdown {
-  font-size: 16px;
-  line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .markdown pre {
-  white-space: pre-wrap;
-  font-size: 15px;
-  overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 15px;
+    overflow-x: auto;
 }
 
 .markdown p {
-  color: inherit;
-  font-size: 16px;
-  font-weight: 400;
-  display: block;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
 }
 
 .markdown p + p {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .markdown img {
-  margin-top: 16px;
-  max-width: 100%;
-  display: inline;
-  border-radius: 4px;
-  transition: box-shadow 0.2s;
-  display: block;
-  margin: 12px 0;
+    margin-top: 16px;
+    max-width: 100%;
+    display: inline;
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+    display: block;
+    margin: 12px 0;
 }
 
 .markdown img:hover {
-  cursor: pointer;
-  transition: box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .markdown em {
-  color: inherit;
-  font-size: inherit;
-  font-style: italic;
+    color: inherit;
+    font-size: inherit;
+    font-style: italic;
 }
 
 .markdown strong {
-  color: inherit;
-  font-size: inherit;
-  font-weight: 700;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 700;
 }
 
 .markdown ul,
 .markdown ol {
-  color: inherit;
-  margin: 8px 0;
-  margin-left: 16px;
+    color: inherit;
+    margin: 8px 0;
+    margin-left: 16px;
 }
 
 .markdown li {
-  color: inherit;
-  font-size: 16px;
-  margin-bottom: 4px;
-  line-height: 1.5;
-  font-weight: 400;
+    color: inherit;
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .markdown blockquote {
-  padding: 4px 8px 4px 16px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  margin: 16px 0;
-  word-break: break-all;
+    padding: 4px 8px 4px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 16px 0;
+    word-break: break-all;
 }
 
 .markdown blockquote p {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .markdown a {
-  font-weight: 500;
-  text-decoration: none;
-  font-size: inherit;
-  word-wrap: break-word;
-  line-height: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: inherit;
+    word-wrap: break-word;
+    line-height: inherit;
 }
 
 .markdown a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .markdown a:visited {
-  opacity: 0.6;
-  transition: opacity 0.2s ease-in;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in;
 }
 
 .markdown code {
-  font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono", monospace;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.4px;
-  padding: 2px 4px;
-  display: inline;
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 16px;
+    font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4px;
+    padding: 2px 4px;
+    display: inline;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 16px;
 }
 
 .markdown pre {
-  white-space: pre-wrap;
-  margin: 16px 0;
-  display: block;
-  border-radius: 4px;
+    white-space: pre-wrap;
+    margin: 16px 0;
+    display: block;
+    border-radius: 4px;
 }
 
 .markdown pre code {
-  padding: 8px 16px;
-  display: block;
-  white-space: pre;
-  position: relative;
-  margin: 0;
-  border: none;
-  background: none;
+    padding: 8px 16px;
+    display: block;
+    white-space: pre;
+    position: relative;
+    margin: 0;
+    border: none;
+    background: none;
 }
 
 .markdown div[data-block="true"] {
-  margin-top: 12px;
+    margin-top: 12px;
 }
 
 .markdown div[data-block="true"]:first-of-type {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .markdown span[data-text="true"] {
-  line-height: 1.4;
+    line-height: 1.4;
 }
 
 .markdown code span {
-  max-width: 100%;
-  white-space: pre-wrap;
-  word-break: break-word;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .markdown iframe {
-  margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 .markdown hr {
-  width: 100%;
-  height: 1px;
-  display: block;
-  margin: 32px 0;
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin: 32px 0;
 }
 
 .markdown h1 {
-  font-size: 24px;
-  line-height: 40px;
-  font-weight: 800;
-  margin-top: 1rem;
-  margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-bottom: 8px;
 }
 
 .markdown h2 {
-  font-size: 20px;
-  line-height: 32px;
-  font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 8px;
 }
 
 .markdown h3 {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 8px;
 }
 
 .markdown h4 {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 8px;
-  text-transform: lowercase;
-  font-variant: small-caps;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 8px;
+    text-transform: lowercase;
+    font-variant: small-caps;
 }
 
 .markdown h5 {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 8px;
-  text-transform: lowercase;
-  font-variant: small-caps;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 8px;
+    text-transform: lowercase;
+    font-variant: small-caps;
 }
 
 .markdown h6 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-transform: lowercase;
-  font-variant: small-caps;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: lowercase;
+    font-variant: small-caps;
 }
 
 .threadComposer textarea {
-  line-height: 1.5;
-  height: calc(100% + 48px) !important;
+    line-height: 1.5;
+    height: calc(100% + 48px) !important;
 }
 
 .content {
-  margin-top: 4rem;
+    /* margin-top: 0rem; */
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
 }
 
 :root {
-  --color-primary-accent: #5b34da;
-  --color-primary: #000;
-  --color-background: #fff;
-  --color-header: #000;
-  --color-secondary-accent: #358ef1;
+    --color-primary-accent: #5b34da;
+    --color-primary: #000;
+    --color-background: #fff;
+    --color-header: #000;
+    --color-secondary-accent: #358ef1;
 }
 
 [data-theme="dark"] {
-  --color-primary-accent: #9d86e9;
-  --color-secondary-accent: #61dafb;
-  --color-header: #fff;
-  --color-primary: #fff;
-  /* --color-background: #0d1117; */
-  --color-background: #282c35;
+    --color-primary-accent: #9d86e9;
+    --color-secondary-accent: #61dafb;
+    --color-header: #fff;
+    --color-primary: #fff;
+    /* --color-background: #0d1117; */
+    --color-background: #282c35;
 }
 
 [data-theme="batman"] {
-  --color-primary-accent: #ffff00;
+    --color-primary-accent: #ffff00;
 }
 
 .blog-post pre {
-  padding: 2.5rem 1rem 1.5rem 1.5rem;
-  border-radius: 4px;
-  overflow: auto;
-  border-radius: 12px;
-  overflow: auto;
-  background-image: url("../public/mac-style.png");
-  background-repeat: no-repeat;
-  background-size: 44px 10px;
-  background-position: 16px 14px;
+    padding: 2.5rem 1rem 1.5rem 1.5rem;
+    border-radius: 4px;
+    overflow: auto;
+    border-radius: 12px;
+    overflow: auto;
+    background-image: url("../public/mac-style.png");
+    background-repeat: no-repeat;
+    background-size: 44px 10px;
+    background-position: 16px 14px;
 }
 
 .think {
-  display: flex;
-  background: #eff5fb;
-  margin: 2rem 0;
-  border-left: 3px solid #5183f5;
-  border-radius: 0.35rem;
-  padding: 1rem 1.5rem;
-  color: #296fa8;
+    display: flex;
+    background: #eff5fb;
+    margin: 2rem 0;
+    border-left: 3px solid #5183f5;
+    border-radius: 0.35rem;
+    padding: 1rem 1.5rem;
+    color: #296fa8;
+}
+
+.read-button {
+    transition: all 0.5s;
+}
+
+.read-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.read-button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.read-button:hover span {
+    padding-right: 15px;
+}
+
+.read-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
