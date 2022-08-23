@@ -26,7 +26,7 @@ function Metadata({ meta, project, blog }) {
                         font-size: 1.5rem;
                         font-weight: 700;
                         color: var(--color-header);
-                        font-family: "Recoleta-Regular";
+                        font-family: "Recoleta";
                     }
                     .great-title {
                         margin-top: 2.5rem;
