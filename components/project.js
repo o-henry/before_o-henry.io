@@ -14,7 +14,7 @@ function Project({ project }) {
                 <a className="read-button">
                     <span
                         style={{
-                            fontFamily: "Recoleta",
+                            fontFamily: "Recoleta-bold",
                         }}
                     >
                         Read more

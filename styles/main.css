@@ -32,6 +32,26 @@
         url("../public/fonts/Recoleta-Regular.eot") format("embedded-opentype");
 }
 
+@font-face {
+    font-family: "Recoleta-bold";
+    src: url("../public/fonts/Recoleta-Medium.ttf") format("truetype"),
+        url("../public/fonts/Recoleta-Medium.eot") format("embedded-opentype"),
+        url("../public/fonts/Recoleta-Medium.woff") format("woof");
+}
+
+@font-face {
+    font-family: "Recoleta-Reuglar";
+    src: url("../public/fonts/Recoleta-Regular.ttf") format("truetype"),
+        url("../public/fonts/Recoleta-Regular.woff") format("woff"),
+        url("../public/fonts/Recoleta-Regular.eot") format("embedded-opentype"),
+        url("../public/fonts/Recoleta-Bold.eot") format("embedded-opentype"),
+        url("../public/fonts/Recoleta-Bold.ttf") format("truetype"),
+        url("../public/fonts/Recoleta-Bold.woff") format("woof"),
+        url("../public/fonts/Recoleta-Medium.ttf") format("truetype"),
+        url("../public/fonts/Recoleta-Medium.eot") format("embedded-opentype"),
+        url("../public/fonts/Recoleta-Medium.woff") format("woof");
+}
+
 @import url("./vscode-style.css");
 /* @import url("./duotone-sea.css"); */
 
@@ -90,7 +110,7 @@ h1 {
     /* font-family: "Playfair Display", serif; */
     /* font-family: "AppleGothic", serif; */
     /* font-family: "Oswald", sans-serif; */
-    font-family: "Recoleta", "NotoSansKR-Thin", "MalgunGothic", serif;
+    font-family: "Recoleta-bold", "NotoSansKR-Thin", "MalgunGothic", serif;
     font-weight: 700;
     padding: 5px 0;
     letter-spacing: 0px;
@@ -206,7 +226,7 @@ figure.highlight {
 
 code {
     /* font-family: "Input Mono", "Menlo", "Inconsolata", "Roboto Mono"; */
-    background: #606770;
+    /* background: #606770; */
     color: white;
     padding: 5px;
     font-family: "PT Mono";

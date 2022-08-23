@@ -9,11 +9,11 @@
 }
 
 @font-face {
-    font-family: "Recoleta-Reuglar";
-    src: url("../../public/fonts/Recoleta-Regular.ttf") format("truetype"),
-        url("../../public/fonts/Recoleta-Regular.woff") format("woff"),
-        url("../../public/fonts/Recoleta-Regular.eot")
-            format("embedded-opentype");
+    font-family: "Recoleta-bold";
+    src: url("../../public/fonts/Recoleta-Medium.ttf") format("truetype"),
+        url("../../public/fonts/Recoleta-Medium.eot")
+            format("embedded-opentype"),
+        url("../../public/fonts/Recoleta-Medium.woff") format("woof");
 }
 
 @font-face {
@@ -21,5 +21,12 @@
     src: url("../../public/fonts/Recoleta-Regular.ttf") format("truetype"),
         url("../../public/fonts/Recoleta-Regular.woff") format("woff"),
         url("../../public/fonts/Recoleta-Regular.eot")
-            format("embedded-opentype");
+            format("embedded-opentype"),
+        url("../../public/fonts/Recoleta-Bold.eot") format("embedded-opentype"),
+        url("../../public/fonts/Recoleta-Bold.ttf") format("truetype"),
+        url("../../public/fonts/Recoleta-Bold.woff") format("woof"),
+        url("../../public/fonts/Recoleta-Medium.ttf") format("truetype"),
+        url("../../public/fonts/Recoleta-Medium.eot")
+            format("embedded-opentype"),
+        url("../../public/fonts/Recoleta-Medium.woff") format("woof");
 }

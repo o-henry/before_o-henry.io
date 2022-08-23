@@ -5,7 +5,7 @@ class MyDocument extends Document {
         return (
             <Html lang="ko">
                 <Head>
-                    <link href="../public/fonts/style.css" rel="stylesheet" />
+                    {/* <link href="../public/fonts/style.css" rel="stylesheet" /> */}
                 </Head>
                 <body>
                     <script
