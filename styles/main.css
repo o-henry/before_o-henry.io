@@ -498,7 +498,6 @@ pre {
 }
 
 .content {
-    /* margin-top: 0rem; */
     flex-grow: 1;
     overflow: auto;
     min-height: 2em;
@@ -526,15 +525,13 @@ pre {
 }
 
 .blog-post pre {
-    padding: 2.5rem 1rem 1.5rem 1.5rem;
-    border-radius: 4px;
-    overflow: auto;
-    border-radius: 12px;
-    overflow: auto;
-    background-image: url("../public/mac-style.png");
-    background-repeat: no-repeat;
-    background-size: 44px 10px;
-    background-position: 16px 14px;
+    padding: 2.5rem 1rem 1.5rem 1.5rem !important;
+    border-radius: 12px !important;
+    overflow: auto !important;
+    background-image: url("/mac-style.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 44px 10px !important;
+    background-position: 16px 14px !important;
 }
 
 .think {
@@ -582,4 +579,26 @@ pre {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+.shake-it:hover {
+    animation: tilt-shaking 1s infinite;
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0eg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
