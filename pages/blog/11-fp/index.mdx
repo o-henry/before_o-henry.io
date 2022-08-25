@@ -1,0 +1,133 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "Functional Programming",
+    description: "함수형 프로그래밍",
+    date: "2022-08-25T11:42:00.0Z",
+    readTime: 30,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ marginTop: "4rem", fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
+
+# Category Theory <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+카테고리 이론은 Object 사이의 morphism을 정의한다. composition을 정의하기에 적합한 이론이다. 합성을 위해서는 정의역과 치역의 타입이 일치해야한다.
+타입스크립트에서는 Object는 타입이고 morphism 은 함수가 된다.
+
+<div className="blog-post">
+
+    ```ts
+    /** f :: (a: A) => B */
+    const f = (s: string): number => s.length;
+    /** g :: (c: C) => D */
+    const g = (n: number): boolean => n > 2;
+
+    /**
+    * gf = g ∘ f
+    * gf :: (a: A) => D
+    * C = B
+    */
+    const gf = (s: string): boolean => g(f(s));
+
+    function flow<A, B, C>(f: (a: A) => B, g: (b: B) => C): (a: A) => C {
+        return (a) => g(f(a));
+    }
+
+    function pipe<A, B, C>(a: A, f: (a: A) => B, g: (b: B) => C): C
+        return flow(f, g)(a);
+    }
+    ```
+
+</div>
+
+<br />
+
+# Functors <sup><a href="#fn2" id="fnref2"> ² </a></sup>
+
+순수함수는 가변성을 금지하고 참조투명성을 위반하지 않아야 하며 이를 위반하는 요소는 사이드이펙트로 간주한다.
+하지만 이러한 사이드이펙트를 완전히 배제해서는 프로그램을 개발할 수 없다. 따라서 효과적으로 이펙트를 관리하기 위해 몇가지 방법을 사용하는데 펑터도 그중 하나다.
+
+> functor는 일종의 container 다.
+
+여기서 해결하고 싶은 문제는 순수함수와 이펙트를 갖는 함수의 합성을 이뤄내는것이다.
+
+<br />
+
+DSL
+
+<span style={{ height: "10px" }} />
+
+함수가 사이드 이펙트에 대한 설명을 반환하도록 공역을 변경한다.
+
+<div className="blog-post">
+
+    ```ts
+    type DSL = ... // sum type of every possible effect handled by the system
+    function log(message: string): DSL {
+        return {
+            type: "log",
+            message
+        }
+    }
+    ```
+
+</div>
+
+<br />
+
+THUNK
+
+<span style={{ height: "10px" }} />
+
+> A Thunk representing a synchronous side effect
+
+<div className="blog-post">
+
+    ```ts
+    // a thunk representing a synchronous side effect
+    type IO<A> = () => A;
+
+    const log = (message: string): IO<void> => {
+        return () => console.log(message); // returns a thunk
+    };
+
+    export const main = log("hello!");
+    // there's nothing in the output at this point
+    // because `main` is only an inert value
+    // representing the computation
+
+    main();
+    // only when launching the program I will see the result
+    ```
+
+</div>
+
+<div className="blog-post">
+
+    ```ts
+    import { Option } from 'fp-ts/Option'
+
+    const head = <A>(as: ReadonlyArray<A>): Option<A> =>
+        as.length === 0 ? none : Some(as[0])
+    ```
+
+</div>
+
+    <br />
+
+    <hr style={{ border:".1px solid whiteSmoke" }} />
+
+    <div style={{ height: "15px" }}></div>
+
+    <ol>
+        <li id="fn1" style={{ fontFamily: "Poppins", fontSize: "8px"}} >
+            <a href="https://github.com/enricopolanski/functional-programming" target="_blank" >fp-ts</a><a href="#fnref1"></a>
+        </li>
+        <li id="fn2" style={{ fontFamily: "Poppins", fontSize: "8px"}} >
+            <a href="https://lazyswamp.tistory.com/entry/functorsapplicativesandmonadsinpictures" target="_blank" >functors</a><a href="#fnref2"></a>
+        </li>
+    </ol>
+
+</div>

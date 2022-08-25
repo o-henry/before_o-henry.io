@@ -25,14 +25,7 @@ function About() {
 
             <div style={{ margin: "3rem" }}></div>
 
-            <div
-                style={{
-                    border: "1px solid whitesmoke",
-                    backgroundColor: "whitesmoke",
-                    padding: "2rem",
-                    borderRadius: "5px",
-                }}
-            >
+            <Box>
                 <a
                     href="https://www.npmjs.com/package/visual-box"
                     style={{
@@ -42,28 +35,11 @@ function About() {
                     }}
                     target="_blank"
                 >
-                    <Npm
-                        style={{
-                            fontSize: "20px",
-                            position: "relative",
-                            right: "10px",
-                            // color: "var(--color-primary)",
-                        }}
-                    />
-                    visual-box
+                    BOX
                 </a>
-            </div>
+            </Box>
 
-            <div style={{ margin: "0.625rem" }}></div>
-
-            <div
-                style={{
-                    border: "1px solid whitesmoke",
-                    backgroundColor: "whitesmoke",
-                    padding: "2rem",
-                    borderRadius: "5px",
-                }}
-            >
+            <Box>
                 <a
                     href="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka"
                     style={{
@@ -73,19 +49,27 @@ function About() {
                     }}
                     target="_blank"
                 >
-                    <Twitch
-                        style={{
-                            fontSize: "20px",
-                            position: "relative",
-                            right: "10px",
-                            // color: "var(--color-primary)",
-                        }}
-                    />
-                    Hide Twitch Chat
+                    HIDE TWITCH CHAT
                 </a>
-            </div>
+            </Box>
         </div>
     );
 }
+
+const Box = ({ children }) => {
+    return (
+        <div
+            style={{
+                border: "1px solid whitesmoke",
+                backgroundColor: "whitesmoke",
+                padding: "2rem",
+                borderRadius: "5px",
+                margin: "0.625rem 0 0.625rem 0",
+            }}
+        >
+            {children}
+        </div>
+    );
+};
 
 export default About;
