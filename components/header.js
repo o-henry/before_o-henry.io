@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Moon from "../assets/moon.svg";
-import Sun from "../assets/s-sun.svg";
+import Sun from "../assets/sun.svg";
 
 export default function Header() {
     const [darkTheme, setDarkTheme] = useState(undefined);
@@ -38,7 +38,7 @@ export default function Header() {
                     flexShrink: 0,
                 }}
             >
-                <div className="shake-it" style={{ flex: 9 }}>
+                <div style={{ flex: 9 }}>
                     <Link href="/">
                         <a>
                             <h1 style={{ fontSize: "1.125rem" }}>Henry</h1>
@@ -46,23 +46,11 @@ export default function Header() {
                     </Link>
                 </div>
 
-                <div
-                    style={{
-                        flexShrink: "0",
-                        width: "15px",
-                    }}
-                ></div>
+                <div style={{ flexShrink: "0", width: "15px" }}></div>
 
                 <Link href="/blog">
                     <a>
-                        <h2
-                            style={{
-                                fontSize: "0.825rem",
-                                paddingRight: "5px",
-                            }}
-                        >
-                            Blog
-                        </h2>
+                        <h2 style={{ fontSize: "0.825rem" }}>Blog</h2>
                     </a>
                 </Link>
 
@@ -86,7 +74,7 @@ export default function Header() {
                 <div style={{ flexShrink: "0", width: "15px" }}></div>
 
                 {darkTheme ? (
-                    <label style={{ paddingBottom: "2.8px" }}>
+                    <label>
                         <input
                             type="checkbox"
                             checked={darkTheme}
@@ -104,7 +92,7 @@ export default function Header() {
                         />
                     </label>
                 ) : (
-                    <label style={{ paddingBottom: "2.8px" }}>
+                    <label>
                         <input
                             type="checkbox"
                             checked={darkTheme}
