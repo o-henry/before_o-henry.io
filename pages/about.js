@@ -13,7 +13,7 @@ function About() {
                         >
                             Hi
                         </h1>
-                        <p
+                        <span
                             style={{
                                 color: "white",
                                 fontFamily: "DM Mono",
@@ -22,30 +22,29 @@ function About() {
                             I'm Henry.
                             <br />
                             These days, I am interested in functional
-                            programming.
-                        </p>
+                            programming and backend service.
+                        </span>
 
+                        <br />
+                        <br />
+                        <br />
                         <br />
 
                         <span
                             style={{ color: "#6a9955", fontFamily: "DM Mono" }}
                         >
                             /*
-                            <br /> *
                             <br /> 😎 I can do these things ...
                             <br /> 🚀 Typescript
                             <br /> 🚀 Node.js
                             <br /> 🚀 SQL
                             <br /> 🚀 React
-                            <br /> 🚀 React-Native
                             <br /> 🚀 CSS
-                            <br /> *
                             <br /> *
                             <br /> 😅 A little bit of ...
                             <br /> 🚀 Java · Spring Boot
                             <br /> 🚀 Kotlin
-                            <br /> *
-                            <br /> * */
+                            <br /> */
                         </span>
 
                         <br />
@@ -208,19 +207,21 @@ function Cmd({ children }) {
 
 function Prod({ children, link }) {
     return (
-        <a
-            href={link}
-            target="_blank"
-            style={{
-                fontSize: "13.5px",
-                color: "#F5CF80",
-                // fontFamily: "Anonymous Pro",
-                fontFamily: "PT Mono",
-                // fontFamily: "DM Mono",
-            }}
-        >
-            {children}
-        </a>
+        <span>
+            <a
+                href={link}
+                target="_blank"
+                style={{
+                    fontSize: "13.5px",
+                    color: "#F5CF80",
+                    // fontFamily: "Anonymous Pro",
+                    fontFamily: "PT Mono",
+                    // fontFamily: "DM Mono",
+                }}
+            >
+                {children}
+            </a>
+        </span>
     );
 }
 
