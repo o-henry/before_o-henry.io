@@ -13,9 +13,9 @@ function Metadata({ meta, project, blog }) {
                 <span className={project || blog ? "hide" : "date"}>
                     {postDateTemplate.render(new Date(meta.date))}
                 </span>
-                <span className={project || blog ? "hide" : "date"}>
+                {/* <span className={project || blog ? "hide" : "date"}>
                     {meta.readTime + " min read"}
-                </span>
+                </span> */}
             </div>
             <style jsx>
                 {`
@@ -44,7 +44,7 @@ function Metadata({ meta, project, blog }) {
                         font-size: 11pt;
                         line-height: 22pt;
                         letter-spacing: 0.8px;
-                        font-family: "NotoSansKR-Thin", MalgunGothic;
+                        font-family: "Poppins", NotoSansKR-Thin;
                     }
                     .date {
                         font-size: 15px;

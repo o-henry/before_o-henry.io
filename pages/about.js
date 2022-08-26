@@ -54,7 +54,9 @@ function About() {
                         <br />
                         <Cmd>&gt; git remote -v</Cmd>
                         <br />
-                        <Prod>https://github.com/o-henry</Prod>
+                        <Prod link="https://github.com/o-henry">
+                            https://github.com/o-henry
+                        </Prod>
                         <br />
                         <br />
                         <Tag />
