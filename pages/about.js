@@ -39,7 +39,7 @@ function About() {
                             <br /> 🚀 CSS
                             <br /> *
                             <br /> *
-                            <br /> 😅 A little bit of
+                            <br /> 😅 A little bit of ...
                             <br /> 🚀 Java · Spring Boot
                             <br /> 🚀 Kotlin
                             <br /> *
@@ -50,46 +50,11 @@ function About() {
                         <br />
                         <br />
                         <br />
-                        <span
-                            style={{
-                                color: "#7A92F5",
-                                fontFamily: "Anonymous Pro",
-                            }}
-                        >
-                            ~/henry's/log
-                            <span
-                                style={{
-                                    color: "#F5CF80",
-                                    fontFamily: "Anonymous Pro",
-                                }}
-                            >
-                                {" "}
-                                @master &gt;
-                            </span>
-                        </span>
+                        <Tag />
                         <br />
-                        <span
-                            style={{
-                                color: "white",
-                                fontFamily: "Anonymous Pro",
-                            }}
-                        >
-                            &gt; git{" "}
-                        </span>
-
+                        <Cmd>&gt; git remote -v</Cmd>
                         <br />
-
-                        <a
-                            href="https://github.com/o-henry"
-                            target="_blank"
-                            style={{
-                                fontSize: "13.5px",
-                                color: "#7A92F5",
-                                fontFamily: "Anonymous Pro",
-                            }}
-                        >
-                            welcome to my github
-                        </a>
+                        <Prod>https://github.com/o-henry</Prod>
                         <br />
                         <br />
                     </code>
@@ -99,20 +64,55 @@ function About() {
     );
 }
 
-const Box = ({ children }) => {
+function Tag() {
     return (
-        <div
+        <span
             style={{
-                border: "1px solid whitesmoke",
-                backgroundColor: "whitesmoke",
-                padding: "2rem",
-                borderRadius: "5px",
-                margin: "0.625rem 0 0.625rem 0",
+                color: "#7BBED2",
+                fontFamily: "Anonymous Pro",
+            }}
+        >
+            ~/henry's/log
+            <span
+                style={{
+                    color: "#6EF17D",
+                    fontFamily: "Anonymous Pro",
+                }}
+            >
+                {" "}
+                @master &gt;
+            </span>
+        </span>
+    );
+}
+
+function Cmd({ children }) {
+    return (
+        <span
+            style={{
+                color: "white",
+                fontFamily: "Anonymous Pro",
             }}
         >
             {children}
-        </div>
+        </span>
     );
-};
+}
+
+function Prod({ children, link }) {
+    return (
+        <a
+            href={link}
+            target="_blank"
+            style={{
+                fontSize: "13.5px",
+                color: "#F5CF80",
+                fontFamily: "Anonymous Pro",
+            }}
+        >
+            {children}
+        </a>
+    );
+}
 
 export default About;
