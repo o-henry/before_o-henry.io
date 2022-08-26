@@ -35,7 +35,7 @@ function About() {
                             <br /> 😎 I can do these things ...
                             <br /> 🚀 Typescript
                             <br /> 🚀 Node.js
-                            <br /> 🚀 Sql
+                            <br /> 🚀 SQL
                             <br /> 🚀 React
                             <br /> 🚀 React-Native
                             <br /> 🚀 CSS
