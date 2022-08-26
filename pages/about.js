@@ -1,57 +1,100 @@
 import React from "react";
-import Npm from "../assets/npm.svg";
-import Twitch from "../assets/twitch.svg";
 
 function About() {
     return (
         <div style={{ margin: "4rem 4rem 0 4rem" }}>
-            <h1>Hi</h1>
+            <div className="blog-post">
+                <pre className="language-typescript">
+                    <code className="language-typescript">
+                        <h1
+                            style={{
+                                color: "white",
+                            }}
+                        >
+                            Hi
+                        </h1>
+                        <p
+                            style={{
+                                color: "white",
+                                fontFamily: "Anonymous Pro",
+                            }}
+                        >
+                            I'm Henry.
+                            <br />
+                            These days, I am interested in functional
+                            programming.
+                        </p>
 
-            <p
-                style={{
-                    fontFamily: "NotoSansKR-Thin, MalgunGothic",
-                    fontSize: "11pt",
-                    lineHeight: "22pt",
-                    letterSpacing: ".8px",
-                }}
-            >
-                안녕하세요 저는 개발자{" "}
-                <a href="https://www.github.com/o-henry" target="_blank">
-                    이찬행
-                </a>{" "}
-                입니다.
-                <br />
-            </p>
+                        <br />
 
-            <div style={{ margin: "3rem" }}></div>
+                        <span style={{ color: "#6a9955" }}>
+                            /*
+                            <br /> *
+                            <br /> 😎 I can do these things ...
+                            <br /> 🚀 Typescript
+                            <br /> 🚀 Node.js
+                            <br /> 🚀 Sql
+                            <br /> 🚀 React
+                            <br /> 🚀 React-Native
+                            <br /> 🚀 CSS
+                            <br /> *
+                            <br /> *
+                            <br /> 😅 A little bit of
+                            <br /> 🚀 Java · Spring Boot
+                            <br /> 🚀 Kotlin
+                            <br /> *
+                            <br /> * */
+                        </span>
 
-            <Box>
-                <a
-                    href="https://www.npmjs.com/package/visual-box"
-                    style={{
-                        fontFamily: "Poppins",
-                        display: "flex",
-                        color: "black",
-                    }}
-                    target="_blank"
-                >
-                    BOX
-                </a>
-            </Box>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <span
+                            style={{
+                                color: "#7A92F5",
+                                fontFamily: "Anonymous Pro",
+                            }}
+                        >
+                            ~/henry's/log
+                            <span
+                                style={{
+                                    color: "#F5CF80",
+                                    fontFamily: "Anonymous Pro",
+                                }}
+                            >
+                                {" "}
+                                @master &gt;
+                            </span>
+                        </span>
+                        <br />
+                        <span
+                            style={{
+                                color: "white",
+                                fontFamily: "Anonymous Pro",
+                            }}
+                        >
+                            &gt; git{" "}
+                        </span>
 
-            <Box>
-                <a
-                    href="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka"
-                    style={{
-                        fontFamily: "Poppins",
-                        display: "flex",
-                        color: "black",
-                    }}
-                    target="_blank"
-                >
-                    HIDE TWITCH CHAT
-                </a>
-            </Box>
+                        <br />
+
+                        <a
+                            href="https://github.com/o-henry"
+                            target="_blank"
+                            style={{
+                                fontSize: "13.5px",
+                                color: "#7A92F5",
+                                fontFamily: "Anonymous Pro",
+                            }}
+                        >
+                            welcome to my github
+                        </a>
+                        <br />
+                        <br />
+                    </code>
+                </pre>
+            </div>
         </div>
     );
 }

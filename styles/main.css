@@ -52,6 +52,11 @@
         url("../public/fonts/Recoleta-Medium.woff") format("woof");
 }
 
+@font-face {
+    font-family: "AnonymousPro-Regular";
+    src: url("../public/fonts/AnonymousPro-Regular.ttf") format("truetype");
+}
+
 @import url("./vscode-style.css");
 /* @import url("./duotone-sea.css"); */
 
@@ -185,7 +190,7 @@ ol {
 
 li {
     color: inherit;
-    font-size: 11pt;
+    font-size: 10pt;
     margin-bottom: 4px;
     line-height: 22pt;
     letter-spacing: 0.8px;

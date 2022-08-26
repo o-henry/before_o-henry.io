@@ -1,7 +1,7 @@
 import Post from "../../../components/post";
 
 export const meta = {
-    title: "Functional Programming",
+    title: "Category Theory",
     description: "함수형 프로그래밍",
     date: "2022-08-25T11:42:00.0Z",
     readTime: 30,
@@ -49,9 +49,10 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 순수함수는 가변성을 금지하고 참조투명성을 위반하지 않아야 하며 이를 위반하는 요소는 사이드이펙트로 간주한다.
 하지만 이러한 사이드이펙트를 완전히 배제해서는 프로그램을 개발할 수 없다. 따라서 효과적으로 이펙트를 관리하기 위해 몇가지 방법을 사용하는데 펑터도 그중 하나다.
 
-> functor는 일종의 container 다.
+> functor는 일종의 container 다. n -ary 타입 생성자로 모든 `X` 타입을 `F<X>`로 매핑한다.
+> `map: <A, B>(f: (a: A) => B) => ((fa: F<A>) => F<B>)`
 
-여기서 해결하고 싶은 문제는 순수함수와 이펙트를 갖는 함수의 합성을 이뤄내는것이다.
+여기서 해결하고 싶은 문제는 순수함수와 이펙트를 갖는 함수의 합성을 하는 것이다.
 
 <br />
 
@@ -104,14 +105,78 @@ THUNK
 
 </div>
 
+<br />
+
+# Decomposition
+
+예제에서 나온 코드를 바탕으로 일반 코드에서의 상황을 고려해보자. FP의 특성은 작은 모듈(순수함수)로 나누어 데이터에 대한 연산을 처리(일종의 SRP 처럼 동작하도록)한후 함수들을 합성하여 프로그램을 형성한다.
+이러한 관점을 토대로 함수를 구현할때 문제를 분해하는 사고가 필요하다.
+
+<br /> 유저 데이터로부터 팔로워의 이름을 가져오는 코드를 작성한다고 해보자.
+데이터를 파싱하기 위해 일련의 순서를 따를 수 있다.
+
+-   인터페이스를 통해 가져와야할 데이터의 타입을 알 수 있다.
+-   팔로워의 타입은 `ReadonlyArray<T>` 이며 우리가 원하는 이름은 `string` 이다.
+-   따라서 구현해야할 함수를 2가지로 보고 follower 데이터만을 출력하는 함수와 팔로워의 이름을 출력하는 함수를 생성한다.
+-   두 가지 함수를 구현했다면 합성을 통해 보다 표현력이 높은 코드를 작성할 수 있다.
+-   다만 여기서 타입(morphism)이 다른 함수를 합성하기 위해서 함수의 변형이 필요한데 이를 functor를 통해 해결할 수 있다.
+
 <div className="blog-post">
 
     ```ts
-    import { Option } from 'fp-ts/Option'
+    import { flow } from 'fp-ts/function'
 
-    const head = <A>(as: ReadonlyArray<A>): Option<A> =>
-        as.length === 0 ? none : Some(as[0])
+    interface User {
+        readonly id: number
+        readonly name: string
+        readonly followers: ReadonlyArray<User>
+    }
+    /** map :: (g: (b: T) -> U) -> (fb: F<T>) -> F<U> */
+    const map = <B, C>(g: (b: B) => C) => (fb: ReadonlyArray<B>): ReadonlyArray<C> => fb.map(g)
+
+    /** g :: (a: T) -> F<T> */
+    const get_followers = (user: User): ReadonlyArray<User> => user.followers
+    /** f :: (a: T) -> String */
+    const get_name = (user: User): string => user.name
+    /** T -> F<String> */
+    const get_followers_name = flow(get_followers, map(get_name))
+
+    const user: User = {
+        id: 1,
+        name: 'Ruth R. Gonzalez',
+        followers: [
+            { id: 2, name: 'Terry R. Emerson', followers: [] },
+            { id: 3, name: 'Marsha J. Joslyn', followers: [] }
+        ]
+    }
+
+    console.log(get_followers_name(user))  // [ 'Terry R. Emerson', 'Marsha J. Joslyn' ]
     ```
+
+    <br />
+
+    # Functors and Functional error handling
+
+    <div className="blog-post">
+        ```ts
+        declare const do_something_with_index: (index: number) => string
+
+        /** before applying the functor */
+        const program = (ns: ReadonlyArray<number>): string => {
+            const i = ns.findIndex((n) => n > 0)
+            if (i !== -1) return do_something_with_index(i)
+            throw new Error('cannt find a positive number')
+        }
+
+        /** after applying the functor */
+        const program = (ns: ReadonlyArray<number>): Option<string> =>
+            pipe(
+                ns,
+                findIndex((n) => n > 0),
+                map(do_something_with_index)
+            )
+        ```
+    </div>
 
 </div>
 

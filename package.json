@@ -15,6 +15,7 @@
         "@mdx-js/loader": "^2.1.3",
         "@mdx-js/react": "^1.6.22",
         "@next/mdx": "^10.1.3",
+        "axios": "^0.27.2",
         "gray-matter": "^4.0.2",
         "next": "12.2.5",
         "next-mdx-remote": "^4.1.0",
@@ -24,6 +25,7 @@
         "react-syntax-highlighter": "^15.4.3",
         "reading-time": "^1.3.0",
         "remark-frontmatter": "^3.0.0",
+        "swr": "^1.3.0",
         "tinytime": "^0.2.6"
     },
     "volta": {
