@@ -16,7 +16,7 @@ function About() {
                         <p
                             style={{
                                 color: "white",
-                                fontFamily: "Anonymous Pro",
+                                fontFamily: "DM Mono",
                             }}
                         >
                             I'm Henry.
@@ -27,7 +27,9 @@ function About() {
 
                         <br />
 
-                        <span style={{ color: "#6a9955" }}>
+                        <span
+                            style={{ color: "#6a9955", fontFamily: "DM Mono" }}
+                        >
                             /*
                             <br /> *
                             <br /> 😎 I can do these things ...
@@ -168,14 +170,18 @@ function Tag() {
         <span
             style={{
                 color: "#7BBED2",
-                fontFamily: "Anonymous Pro",
+                // fontFamily: "Anonymous Pro",
+                fontFamily: "PT Mono",
+                // fontFamily: "DM Mono",
             }}
         >
             ~/henry's/log
             <span
                 style={{
                     color: "#6EF17D",
-                    fontFamily: "Anonymous Pro",
+                    // fontFamily: "Anonymous Pro",
+                    fontFamily: "PT Mono",
+                    // fontFamily: "DM Mono",
                 }}
             >
                 {" "}
@@ -190,7 +196,9 @@ function Cmd({ children }) {
         <span
             style={{
                 color: "white",
-                fontFamily: "Anonymous Pro",
+                // fontFamily: "Anonymous Pro",
+                fontFamily: "PT Mono",
+                // fontFamily: "DM Mono",
             }}
         >
             {children}
@@ -206,7 +214,9 @@ function Prod({ children, link }) {
             style={{
                 fontSize: "13.5px",
                 color: "#F5CF80",
-                fontFamily: "Anonymous Pro",
+                // fontFamily: "Anonymous Pro",
+                fontFamily: "PT Mono",
+                // fontFamily: "DM Mono",
             }}
         >
             {children}
@@ -219,14 +229,18 @@ function PTag() {
         <span
             style={{
                 color: "#7BBED2",
-                fontFamily: "Anonymous Pro",
+                // fontFamily: "Anonymous Pro",
+                fontFamily: "PT Mono",
+                // fontFamily: "DM Mono",
             }}
         >
             ~/henry's/log/projects
             <span
                 style={{
                     color: "#6EF17D",
-                    fontFamily: "Anonymous Pro",
+                    // fontFamily: "Anonymous Pro",
+                    fontFamily: "PT Mono",
+                    // fontFamily: "DM Mono",
                 }}
             >
                 {" "}
