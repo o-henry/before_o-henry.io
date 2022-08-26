@@ -1,0 +1,49 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "Functional Programming",
+    description: "함수형 프로그래밍",
+    date: "2022-07-25T13:59:00.0Z",
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ marginTop: "4rem", fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px'}}>
+
+<br />
+
+# Functional Programming
+
+함수는 어디에서나 실행가능 하다. 각 언어마다 특성이 존재하나 함수형 프로그래밍을 지원하는 언어는 higher-order function · closure · currying 등의 기능을 포함하고 있다.
+함수형 프로그래밍 자체가 리스트(LISP) 같은 데이터를 조작하는 방법에서 왔다고 하니 여러 자료형을 다루는 법을 아는것도 필요하다.
+
+<br />
+
+# Imperative vs Declarative
+
+개발자는 코드를 작성하는 시간보다 읽는 시간이 더 길다고 한다. 이를 다시 말하면 코드를 읽는 시간을 줄일 필요가 있다는 것이다. 명령형 코드는 분기처리 · 상태 · nullable 등으로 인해 가독성을 해치게 되고 읽기에 많은 시간을 소비하게 된다.
+이에 반해 선언형 프로그래밍은 내부적으로 코드 구현을 숨기고 연산 · 작업을 표현한다. 이를 내부 메커니즘의 추상화라고 한다. 이러한 추상화를 이루기 위해서는 따라야 할 몇가지 규칙이 존재한다.
+
+> _너무 많은 추상화는 오히려 코드 이해를 해친다._
+
+# Pure
+
+먼저 사용하는 코드가 신뢰성이 높아야 한다. 비즈니스는 항상 변화하고 개발자는 이러한 변화에 대응해야 한다. 수천 · 수만줄의 코드에서 요구사항에 따라서 기능을 변경했을 때 문제가 발생하지 않을거라는 건 말도 안되는 믿음이다.
+이를 예방하기 위해 TDD 등의 테스트를 도입함으로써 어느정도 예방을 하긴하지만 근본적으로 가장 좋은 대응은 코드(함수)를 예측 · 커버 가능한 범위에서 사용하는 것이다.
+
+<br />
+
+그리고 여기서 순수함수가 나온다.
+순수함수는 같은 Input에 항상 같은 Output을 반환한다. 순수함수를 방해하는 외부요소를 사이드 이펙트라고 한다.
+
+> _웹은 다양한 라이브러리와 API를 통해 작동하므로 사이드 이펙트가 발생할 수 밖에 없는 구조다. 따라서 Haskeller 처럼 완벽한 순수함수를 추구 하기보다 순수 · 사이드 이펙트를 일으키는 함수를 구분 및 관리를 목표로 한다._
+
+<br />
+
+# Composition
+
+<br />
+<br />
+<br />
+
+</div>
