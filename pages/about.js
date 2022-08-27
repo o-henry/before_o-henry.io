@@ -42,6 +42,7 @@ function About() {
                             <br /> 🚀 CSS
                             <br /> *
                             <br /> 😅 A little bit of ...
+                            <br /> 🚀 Python
                             <br /> 🚀 Java · Spring Boot
                             <br /> 🚀 Kotlin
                             <br /> */

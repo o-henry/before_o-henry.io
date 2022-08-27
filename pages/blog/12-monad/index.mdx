@@ -14,7 +14,11 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <br />
 
-# Monad <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+# Monad Definition <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+1. 펑터 인스턴스를 허용하는 타입 생성자 M
+2. `of: <A>(a: <A>) => M<A>` 의 시그니쳐가 있는 함수
+3. `chain: <A, B>(f: (a: A) => M<B>) => (ma: M<A>) => M<B>` 의 시그니쳐가 있는 함수
 
 <br />
 <br />
