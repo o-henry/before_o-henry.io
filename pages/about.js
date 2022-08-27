@@ -24,32 +24,21 @@ function About() {
                             These days, I am interested in functional
                             programming and backend service.
                         </span>
-
                         <br />
                         <br />
                         <br />
+                        <Tag />
                         <br />
-
-                        <span
-                            style={{ color: "#6a9955", fontFamily: "DM Mono" }}
-                        >
-                            /*
-                            <br /> 😎 I can do these things ...
-                            <br /> 🚀 Typescript
-                            <br /> 🚀 Node.js
-                            <br /> 🚀 SQL
-                            <br /> 🚀 React
-                            <br /> 🚀 CSS
-                            <br /> *
-                            <br /> 😅 A little bit of ...
-                            <br /> 🚀 Python
-                            <br /> 🚀 Java · Spring Boot
-                            <br /> 🚀 Kotlin
-                            <br /> */
-                        </span>
-
+                        <Cmd>&gt; I can do these things ... </Cmd>
+                        <br />
+                        <span>Typescript · Node.js · SQL · React · CSS</span>
                         <br />
                         <br />
+                        <Tag />
+                        <br />
+                        <Cmd>&gt; A little bit of ... </Cmd>
+                        <br />
+                        <span>Python · Java · Spring Boot · Kotlin</span>
                         <br />
                         <br />
                         <Tag />
@@ -78,7 +67,6 @@ function About() {
                         <Prod link="https://youtu.be/tvFPEwrtKao">
                             Auction (React·TS·NestJS·TypeORM·Emotion)
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -88,7 +76,6 @@ function About() {
                         <Prod link="https://youtu.be/L5u7KgX1P4o">
                             Ohouse (React·TS·Sass){" "}
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -98,7 +85,6 @@ function About() {
                         <Prod link="https://play.google.com/store/apps/details?id=com.hunger.ohenry">
                             Hunger (TS·TypeORM·Express·RN)
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -108,7 +94,6 @@ function About() {
                         <Prod link="https://youtu.be/vV-hFzdlYyU">
                             Devsisters (TS·Sass·GraphQL·React){" "}
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -118,7 +103,6 @@ function About() {
                         <Prod link="https://youtu.be/LkqD32oWN20">
                             Place (Express·EXPO·MongoDB·React·Puppeteer)
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -128,7 +112,6 @@ function About() {
                         <Prod link="https://youtu.be/nv3lNBxKLmY">
                             Blinker (React·AWS·Html·Css)
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -138,7 +121,6 @@ function About() {
                         <Prod link="https://www.npmjs.com/package/visual-box">
                             Box (TS·React){" "}
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
@@ -148,7 +130,6 @@ function About() {
                         <Prod link="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka">
                             Block (JS)
                         </Prod>
-
                         <br />
                         <br />
                         <PTag />
