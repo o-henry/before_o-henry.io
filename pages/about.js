@@ -4,7 +4,10 @@ function About() {
     return (
         <div style={{ margin: "4rem 4rem 0 4rem" }}>
             <div className="blog-post">
-                <pre className="language-typescript">
+                <pre
+                    className="language-typescript"
+                    style={{ backgroundColor: "#282c35" }}
+                >
                     <code className="language-typescript">
                         <h1
                             style={{
