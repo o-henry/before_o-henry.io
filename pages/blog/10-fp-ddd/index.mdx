@@ -14,19 +14,34 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     FP with DDD <sup><a href="#fn1" id="fnref1"> ¹ </a></sup> 타입과 함수를 통해서 도메인 모델을 구현하는 방법을 배운다.
 
 
-    > 소프트웨어 개발을 입력(요구 사항) 과 출력(최종 결과)이 있는 파이프라인 이라 생각하자.
+    > 소프트웨어 개발을 입력(모듈 · 컴포넌트 · 요구 사항) 과 출력(프로그램 · 최종 결과)이 있는 파이프라인 이라 생각하자.
+
+
+    # Understanding the Domain
+    최종 목표는 거대한 도메인을 독립적으로 구현하고 진화할 수 있는 작은 컴포넌트로 분해하는 것이다.
+
+    <br/>
 
     # Focus on business event
-    데이터 구조보다 **비즈니스 이벤트**에 집중해야 한다. 비즈니스는 단순한 데이터가 아니다. 어떻게든 변화 한다.
+    기업은 데이터를 가지고 있을 뿐만 아니라 데이터를 어떻게든 변화시킨다.
+    즉 일반적인 비즈니스 프로세스를 일련의 데이터 또는 문서 변환이라고 생각할 수 있다. 비즈니스의 가치는 이러한 변환 과정에서 창출되므로 이러한 변환이 어떻게 작동하고 서로 어떻게 관련되는지 이해하는 것이 매우 중요하다.
+    <hr />
+    그리고 이러한 구조를 파악하는데에 데이터 구조보다 <span className="high-light">도메인 이벤트</span>에 집중해야 한다.
     도메인 이벤트는 모델링 하려는 거의 모든 비즈니스 프로세스의 시작점이다. 이벤트를 도출하기 위해 이벤트 스토밍을 사용한다.
 
     <br />
+
+    # Event Storming
+    DDD 접근 방식에서 도메인 이벤트를 발견하는 가장 적합한 방법은 이벤트 스토밍을 활용하는 것이다.
+    <br />
+
+
 
     # Documenting Commands
     이벤트 스토밍을 통해 이벤트를 식별했다면 해당 이벤트를 촉발시키는 요청인 커맨드에 대해서 알아야 한다.
 
     <div className="think" style={{fontFamily: "Poppins"}}>
-        커맨드(Input · Event triggers) → 도메인 이벤트(output · events can trigger further commands)
+        커맨드와 도메인 이벤트는 서로 인풋이 될 수도 아웃풋이 될 수 도 있다. 커맨드에 의해서 이벤트가 트리거될 수 도 있고 이벤트에 의해서 커맨드가 트리거 될 수 도 있다.
     </div>
 
 
@@ -42,7 +57,18 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
     <br />
 
-    # Documenting the Domain
+    {/* # Documenting the Domain
+
+    # Representing Complexity in Our Domain Model */}
+
+    # A Functional Architecture
+    좋은 아키텍처의 목표중 하나는 컨테이너 · 컴포넌트 · 모듈 사이의 다양한 경계를 정의하여 변화(새로운 요구사항)에 유연하고 비용을 최소화 하는 것이다.
+    먼저 모놀리스 하게 시스템을 구축하고 이후에 필요시에 리팩토링하는 것이 좋다.
+
+    <br />
+    # Communicating Between Bounded Contexts
+    바운디드 컨텍스트 간에 커뮤니케이션은 이벤트를 통해 이뤄진다. 이벤트는 큐(Kafka · RabbitMQ)를 통해 전송할 수 있는데 모놀리식 함수형 프로그래밍 에서는 함수 호출을 통해서 업스트림 컴포넌트에서 다운스트림 컴포넌트로 이벤트를 전송할 수 있다.
+
 
     <br />
 

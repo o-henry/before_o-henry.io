@@ -616,3 +616,10 @@ pre {
         transform: rotate(0deg);
     }
 }
+
+.high-light {
+    background-color: #fcd19c;
+    color: black;
+    border-radius: 2px;
+    padding: 0 0.2rem 0 0.25rem;
+}
