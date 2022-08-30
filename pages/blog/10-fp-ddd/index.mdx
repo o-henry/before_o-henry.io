@@ -18,8 +18,12 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 
     # Understanding the Domain
-    최종 목표는 거대한 도메인을 독립적으로 구현하고 진화할 수 있는 작은 컴포넌트로 분해하는 것이다.
+    도메인 전문가와 대화를 통해 도메인에 대한 설명을 접하게 된다. 이러한 논의를 통해 비즈니스를 이해하고 유비쿼터스 언어를 구축한다.
+    * 거대한 도메인을 독립적으로 구현하고 진화할 수 있는 작은 컴포넌트로 분해해야 한다.
+    * 도메인과 일치하는 코드구현을 목표로 하고 텍스트처럼 읽히고 개발자가 아닌 사람들이 이해할 수 있는 코드를 만들 수 있도록 해야한다.
+    * 도메인 이외의 용어를 도입하는 것을 지양해야 한다.
 
+    <br/>
     <br/>
 
     # Focus on business event
@@ -30,9 +34,11 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     도메인 이벤트는 모델링 하려는 거의 모든 비즈니스 프로세스의 시작점이다. 이벤트를 도출하기 위해 이벤트 스토밍을 사용한다.
 
     <br />
+    <br />
 
     # Event Storming
     DDD 접근 방식에서 도메인 이벤트를 발견하는 가장 적합한 방법은 이벤트 스토밍을 활용하는 것이다.
+    <br />
     <br />
 
 
@@ -44,17 +50,21 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
         커맨드와 도메인 이벤트는 서로 인풋이 될 수도 아웃풋이 될 수 도 있다. 커맨드에 의해서 이벤트가 트리거될 수 도 있고 이벤트에 의해서 커맨드가 트리거 될 수 도 있다.
     </div>
 
+    <br />
+    <br />
 
     # Partitioning the Domain to Subdomains
     기업이 이미 서비스별 부서를 갖고 있는 것처럼 도메인을 분리할 수 있다.
     > 도메인이라는 용어를 일관된 지식의 영역으로 정의하자.
 
     <br />
+    <br />
 
     # Thinking About Inputs and Outputs
     위에서 구현한 도메인 에서 인풋과 아웃풋을 보다 확실히 구분하기 위해 "이 프로세스를 시작하기 위해서 어떠한 정보가 필요한가" 라는 질문을 던질 수 있다.
-    워크플로우의 아웃풋은 항상 워크플로우가 생성하는 이벤트, 즉 다른 바운디드 컨텍스트에서 액션을 트리거하는 이벤트여야 한다.
+    워크플로우(시나리오)의 아웃풋은 항상 워크플로우가 생성하는 이벤트, 즉 다른 바운디드 컨텍스트에서 액션을 트리거하는 이벤트여야 한다.
 
+    <br />
     <br />
 
     {/* # Documenting the Domain
@@ -66,11 +76,75 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     먼저 모놀리스 하게 시스템을 구축하고 이후에 필요시에 리팩토링하는 것이 좋다.
 
     <br />
+    <br />
+
     # Communicating Between Bounded Contexts
     바운디드 컨텍스트 간에 커뮤니케이션은 이벤트를 통해 이뤄진다. 이벤트는 큐(Kafka · RabbitMQ)를 통해 전송할 수 있는데 모놀리식 함수형 프로그래밍 에서는 함수 호출을 통해서 업스트림 컴포넌트에서 다운스트림 컴포넌트로 이벤트를 전송할 수 있다.
 
 
     <br />
+    <br />
+
+    # Types are not classes
+    A type is a just a name for a set of things. 도메인 모델을 타입을 통해서 표현할 수 있다.
+
+    <div className="blog-post">
+    ```ts
+    1 data order_id
+    2 // opaque -- don't care about representation
+    3 data product_id
+    4 // opaque -- don't care about representation
+    5 data order_quantity is int
+    6 // constrained to be between 1 and 100
+    7 data phone_number is string
+    8 // Must not be null or empty. Must only contain digits
+    9 data order_line is order_id AND product_id AND order_quantity
+    ```
+    </div>
+
+    도메인 개념을 사용한 표현을 타입을 통해 정의할 수 있다. 이는 일반 DDD에서 value-object를 표한하는 것과 유사하다.
+
+    <br />
+    <br />
+
+
+    # Fighting the impulse to do class-drvien design
+    DDD의 핵심 원칙 중 하나는 persistence ignorance다. 데이터베이스의 데이터 표현에 대해 걱정하지 않고 도메인을 정확하게 모델링하는 데 집중해야 하기 때문에 중요한 원칙이다.
+    실제로 객체지향 역시 데이터베이스 모델에 치우치지 않는다. 의존성 주입 같은 기술은 데이터베이스 구현을 비즈니스 로직과 분리하도록 지원한다.
+    그러나 도메인이 아닌 객체와 클래스의 관점에서 생각한다면 디자인에 편향을 도입하는 것에 조심해야 한다.
+    <hr/>
+    예를들어 도메인 전문가가 다양한 종류의 연락 메서드를 설명할때 아래처럼 클래스 계층을 구현하고 싶어질 수 있다.
+
+    <div className="blog-post">
+    ```ts
+    1 // represents all kinds of contact methods
+    2 class ContactMethodBase ...
+    3
+    4 // represents email contact method
+    5 class EmailAddressContactMethod extends ContactMethodBase ...
+    6
+    7 // represents phone contact method
+    8 class PhoneNumberContactMethod extends ContactMethodBase ...
+    ```
+
+    * 클래스가 실제세계에 존재하지 않는 인공적인 클래스를 도입한다.
+    * 특정 클래스에 종속되어 있는 메서드는 재사용을 어렵게 한다.
+
+    <div className="think">
+        개인적으로 상속의 사용을 최대한 자제하는 상황에서 다른 예제를 사용하는게 맞지 않았을까
+    </div>
+
+
+    <br />
+
+    # States and lifecycles
+    대부분의 비즈니스 엔티티는 라이프사이클을 갖고 있다. 상태 및 라이프사이클 측면에서 생각해야한다.
+
+    * 인보이스는 미지급 상태로 시작하여 지급 상태로 전환된다.
+    * 구매자는 게스트로 시작한 다음 등록된 회원으로 전환된다.
+
+</div>
+<br />
 
     <hr style={{ border:".1px solid whiteSmoke" }} />
 
