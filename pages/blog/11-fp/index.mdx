@@ -154,8 +154,13 @@ THUNK
     ```
 
     <br />
+    <br />
 
     # Functors and Functional error handling
+
+    <div className="think">
+        함수형 프로그래밍은 에러를 발생시키보다는 값을 반환한다. 이 경우에 어떤 장점이 존재하는가?
+    </div>
 
     <div className="blog-post">
         ```ts
@@ -177,6 +182,28 @@ THUNK
             )
         ```
     </div>
+
+<br />
+<br />
+
+# Monad
+
+모나드는 함수형 프로그래밍에서 가장 중요한 추상화중 하나다. 모나드는 컨테이너 안으로 값을 리프팅하고 어떤 규칙을 정해 통제한다는 생각으로 자료형을 생성하는 것이다.
+
+<div className="blog-post">
+```ts
+1 f: (a: A) => F<B>
+2 g: (b: B) => F<C>
+```
+</div>
+
+<br />
+
+# Monad Definition <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+1. 펑터 인스턴스를 허용하는 타입 생성자 M
+2. `of: <A>(a: <A>) => M<A>` 의 시그니쳐가 있는 함수
+3. `chain: <A, B>(f: (a: A) => M<B>) => (ma: M<A>) => M<B>` 의 시그니쳐가 있는 함수
 
 </div>
 
