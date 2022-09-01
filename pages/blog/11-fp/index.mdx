@@ -46,13 +46,38 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 # Functors <sup><a href="#fn2" id="fnref2"> ² </a></sup>
 
-순수함수는 가변성을 금지하고 참조투명성을 위반하지 않아야 하며 이를 위반하는 요소는 사이드이펙트로 간주한다.
-하지만 이러한 사이드이펙트를 완전히 배제해서는 프로그램을 개발할 수 없다. 따라서 효과적으로 이펙트를 관리하기 위해 몇가지 방법을 사용하는데 펑터도 그중 하나다.
+순수함수는 가변성을 금지하고 참조투명성을 위반하지 않아야 하며 이를 위반하는 요소는 사이드 이펙트로 간주한다.
+하지만 이러한 사이드 이펙트를 완전히 배제해서는 프로그램을 개발할 수 없다. 따라서 효과적으로 이펙트를 관리하기 위해 몇가지 방법을 사용하는데 펑터도 그중 하나다.
 
-> functor는 일종의 container 다. n -ary 타입 생성자로 모든 `X` 타입을 `F<X>`로 매핑한다.
-> `map: <A, B>(f: (a: A) => B) => ((fa: F<A>) => F<B>)`
+<div className="custom-blockquote">
+    Why is finding solutions to this problem so important? Because, if it is
+    true that categories can be used to model programming languages, morphisms
+    (functions in the TS category) can be used to model programs. Thus, solving
+    this abstract problem means finding a concrete way of composing programs in
+    a generic way. And that is really interesting for us developers, isn't it?
+</div>
 
-여기서 해결하고 싶은 문제는 순수함수와 이펙트를 갖는 함수의 합성을 하는 것이다.
+<div className="blog-post">
+```ts
+/** 
+ * 펑터는 일종의 컨테이너 다.
+ * n -ary 타입 생성자로 모든 `X` 타입을 `F<X>`로 매핑한다. 
+ **/
+map: <A, B>(f: (a: A) => B) => ((fa: F<A>) => F<B>)
+```
+</div>
+
+<br />
+
+## Functions as programs
+
+함수로 프로그램을 모델링하려고 하면 바로 문제에 직면하게 된다.
+
+<div className="custom-blockquote">
+    사이드 이펙트를 발생시키는 순수함수를 어떻게 구현 가능한 것인가? <hr />
+    정답은 바로 사이드 이펙트를 의미하는 타입인 effects를 생성하여 이를 통해 사이드
+    이펙트를 모델링하는 것이다.
+</div>
 
 <br />
 

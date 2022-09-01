@@ -624,3 +624,14 @@ pre {
     padding: 0.3rem 0.2rem 0.3rem 0.3rem;
     margin: 0 0.4rem 0 0.2rem;
 }
+
+.custom-blockquote {
+    font-family: Poppins, "SeoulNamsanL";
+    border-radius: 4px;
+    line-height: 1.9rem;
+    max-width: 100%;
+    font-size: 0.965rem;
+    font-weight: 100;
+    position: relative;
+    padding: 2rem 1rem;
+}
