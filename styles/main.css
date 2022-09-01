@@ -596,7 +596,7 @@ pre {
 }
 
 .shake-it:hover {
-    animation: tilt-shaking 1s infinite;
+    animation: tilt-shaking 2s infinite;
 }
 
 @keyframes tilt-shaking {
