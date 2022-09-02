@@ -129,8 +129,12 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     <br />
 
     # Transferring Data Between Bounded Contexts
-    일반적으로 컨텍스트 간에 소통을 위해 사용되는 이벤트는
+    일반적으로 컨텍스트 간에 소통을 위해 사용되는 이벤트는 단순 신호가 아닌 다운스트림 컴포넌트에서 이벤트 처리를 위해 필요한 모든 데이터를 포함한다.
+    이벤트는 바운디드 컨텍스트에서 도메인 객체(타입)로 표현되고 이는 DTO로 변환되어 다른포맷으로 직렬화 된다.
 
+
+    <br />
+    <br />
 
     # Types are not classes
     A type is a just a name for a set of things. 도메인 모델을 타입을 통해서 표현할 수 있다.
