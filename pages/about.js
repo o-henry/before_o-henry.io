@@ -25,7 +25,7 @@ function About() {
                             I'm Henry.
                             <br />
                             These days, I am interested in functional
-                            programming and backend service.
+                            programming.
                         </span>
                         <br />
                         <br />
