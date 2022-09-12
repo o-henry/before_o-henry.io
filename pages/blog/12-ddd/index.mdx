@@ -1,0 +1,94 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "Domain Driven Design",
+    description: "도메인 주도 개발",
+    date: "2022-09-10T20:56:00.0Z",
+    readTime: 30,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ marginTop: "4rem", fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px' }}>
+
+# What is DDD <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+비즈니스 아이디어를 작동하는 소프트웨어로 변환하기 전에 당면한 문제에 대한 철저한 이해가 필요하다. 코드로 문제에 대한 해결책을 표현하기 전에 문제가 무엇을 수반하는지 · 왜 문제가 해결되어야 하는지 · 마지막으로 어떻게 해결할 수 있는지 이해해야 한다.
+
+<br />
+
+-   Understand the problem
+-   Break down the problem into more manageable parts
+
+<br />
+<br />
+
+# What is a domain
+
+비즈니스 맥락에서 도메인은 주요 활동, 즉 고객에게 제공하는 서비스를 포괄하며 이를 문제 도메인이라고 한다. 테슬라는 전기차 분야에서 · 넷플릭스는 OTT서비스를 · 스타벅스는 커피를 제공한다.
+문제 도메인은 여러개일 수 도 있다. 비즈니스 영역은 거의 항상 상당히 복잡하고 추상적인 개념을 포함한다. 이러한 복잡성을 대처하기 위해서 서브도메인이라고 부르는 더 관리하기 쉬운 부분으로 도메인을 분해해야 한다.
+
+<br />
+<br />
+
+# What is a subdomain
+
+온라인 소매점의 도메인을 예로 들어보면 제품 · 재고 · 보상 · 쇼핑카트 · 주문관리 · 결제 및 배송 과 같은 하위 도메인으로 나눌 수 있다.
+그리고 이러한 하위도메인 또한 추가 분해할 수 있다. 제품 하위 도메인의 경우 카탈로그 · 검색 · 추천 · 리뷰 등의 추가 하위 도메인으로 분해가능하다.
+결국 분해의 정도는 관리 가능한 복잡성 수준에 도달할 때까지 가능하다는 말이기도 하다.
+
+<br />
+<br />
+
+# Problem domain
+
+문제 도메인은 솔루션의 세부사항을 의식적으로 피하면서 문제를 간단히 정의하는 정보를 캡처하는 데 사용된다.
+왜 우리가 문제를 해결하려고 하는지, 무엇을 달성하려고 하는지, 어떻게 해결해야 하는지 등 세부 내용이 담겨 있다.
+문제에 대한 소프트웨어 솔루션을 제공하는 엔지니어의 관점이 아니라 고객 · 이해관계자의 관점에서 그 이유, 목적 및 방법을 파악하는 것이 중요하다.
+
+<br />
+<br />
+
+# Solution domain
+
+요구 사항을 작동하는 소프트웨어로 변환하는 프로세스(설계 · 개발 · 테스트 및 배포 포함)를 표현하는 도메인이다.
+
+<br />
+<br />
+
+# Clean Architecture
+
+![clean](/clean.png)
+
+<br />
+<br />
+
+# Hexagonal Architecture
+
+![hexa](/hexa.png)
+
+<br />
+<br />
+
+# Flow
+
+![state](/state.png)
+
+    {" "}
+    <br />
+
+    {" "}
+    <hr style={{ border: ".1px solid whiteSmoke" }} />
+
+    {" "}
+    <div style={{ height: "15px" }}></div>
+
+    {" "}
+    <ol>
+        <li id="fn1" style={{ fontFamily: "Poppins", fontSize: "8px" }}>
+            Learning Domain-Driven Design
+            <a href="#fnref1"></a>
+        </li>
+    </ol>
+
+</div>
