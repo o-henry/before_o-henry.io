@@ -24,8 +24,7 @@ function About() {
                         >
                             I'm Henry.
                             <br />
-                            These days, I am interested in functional
-                            programming.
+                            These days, I am interested in fp and oop.
                         </span>
                         <br />
                         <br />

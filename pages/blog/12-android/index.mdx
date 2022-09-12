@@ -1,8 +1,8 @@
 import Post from "../../../components/post";
 
 export const meta = {
-    title: "Android",
-    description: "안드로이드 모바일 프로그래밍",
+    title: "Decoupling",
+    description: "Architecture and OOP",
     date: "2022-09-02T23:29:00.0Z",
     readTime: 30,
 };
@@ -11,44 +11,34 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <div style={{ marginTop: "4rem", fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px' }}>
 
-# How does a mobile OS work?
+# Separating core from Infrastructure
 
-OS는 모바일 장치의 하드웨어와 앱 사이에서 발생하는 통신을 조정하도록 설계되었다. 모바일 OS의 주요 기능은 디바이스에서 애플리케이션이 실행되도록 하는 것이며 또한
-응용프로그램이 프로세서 · 메모리 · WI-FI · 블루투스 등과 같은 장치 리소스에 액세스 할 수 있는 채널을 제공한다.
+애플리케이션의 핵심 코드 와 인프라 코드를 명확하게 구분하는 것이 목표다. 핵심 코드는 특별한 설정이나 사용 가능한 외부 시스템 없이 모든 컨텍스트에서 실행할 수 있는 코드다.
+인프라 코드는 이와 반대다.
 
 <br />
-<br />
 
-# Anatomy of an Android App
+-   No dependencies on external systems
 
-안드로이드 앱은 4개의 주요 컴포넌트로 구성되어 있다.
+    핵심 코드는 외부 시스템에 직접적으로 의존하지 않으며 특정 유형의 외부 시스템과 상호작용하기 위해 작성된 코드에도 의존하지도 않는다.
+    외부시스템에는 데이터베이스 · 파일시스템 · 외부 웹서비스 등 이 있다.
 
 <hr />
 
-<div style={{ fontFamily: "Poppins" }}>
-    _Activities_ <br />
-    유저의 단일 화면을 나타내는 사용자의 엔트리 포인트로 간주되는 클래스다. <br />
-    With the help of activity, you can place all your user interface or UI
-    components or widgets on a single screen
-    <br />
-    _Services_ <br />
-    서비스 컴포넌트는 백그라운드에서 실행되며 데이터 소스 및 액티비티를 최신 변경사항으로
-    지속적으로 업데이트 하는 것이다. 또한 사용자가 응용 프로그램에서 활성화되지 않은
-    경우에도 태스크를 수행한다.
-    <br />
-    _Broadcast Receivers_ <br />
-    Response to message real-time의 역할을 수행한다. 예를 들면 음악을 듣다가
-    배터리 부족 알림 메시지를 받은 경험이 있을 것이다. 이러한 역할을 담당하는
-    컴포넌트다.
-    <br />
-    _Content Providers_ <br />
-    Content providers is the last major component and is responsible for sharing
-    data between one or more applications.
+-   Abstraction
 
-    <br />
-    위 구성요소들은 AndroidMenifest.xml 파일에 정의할 수 있다.
+    외부 시스템에 대한 종속성을 제거하기 위해 추상화(인터페이스 등)를 통해 직접 연결을 끊는다.
 
-</div>
+<hr />
+
+-   No special context needed
+
+    특정 문맥에서만 사용할 수 있는 것이 아닌 어느 곳에서나 사용할 수 있다.
+
+<br />
+<br />
+
+<hr />
 
 <br />
 <br />
@@ -59,7 +49,7 @@ OS는 모바일 장치의 하드웨어와 앱 사이에서 발생하는 통신�
 
     <ol>
         <li id="fn1" style={{ fontFamily: "Poppins", fontSize: "8px"}} >
-               coursera · Meta android programming
+               Advanced Web Application Architecture
         </li>
     </ol>
 
