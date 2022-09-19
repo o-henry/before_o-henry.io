@@ -1,0 +1,62 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "Object-Oriented Programming",
+    description: "객체지향",
+    date: "2022-09-14T23:59:00.0Z",
+    readTime: 30,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div style={{ marginTop: "4rem", fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic", fontSize: '11pt', lineHeight: '22pt', letterSpacing: '.8px' }}>
+
+# Object-Oriented Design <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+객체는 attributes · behaviors 두가지 컴포넌트로 정의된다. OOD 에서 속성과 동작은 단일 객체에 포함되며 절차적 · 구조적 디자인에서는 속성과 동작이 일반적으로 분리되어 있다.
+
+<br />
+<br />
+
+# Encapsulation
+
+객체에서는 속성(데이터)과 메서드(동작) 에 대한 접근을 제어할 수 있다. 동일한 엔티티에 속성과 메서드를 결합함으로써 데이터의 접근을 제어하는 것을 캡슐화 라고 한다.
+특정 객체의 메서드를 사용할때 내부 구현을 알지 못해도 사용할 수 있다.
+
+캡슐화를 통해 데이터를 숨겼다면 다른 객체가 데이터를 사용하는 방법을 알려줄 필요가 있다.
+
+사용자가 세부구현에는 알지 못하고 **인터페이스(시그니처·API)** 를 사용하는 방법은 접근제어자 와 캡슐화를 통해 구현할 수 있다.
+
+<br />
+<br />
+
+# Architecture
+
+기존 MVC 모델의 문제를 타파하기 위해 DDD를 도입하고 이에따라 Onion Architecture나 Clean Architecture를 구현한다.
+
+<div className="think">
+    DDD를 학습한 후 논리를 코드로 구현 가능하냐가 중요하다.
+</div>
+
+<br />
+<br />
+
+<br />
+<br />
+<br />
+
+    {" "}
+    <hr style={{ border: ".1px solid whiteSmoke" }} />
+
+    {" "}
+    <div style={{ height: "15px" }}></div>
+
+    {" "}
+    <ol>
+        <li id="fn1" style={{ fontFamily: "Poppins", fontSize: "8px" }}>
+            The Object-Oriented Thought
+            <a href="#fnref1"></a>
+        </li>
+    </ol>
+
+</div>
