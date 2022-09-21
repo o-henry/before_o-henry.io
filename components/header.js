@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Moon from "../assets/moon.svg";
-import Sun from "../assets/s-sun.svg";
+import Sun from "../assets/h-sun.svg";
 
 export default function Header() {
     const [darkTheme, setDarkTheme] = useState(undefined);

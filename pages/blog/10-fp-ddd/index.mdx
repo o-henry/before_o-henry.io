@@ -114,6 +114,11 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     위 처럼 이벤트 스토밍을 마쳤다면 워크플로우에 대해서도 세분화가 필요하다.
     예를들어 워크플로우에서 전달받은 이벤트(인풋)를 바로 사용하지 않고 이에 대한 검증 로직등을 추가할 수 있기 때문이다. 또 이러한 과정 중에 인풋과 아웃풋을 분할할 수 있다.
 
+    <div className="think" style={{ fontFamily: "Poppins"}}>
+        FP Looks like a Pipe-and-Filter Architecture
+    </div>
+
+
     <br />
     <br />
 
@@ -203,9 +208,12 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
     <br />
     <br />
 
-    # Modules
-    OOP에서 객체 생성에 private 등의 키워드를 사용해서 외부에서 접근이 불가능하도록 제약을 추가할 수 있다. 그럼 FP에서는 이를 어떻게 구현할 수 있을까? <br/>
-    이에 대한 답으로 모듈을 활용할 수 있다.
+    # Configuration
+    DDD와 FP를 활용한 코드에서의 구성에 대한 고민이 필요하다. 기존 DDD에서 도메인을 표현하는 <span style={{fontFamily: "Poppins"}}>entity · value-object · aggregate · hexagonal architecture ( port and adapter ) · DIP </span> 등등 수많은
+    패턴과 구성 · 표현 방법 등을 FP에 알맞게 적용시켜야 한다. ( 필요 없는 기능은 제외하는 등 )
+
+    1. 책에서 나온 방식과 비슷한 Pipe-and-Filter Architecture 형식의 코드를 구현할 것인지
+    2. OOP를 적절하게 적용하여 FP스러운 클래스를 생성할 것인지
 
 </div>
 <br />
