@@ -40,7 +40,7 @@ function About() {
                         <br />
                         <Cmd>&gt; A little bit of ... </Cmd>
                         <br />
-                        <span>Python · Java · Spring Boot · Kotlin</span>
+                        <span>Python · Kotlin</span>
                         <br />
                         <br />
                         <Tag />
