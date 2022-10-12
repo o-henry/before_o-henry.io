@@ -1,0 +1,82 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "WEB",
+    description: "WEB APPLICATION",
+    date: "2022-10-12T11:57:00.0Z",
+    readTime: 30,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div
+    style={{
+        marginTop: "4rem",
+        fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic",
+        fontSize: "11pt",
+        lineHeight: "22pt",
+        letterSpacing: ".8px",
+    }}
+>
+
+# Decoupling <sup><a href="#fn1" id="fnref1"> ¹ </a></sup>
+
+웹 개발을 하게되면 자연스럽게 CRUD를 구현하는 MVC 모델을 먼저 접하게 되는데 복잡하지 않은 서비스의 경우 무리없이 잘 동작하지만 코드의 수명이 길어질수록 기술이 변화하게 되고 새로운 기능이 추가하게 되어 유지보수에 많은 어려움을 겪게된다.
+기존 MVC 패턴에서 벗어나 비즈니스 로직과 인프라스트럭처 코드를 분리하는데에 중점을 둔다.
+
+<hr />
+
+머리 속에 떠오르는 기능을 KISS · YAGNI · DRY 원칙을 따라서 우선 구현할 수도 있지만 웹 서비스는 여러 컴포넌트(모듈)의 조합으로 이루어진 만큼 기초 설계를 통해 코드를 구현하게 되면 보다 짜임새있는 코드를 구현할 수 있게 된다.
+
+<div className="custom-blockquote">
+    이 첫번째 단계로 Decoupling from infrastructure를 고민해보자
+</div>
+
+분리를 통한 가장 큰 기술적 이점은 도메인 우선 개발이 가능하다는 점과 효과적인 테스트를 통해 TDD의 이점 또한 가져간다는 것이다.
+
+<br />
+<br />
+
+# API
+
+API 설계의 목표는 비즈니스 요구사항에서 API 설계로 전환하는 방법을 결정하는 것이다.
+
+<br />
+<br />
+
+# ADDR Process <sup><a href="#fn1" id="fnref1"> ² </a></sup>
+
+![addr](/addr.png)
+API를 설계하는 데 있어 Align - Define - Design - Refine 의 단계를 따른다.
+
+<br />
+<br />
+
+# Job Stories
+
+고객과 사용자는 API · 마이크로서비스 · 서버리스 · 프레임워크 등에 관심이 없으며 그들은 단지 문제에 대한 해결책을 원한다. 즉 결과에 대해서만 고려한다.
+잡스토리는 고객의 동기 · 이벤트 및 신제품에 대한 기대치 · 서비스 또는 API 등 모든 제품에 대해 수행해야할 작업을 캡처한다.
+이는 고객이 가지고 있는 문제와 고객이 달성하고자 하는 최종 결과를 식별하는데 도움을 준다.
+
+<hr />
+잡스토리를 통해 구현한 고수준 모델에서 시작해 세분화하는 과정을 거쳐 API를 구축한다.
+
+<br />
+<br />
+
+    <br />
+
+    <hr style={{ border:".1px solid whiteSmoke" }} />
+
+    <div style={{ height: "15px" }}></div>
+
+    <ol>
+        <li id="fn2" style={{ fontFamily: "Poppins", fontSize: "8px"}} >
+          Advanced Web Application Architecture <a href="#fnref2"></a>
+        </li>
+        <li id="fn1" style={{ fontFamily: "Poppins", fontSize: "8px"}} >
+            Principles of Web API Design: Delivering Value with APIs and Microservices<a href="#fnref1"></a>
+        </li>
+    </ol>
+
+</div>
