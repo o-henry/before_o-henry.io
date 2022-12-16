@@ -33,7 +33,10 @@ function About() {
                         <br />
                         <Cmd>&gt; I can do these things ... </Cmd>
                         <br />
-                        <span>Typescript · Node.js · SQL · React · CSS</span>
+                        <span>
+                            Typescript · Java · Spring Boot · Node.js · SQL ·
+                            React · CSS
+                        </span>
                         <br />
                         <br />
                         <Tag />
@@ -50,16 +53,16 @@ function About() {
                         <Prod link="https://github.com/o-henry">
                             https://github.com/o-henry
                         </Prod>
+                        {/* <br />
                         <br />
-                        <br />
-                        <Tag />
-                        <br />
-                        <Cmd>&gt; cd projects && ls</Cmd>
+                        <Tag /> */}
+                        {/* <br /> */}
+                        {/* <Cmd>&gt; cd projects && ls</Cmd>
                         <br />
                         <span>
                             Auction Ohouse Hunger Devsisters Papaya Place
                             Blinker Box Block
-                        </span>
+                        </span> */}
                         <br />
                         <br />
                         <PTag />
@@ -155,6 +158,7 @@ function Tag() {
                 color: "#7BBED2",
                 // fontFamily: "Anonymous Pro",
                 fontFamily: "PT Mono",
+                opacity: ".6",
                 // fontFamily: "DM Mono",
             }}
         >
@@ -181,6 +185,7 @@ function Cmd({ children }) {
                 color: "white",
                 // fontFamily: "Anonymous Pro",
                 fontFamily: "PT Mono",
+                opacity: ".55555",
                 // fontFamily: "DM Mono",
             }}
         >
@@ -216,6 +221,7 @@ function PTag() {
                 color: "#7BBED2",
                 // fontFamily: "Anonymous Pro",
                 fontFamily: "PT Mono",
+                opacity: ".55555",
                 // fontFamily: "DM Mono",
             }}
         >
