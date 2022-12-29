@@ -23,8 +23,6 @@ function About() {
                             }}
                         >
                             I'm Henry.
-                            <br />
-                            These days, I am interested in fp and oop.
                         </span>
                         <br />
                         <br />
@@ -130,7 +128,7 @@ function About() {
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Box/</Cmd>
+                        <Cmd>&gt; open Block/</Cmd>
                         <br />
                         <Prod link="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka">
                             Block (JS)
