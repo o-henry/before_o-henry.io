@@ -31,8 +31,9 @@ function About() {
                         <br />
                         <Cmd>&gt; I can do these things ... </Cmd>
                         <br />
-                        <span>
-                            Typescript · Java · Spring Boot · Node.js · SQL ·
+                        <span fontFamily="Anonymous Pro">
+                            Kotlin · Typescript · Java <br />
+                            Spring Boot · Node.js · SQL <br />
                             React · CSS
                         </span>
                         <br />
@@ -41,7 +42,7 @@ function About() {
                         <br />
                         <Cmd>&gt; A little bit of ... </Cmd>
                         <br />
-                        <span>Python · Kotlin</span>
+                        <span>Python</span>
                         <br />
                         <br />
                         <Tag />
@@ -154,8 +155,8 @@ function Tag() {
         <span
             style={{
                 color: "#7BBED2",
-                // fontFamily: "Anonymous Pro",
-                fontFamily: "PT Mono",
+                fontFamily: "Anonymous Pro",
+                // fontFamily: "PT Mono",
                 opacity: ".6",
                 // fontFamily: "DM Mono",
             }}
@@ -164,8 +165,8 @@ function Tag() {
             <span
                 style={{
                     color: "#6EF17D",
-                    // fontFamily: "Anonymous Pro",
-                    fontFamily: "PT Mono",
+                    fontFamily: "Anonymous Pro",
+                    // fontFamily: "PT Mono",
                     // fontFamily: "DM Mono",
                 }}
             >
@@ -181,8 +182,8 @@ function Cmd({ children }) {
         <span
             style={{
                 color: "white",
-                // fontFamily: "Anonymous Pro",
-                fontFamily: "PT Mono",
+                fontFamily: "Anonymous Pro",
+                // fontFamily: "PT Mono",
                 opacity: ".55555",
                 // fontFamily: "DM Mono",
             }}
@@ -201,8 +202,8 @@ function Prod({ children, link }) {
                 style={{
                     fontSize: "13.5px",
                     color: "#F5CF80",
-                    // fontFamily: "Anonymous Pro",
-                    fontFamily: "PT Mono",
+                    fontFamily: "Anonymous Pro",
+                    // fontFamily: "Dank Mono",
                     // fontFamily: "DM Mono",
                 }}
             >
@@ -217,8 +218,8 @@ function PTag() {
         <span
             style={{
                 color: "#7BBED2",
-                // fontFamily: "Anonymous Pro",
-                fontFamily: "PT Mono",
+                fontFamily: "Anonymous Pro",
+                // fontFamily: "PT Mono",
                 opacity: ".55555",
                 // fontFamily: "DM Mono",
             }}
@@ -227,8 +228,8 @@ function PTag() {
             <span
                 style={{
                     color: "#6EF17D",
-                    // fontFamily: "Anonymous Pro",
-                    fontFamily: "PT Mono",
+                    fontFamily: "Anonymous Pro",
+                    // fontFamily: "PT Mono",
                     // fontFamily: "DM Mono",
                 }}
             >
