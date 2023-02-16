@@ -32,9 +32,9 @@ function About() {
                         <Cmd>&gt; I can do these things ... </Cmd>
                         <br />
                         <span fontFamily="Anonymous Pro">
-                            Kotlin · Typescript · Java <br />
-                            Spring Boot · Node.js · SQL <br />
-                            React · CSS
+                            kotlin · typescript · java <br />
+                            spring boot · node.js · sql <br />
+                            react · css
                         </span>
                         <br />
                         <br />
@@ -42,7 +42,7 @@ function About() {
                         <br />
                         <Cmd>&gt; A little bit of ... </Cmd>
                         <br />
-                        <span>Python</span>
+                        <span>python</span>
                         <br />
                         <br />
                         <Tag />
@@ -66,82 +66,82 @@ function About() {
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Auction/</Cmd>
+                        <Cmd>&gt; open auction/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/tvFPEwrtKao">
-                            Auction (React·TS·NestJS·TypeORM·Emotion)
+                            auction (react·ts·nest·typeorm·emotion)
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Ohouse/</Cmd>
+                        <Cmd>&gt; open ohouse/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/L5u7KgX1P4o">
-                            Ohouse (React·TS·Sass){" "}
+                            ohouse (react·ts·sass){" "}
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Hunger/</Cmd>
+                        <Cmd>&gt; open hunger/</Cmd>
                         <br />
                         <Prod link="https://play.google.com/store/apps/details?id=com.hunger.ohenry">
-                            Hunger (TS·TypeORM·Express·RN)
+                            hunger (ts·typeorm·express·rn)
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Devsisters/</Cmd>
+                        <Cmd>&gt; open devsisters/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/vV-hFzdlYyU">
-                            Devsisters (TS·Sass·GraphQL·React){" "}
+                            devsisters (ts·sass·graphql·react){" "}
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Place/</Cmd>
+                        <Cmd>&gt; open place/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/LkqD32oWN20">
-                            Place (Express·EXPO·MongoDB·React·Puppeteer)
+                            place (express·expo·mongo·react·puppeteer)
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Blinker/</Cmd>
+                        <Cmd>&gt; open blinker/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/nv3lNBxKLmY">
-                            Blinker (React·AWS·Html·Css)
+                            blinker (react·aws·html·css)
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Box/</Cmd>
+                        <Cmd>&gt; open box/</Cmd>
                         <br />
                         <Prod link="https://www.npmjs.com/package/visual-box">
-                            Box (TS·React){" "}
+                            box (ts·react){" "}
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Block/</Cmd>
+                        <Cmd>&gt; open block/</Cmd>
                         <br />
                         <Prod link="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka">
-                            Block (JS)
+                            block (js)
                         </Prod>
                         <br />
                         <br />
                         <PTag />
                         <br />
-                        <Cmd>&gt; open Papaya/</Cmd>
+                        <Cmd>&gt; open papaya/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/s5gBXg1zrHY">
-                            Papaya (TS·React·Mapbox·Sass·GraphQL·AWS)
+                            papaya (ts·react·mapbox·sass·graphql·aws)
                         </Prod>
                     </code>
                 </pre>
