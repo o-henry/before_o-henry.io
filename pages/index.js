@@ -1,12 +1,14 @@
 import Project from "../components/project";
 import { getAllProject } from "../lib/getall.post";
+import About from "./about";
 
 function Index() {
     const projects = getAllProject();
 
     return (
         <div style={{ marginTop: "4rem", marginBottom: "8rem" }}>
-            <header
+            <About />
+            {/* <header
                 style={{
                     fontFamily: "Rajdhani",
                     fontWeight: "600",
@@ -20,7 +22,7 @@ function Index() {
                 {projects.map((project) => (
                     <Project key={project.link} project={project} />
                 ))}
-            </section>
+            </section> */}
         </div>
     );
 }

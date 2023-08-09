@@ -8,6 +8,12 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+
+# build
+git push origin master
+yarn run deploy (or npm)
+-------------
+github action
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

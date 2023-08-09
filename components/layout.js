@@ -27,7 +27,7 @@ function Layout({ children, pageTitle, description }) {
                     margin: "4.125rem",
                 }}
             >
-                2022 © Henry
+                2023 © Henry
             </footer>
         </div>
     );

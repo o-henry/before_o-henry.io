@@ -1,0 +1,66 @@
+import Post from "../../../components/post";
+
+export const meta = {
+    title: "WEB",
+    description: "WEB APPLICATION",
+    date: "2022-10-12T14:23:00.0Z",
+    readTime: 30,
+};
+
+export default ({ children }) => <Post meta={meta}>{children}</Post>;
+
+<div
+    style={{
+        marginTop: "4rem",
+        fontFamily: "Recoleta, NotoSansKR-Thin, MalgunGothic",
+        fontSize: "11pt",
+        lineHeight: "22pt",
+        letterSpacing: ".8px",
+    }}
+>
+
+# Decoupling
+
+웹 개발을 하게되면 자연스럽게 CRUD를 구현하는 MVC 모델을 먼저 접하게 되는데 복잡하지 않은 서비스의 경우 무리없이 잘 동작하지만 코드의 수명이 길어질수록 기술이 변화하게 되고 새로운 기능이 추가하게 되어 유지보수에 많은 어려움을 겪게된다.
+기존 MVC 패턴에서 벗어나 비즈니스 로직과 인프라스트럭처 코드를 분리하는데에 중점을 둔다.
+
+<hr />
+
+분리를 통한 가장 큰 기술적 이점은 도메인 우선 개발이 가능하다는 점과 효과적인 테스트를 통해 TDD의 이점 또한 가져간다는 것이다.
+
+<hr />
+먼저 인프라스트럭처는 무엇인가에 대한 대답이 필요하다. 인프라는 외부 시스템으로 데이터베이스
+· 외부 웹서비스 · 파일시스템 등 핵심 코드를 제외한 부분이다. 핵심코드는 이러한 외부
+종속성 없이 동작할 수 있어야 한다.
+
+<br />
+<br />
+
+# Domain Model
+
+핵심 코드(비즈니스 로직)를 찾는 가장 좋은 방법은 DDD를 적용하는 것이다. 이벤트 스토밍을 통해 도메인 모델을 식별하고 비즈니스 로직을 찾는다.
+
+<br />
+<br />
+
+# API
+
+API 설계의 목표는 비즈니스 요구사항에서 API 설계로 전환하는 방법을 결정하는 것이다.
+REST API를 구현할때 호출이 실패할 경우 앱에 어떤영향을 미치는지 항상 고려해야 한다.
+
+<br />
+<br />
+
+<br />
+<br />
+
+<br />
+<br />
+
+    <br />
+
+    <hr style={{ border:".1px solid whiteSmoke" }} />
+
+    <div style={{ height: "15px" }}></div>
+
+</div>

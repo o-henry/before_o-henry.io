@@ -52,6 +52,20 @@
         url("../public/fonts/Recoleta-Medium.woff") format("woof");
 }
 
+@font-face {
+    font-family: "Anonymous Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/anonymous-pro-v21-latin-regular.ttf")
+            format("truetype"),
+        url("../public/fonts/anonymous-pro-v21-latin-regular.eot"),
+        url("../public/fonts/anonymous-pro-v21-latin-regular.woff")
+            format("woff"),
+        url("../public/fonts/anonymous-pro-v21-latin-regular.woff2")
+            format("woff2"),
+        url("../public/fonts/AnonymousPro-Regular.ttf") format("truetype");
+}
+
 @import url("./vscode-style.css");
 /* @import url("./duotone-sea.css"); */
 
@@ -185,11 +199,11 @@ ol {
 
 li {
     color: inherit;
-    font-size: 11pt;
+    font-size: 10pt;
     margin-bottom: 4px;
     line-height: 22pt;
     letter-spacing: 0.8px;
-    font-family: "Roboto Slab", "NotoSansKR-Thin", "MalgunGothic", serif;
+    font-family: Poppins, "NotoSansKR-Thin", "MalgunGothic";
 }
 
 blockquote {
@@ -582,7 +596,7 @@ pre {
 }
 
 .shake-it:hover {
-    animation: tilt-shaking 1s infinite;
+    animation: tilt-shaking 2s infinite;
 }
 
 @keyframes tilt-shaking {
@@ -601,4 +615,23 @@ pre {
     100% {
         transform: rotate(0deg);
     }
+}
+
+.high-light {
+    background-color: #fcd19c;
+    color: black;
+    border-radius: 4px;
+    padding: 0.3rem 0.2rem 0.3rem 0.3rem;
+    margin: 0 0.4rem 0 0.2rem;
+}
+
+.custom-blockquote {
+    font-family: Poppins, "SeoulNamsanL";
+    border-radius: 4px;
+    line-height: 1.9rem;
+    max-width: 100%;
+    font-size: 0.965rem;
+    font-weight: 100;
+    position: relative;
+    padding: 2rem 1rem;
 }

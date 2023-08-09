@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Moon from "../assets/moon.svg";
-import Sun from "../assets/s-sun.svg";
+import Sun from "../assets/h-sun.svg";
 
 export default function Header() {
     const [darkTheme, setDarkTheme] = useState(undefined);
@@ -66,7 +66,7 @@ export default function Header() {
                     </a>
                 </Link>
 
-                <div style={{ flexShrink: "0", width: "15px" }}></div>
+                <div style={{ flexShrink: "0", width: "25px" }}></div>
 
                 <a
                     href="https://lee-note.notion.site/82a3ac3053a9457b9f1a4e1b3d7baedc?v=2acb0e3dd5c64d4d8582ee28f193acd7"
@@ -77,11 +77,11 @@ export default function Header() {
 
                 <div style={{ flexShrink: "0", width: "15px" }}></div>
 
-                <Link href="/about">
+                {/* <Link href="/about">
                     <a>
                         <h2 style={{ fontSize: "0.825rem" }}>About</h2>
                     </a>
-                </Link>
+                </Link> */}
 
                 <div style={{ flexShrink: "0", width: "15px" }}></div>
 

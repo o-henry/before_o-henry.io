@@ -33,31 +33,6 @@ export default ({ children }) => <Post meta={meta}>{children}</Post>;
 
 <hr />
 
-<div className="blog-post">
-
-```ts
-// one-way data flow
-function Counter() {
-    // State: the source of truth that drives our app;
-    const [counter, setCounter] = useState(0);
-
-    // Action: the events that occur in the app based on user input,
-    // and trigger updates in the state
-    const increment = () => {
-        setCounter((prevCounter) => prevCounter + 1);
-    };
-
-    // View: a declarative description of the UI based on the current state
-    return (
-        <div>
-            Value: {counter} <button onClick={increment}>Increment</button>
-        </div>
-    );
-}
-```
-
-</div>
-
 <div className="think">
     컴포넌트를 만들때, UI를 만들고 해당 UI 에서는 button 이나 Input등의 이벤트를
     발생시키고, 이를 통해 상태를 변경 할텐데, Redux로 해당 UI에서 상태가
