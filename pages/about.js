@@ -32,9 +32,8 @@ function About() {
                         <Cmd>&gt; I can do these things ... </Cmd>
                         <br />
                         <span fontFamily="Anonymous Pro">
-                            kotlin · typescript · java <br />
-                            spring boot · node.js · sql <br />
-                            react · css
+                            android · kotlin · typescript · java ·
+                            spring boot · node.js · sql · react
                         </span>
                         <br />
                         <br />
@@ -69,7 +68,7 @@ function About() {
                         <Cmd>&gt; open auction/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/tvFPEwrtKao">
-                            auction (react·ts·nest·typeorm·emotion)
+                            auction
                         </Prod>
                         <br />
                         <br />
@@ -78,7 +77,7 @@ function About() {
                         <Cmd>&gt; open ohouse/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/L5u7KgX1P4o">
-                            ohouse (react·ts·sass){" "}
+                            ohouse
                         </Prod>
                         <br />
                         <br />
@@ -87,7 +86,7 @@ function About() {
                         <Cmd>&gt; open hunger/</Cmd>
                         <br />
                         <Prod link="https://play.google.com/store/apps/details?id=com.hunger.ohenry">
-                            hunger (ts·typeorm·express·rn)
+                            hunger
                         </Prod>
                         <br />
                         <br />
@@ -96,7 +95,7 @@ function About() {
                         <Cmd>&gt; open devsisters/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/vV-hFzdlYyU">
-                            devsisters (ts·sass·graphql·react){" "}
+                            devsisters{" "}
                         </Prod>
                         <br />
                         <br />
@@ -105,7 +104,7 @@ function About() {
                         <Cmd>&gt; open place/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/LkqD32oWN20">
-                            place (express·expo·mongo·react·puppeteer)
+                            place
                         </Prod>
                         <br />
                         <br />
@@ -114,7 +113,7 @@ function About() {
                         <Cmd>&gt; open blinker/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/nv3lNBxKLmY">
-                            blinker (react·aws·html·css)
+                            blinker
                         </Prod>
                         <br />
                         <br />
@@ -123,7 +122,7 @@ function About() {
                         <Cmd>&gt; open box/</Cmd>
                         <br />
                         <Prod link="https://www.npmjs.com/package/visual-box">
-                            box (ts·react){" "}
+                            box
                         </Prod>
                         <br />
                         <br />
@@ -132,7 +131,7 @@ function About() {
                         <Cmd>&gt; open block/</Cmd>
                         <br />
                         <Prod link="https://chrome.google.com/webstore/detail/hidetwitch/ihefbdnchlbbmhbecinobdelbijcchka">
-                            block (js)
+                            block
                         </Prod>
                         <br />
                         <br />
@@ -141,7 +140,7 @@ function About() {
                         <Cmd>&gt; open papaya/</Cmd>
                         <br />
                         <Prod link="https://youtu.be/s5gBXg1zrHY">
-                            papaya (ts·react·mapbox·sass·graphql·aws)
+                            papaya
                         </Prod>
                     </code>
                 </pre>
